@@ -18,7 +18,7 @@
                 @endforeach
             </ul>
           </div>
-@endif
+          @endif
           @if(Session::has('success'))
             <div class="alert alert-success">
                 {{Session::get('success')}}
@@ -167,4 +167,4 @@
     
 
 @endsection
-@section('script')
+

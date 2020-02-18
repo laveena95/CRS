@@ -13,21 +13,45 @@
     <h3><i class="fa fa-building"></i> <b>Coordinator</b> <i class="fa fa-angle-right"></i> <i class="fa fa-folder-open"></i> @yield('title')</h3>
     <div class="row mb">
         <!-- page start-->
+        @if($message = Session::get('success'))
+          <div class="alert alert-success">
+            <p>{{$message}}</p>
+          </div>
+        @endif
+        <div align="right">
+          <a href="addStudent" class="btn btn-theme ">ADD</a><br><br>
+        </div>
         <div class="content-panel">
         <div class="adv-table">
-            <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
-            <thead>
-                <tr>
+        <table cellpadding="0" cellspacing="0" class="display table table-bordered" id="hidden-table-info">
+                <tr style="background-color:silver; font-weight:bold;color:black;"> 
                 <th>Name of the Company</th>
                 <th>Location</th>
-                <th class="hidden-phone">Type of the Business</th>
-                <th class="hidden-phone">Achivements</th>
-                <th class="hidden-phone">Active in Market</th>
-                <th class="hidden-phone">Email</th>
-                <th class="hidden-phone">Official Website</th>
+                <th>Type of the Business</th>
+                <th>Achivements</th>
+                <th>Active in Market</th>
+                <th>Email</th>
+                <th>Official Website</th>
+                <th>Vacancies Available</th>
                 </tr>
-            </thead>
-            <tbody>
+
+                @foreach($company as $row)
+                <td>{{$row['fname']}}</td>
+                    <td>{{$row['lname']}}</td>
+                    <td>{{$row['gender']}}</td>
+                    <td>{{$row['DOB']}}</td>
+                    <td>{{$row['Age']}}</td>
+                    <td>{{$row['Semester']}}</td>
+                    <td>{{$row['Registration_No']}}</td>
+                    <td>{{$row['PIN']}}</td>
+                    <td>{{$row['Course_Period']}}</td>
+                    <td>{{$row['email']}}</td>
+                    <td>{{$row['phone']}}</td>
+                    <td>{{$row['address']}}</td>
+                    <td>{{$row['nationality']}}</td>
+                    <td>{{$row['image']}}</td>
+                @endforeach
+            <!--<tbody>
                 <tr class="gradeA">
                 <td>IT Solutions</td>
                 <td>No: 21,
@@ -256,7 +280,7 @@
                 <td class="center hidden-phone">info@gmail.com</td>
                 <th class="hidden-phone">www.itsolution.lk</th>
                 </tr>
-            </tbody>
+            </tbody>-->
             </table>
         </div>
         </div>
