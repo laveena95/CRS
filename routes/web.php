@@ -58,6 +58,10 @@ Route::get('coordinatorOverview', 'AdministratorController@coordinatorOverview')
 Route::get('coordinatorNotification', 'AdministratorController@coordinatorNotification');
 
 Route::post('/coordinators','CoordinatorController@store');
+Route::get('coordinatorOverview','CoordinatorController@index');
+Route::get('coordinatorOverview/{id}','CoordinatorController@edit');
+Route::patch('coordinatorOverview/{id}','CoordinatorController@update');
+Route::delete('coordinatorOverview/{id}','CoordinatorController@destroy');
 
 //Admin-Student
 Route::get('addStudent', 'AdministratorController@addStudent');
@@ -72,7 +76,6 @@ Route::get('studentOverview','addController@index');
 Route::get('studentOverview/{id}','addController@edit');
 Route::patch('studentOverview/{id}','addController@update');
 Route::delete('studentOverview/{id}','addController@destroy');
-//Route::resource('/administrator/studentOverview','addController');
 
 //Admin-Company
 Route::get('addCompany', 'AdministratorController@addCompany');

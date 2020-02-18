@@ -74,7 +74,35 @@ class CoordinatorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'fname'=> 'required',
+            'lname'=> 'required',
+            'gender'=> 'required',
+            'position'=> 'required',
+            'qualification'=> 'required',
+            'subject'=> 'required',
+            'appointment'=> 'required',
+            'mobile'=> 'required',
+            'email'=> 'required',
+            'password'=> 'required'
+        ]);
+
+        $coordinator=Coordinators::find($id);
+        $coordinator->fname = $request->get('fname');
+        $coordinator->lname = $request->get('lname');
+        $coordinator->gender = $request->get('gender');
+        $coordinator->position = $request->get('position');
+        $coordinator->qualification = $request->get('qualification');
+        $coordinator->subject = $request->get('subject');
+        $coordinator->appointment = $request->get('appointment');
+        $coordinator->mobile = $request->get('mobile');
+        $coordinator->email = $request->get('email');
+        $coordinator->password = $request->get('password');
+
+        $coordinator->save();
+
+        $details= Coordinators::all();
+        return view('administrator.coordinatorOverview')->with('coordi',$details);
     }
 
     /**

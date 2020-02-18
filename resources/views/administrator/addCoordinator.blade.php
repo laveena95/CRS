@@ -106,7 +106,7 @@
                   </div>
                 </div>
                 <div class="form-send">
-                <button type="submit" class="btn btn-large btn-danger" style="margin-left: 60%;">Add to List</button>
+                <button type="submit" class="btn btn-large btn-danger" style="margin-left: 60%;">Add to Coordinator</button>
               </div>
 
               </form>

@@ -20,7 +20,7 @@
           </div>
         @endif
         <div align="right">
-          <a href="addStudent" class="btn btn-theme ">ADD</a><br><br>
+          <a href="addCoordinator" class="btn btn-theme ">ADD</a><br><br>
         </div>
         <div class="content-panel">
         <div class="adv-table">
@@ -29,12 +29,13 @@
                   <th>First Name</th>
                   <th>Last Name</th>
                   <th>Gender</th>
-                  <th>Psition</th>
+                  <th>Position</th>
                   <th>Qualification</th>
                   <th>Subject In Charge</th>
                   <th>Date of Appointment</th>
                   <th>Mobile No</th>
                   <th>Email</th>
+                  <th>Password</th>
                   <th>Image</th>
                   <th>Edit</th>
                   <th>Delete</th>

@@ -19,7 +19,7 @@
           </div>
         @endif
         <div align="right">
-          <a href="addStudent" class="btn btn-theme ">ADD</a><br><br>
+          <a href="addCompany" class="btn btn-theme ">ADD</a><br><br>
         </div>
         <div class="content-panel">
         <div class="adv-table">
