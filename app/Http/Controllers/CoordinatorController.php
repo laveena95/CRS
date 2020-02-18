@@ -14,7 +14,8 @@ class CoordinatorController extends Controller
      */
     public function index()
     {
-        //
+        $coordi=Coordinators::all()->toArray();
+        return view('administrator.coordinatorOverview',compact('coordi'));
     }
 
     /**
@@ -60,7 +61,8 @@ class CoordinatorController extends Controller
      */
     public function edit($id)
     {
-        //
+        $coordinator=Coordinators::find($id);
+        return view('administrator.editCoordinator',compact('coordinator','id'));
     }
 
     /**
@@ -83,6 +85,7 @@ class CoordinatorController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Coordinators::where('id',$id)->delete();
+        return redirect()->back()->with('success','Data Deleted Successfully!'); 
     }
 }

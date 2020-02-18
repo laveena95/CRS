@@ -34,10 +34,12 @@
                 <th>Phne</th>
                 <th>Email</th>
                 <th>Official Website</th>
+                <th>Password</th>
+                <th>Edit</th>
+                <th>Delete</th>
                 </tr>
 
                 @foreach($company as $row)
-                <td>{{$row['fname']}}</td>
                     <td>{{$row['cname']}}</td>
                     <td>{{$row['address']}}</td>
                     <td>{{$row['businessType']}}</td>
@@ -48,6 +50,14 @@
                     <td>{{$row['email']}}</td>
                     <td>{{$row['website']}}</td>
                     <td>{{$row['password']}}</td>
+                    <td><a href="{{action('CompanyController@edit',$row['id'])}}" class="btn btn-theme"><i class="fa fa-pencil"></i></a></td>
+                    <td>
+                      <form method="post" class="delete_form" action="{{action('CompanyController@destroy',$row['id'])}}">
+                        {{csrf_field()}}
+                        <input type="hidden" name="_method" value="DELETE" />
+                        <button type="submit" class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
+                      </form>
+                    </td>
                 @endforeach
             
             </table>

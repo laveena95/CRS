@@ -80,6 +80,10 @@ Route::get('companyOverview', 'AdministratorController@companyOverview');
 Route::get('companyNotification', 'AdministratorController@companyNotification');
 
 Route::post('/companies','CompanyController@store');
+Route::get('companyOverview','CompanyController@index');
+Route::get('companyOverview/{id}','CompanyController@edit');
+Route::patch('companyOverview/{id}','CompanyController@update');
+Route::delete('companyOverview/{id}','CompanyController@destroy');
 
 //student
 Route::get('profile', 'StudentController@profile');

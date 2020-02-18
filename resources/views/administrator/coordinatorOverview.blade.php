@@ -14,101 +14,56 @@
     <h3><i class="fa fa-user"></i> <b>Coordinator</b> <i class="fa fa-angle-right"></i> <i class="fa fa-folder-open"></i> @yield('title')</h3>
     <div class="row mb">
         <!-- page start-->
+        @if($message = Session::get('success'))
+          <div class="alert alert-success">
+            <p>{{$message}}</p>
+          </div>
+        @endif
+        <div align="right">
+          <a href="addStudent" class="btn btn-theme ">ADD</a><br><br>
+        </div>
         <div class="content-panel">
         <div class="adv-table">
             <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
-            <thead>
                 <tr>
-                <th>Name of the Coordinator</th>
-                <th>Psition</th>
-                <th class="hidden-phone">Qualification</th>
-                <th class="hidden-phone">Subject In Charge</th>
-                <th class="hidden-phone">Email</th>
-                <th class="hidden-phone">Image</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Gender</th>
+                  <th>Psition</th>
+                  <th>Qualification</th>
+                  <th>Subject In Charge</th>
+                  <th>Date of Appointment</th>
+                  <th>Mobile No</th>
+                  <th>Email</th>
+                  <th>Image</th>
+                  <th>Edit</th>
+                  <th>Delete</th>
                 </tr>
-            </thead>
-            <tbody>
-                <tr class="gradeX">
-                <td>A</td>
-                <td>Senior Lecture, Sabaragamuwa University of Srilanka</td>
-                <td>BSC.Hons in IS, Sabaragamuwa University of Srilanka</td>
-                <td class="hidden-phone">Enterprise Architecture</td>
-                <td class="center hidden-phone">a@gmail.com</td>
-                <th class="hidden-phone"><img src="{{ asset('backend/img/ui-sam.jpg') }}"></th>
-                </tr>
-                <tr class="gradeX">
-                <td>A</td>
-                <td>Senior Lecture, Sabaragamuwa University of Srilanka</td>
-                <td>BSC.Hons in IS, Sabaragamuwa University of Srilanka</td>
-                <td class="hidden-phone">Enterprise Architecture</td>
-                <td class="center hidden-phone">a@gmail.com</td>
-                <th class="hidden-phone"><img src="{{ asset('backend/img/ui-sam.jpg') }}"></th>
-                </tr>
-                <tr class="gradeX">
-                <td>A</td>
-                <td>Senior Lecture, Sabaragamuwa University of Srilanka</td>
-                <td>BSC.Hons in IS, Sabaragamuwa University of Srilanka</td>
-                <td class="hidden-phone">Enterprise Architecture</td>
-                <td class="center hidden-phone">a@gmail.com</td>
-                <th class="hidden-phone"><img src="{{ asset('backend/img/ui-sam.jpg') }}"></th>
-                </tr>
-                <tr class="gradeX">
-                <td>A</td>
-                <td>Senior Lecture, Sabaragamuwa University of Srilanka</td>
-                <td>BSC.Hons in IS, Sabaragamuwa University of Srilanka</td>
-                <td class="hidden-phone">Enterprise Architecture</td>
-                <td class="center hidden-phone">a@gmail.com</td>
-                <th class="hidden-phone"><img src="{{ asset('backend/img/ui-sam.jpg') }}"></th>
-                </tr>
-                <tr class="gradeX">
-                <td>A</td>
-                <td>Senior Lecture, Sabaragamuwa University of Srilanka</td>
-                <td>BSC.Hons in IS, Sabaragamuwa University of Srilanka</td>
-                <td class="hidden-phone">Enterprise Architecture</td>
-                <td class="center hidden-phone">a@gmail.com</td>
-                <th class="hidden-phone"><img src="{{ asset('backend/img/ui-sam.jpg') }}"></th>
-                </tr>
-                <tr class="gradeX">
-                <td>A</td>
-                <td>Senior Lecture, Sabaragamuwa University of Srilanka</td>
-                <td>BSC.Hons in IS, Sabaragamuwa University of Srilanka</td>
-                <td class="hidden-phone">Enterprise Architecture</td>
-                <td class="center hidden-phone">a@gmail.com</td>
-                <th class="hidden-phone"><img src="{{ asset('backend/img/ui-sam.jpg') }}"></th>
-                </tr>
-                <tr class="gradeX">
-                <td>A</td>
-                <td>Senior Lecture, Sabaragamuwa University of Srilanka</td>
-                <td>BSC.Hons in IS, Sabaragamuwa University of Srilanka</td>
-                <td class="hidden-phone">Enterprise Architecture</td>
-                <td class="center hidden-phone">a@gmail.com</td>
-                <th class="hidden-phone"><img src="{{ asset('backend/img/ui-sam.jpg') }}"></th>
-                </tr>
-                <tr class="gradeX">
-                <td>A</td>
-                <td>Senior Lecture, Sabaragamuwa University of Srilanka</td>
-                <td>BSC.Hons in IS, Sabaragamuwa University of Srilanka</td>
-                <td class="hidden-phone">Enterprise Architecture</td>
-                <td class="center hidden-phone">a@gmail.com</td>
-                <th class="hidden-phone"><img src="{{ asset('backend/img/ui-sam.jpg') }}"></th>
-                </tr>
-                <tr class="gradeX">
-                <td>A</td>
-                <td>Senior Lecture, Sabaragamuwa University of Srilanka</td>
-                <td>BSC.Hons in IS, Sabaragamuwa University of Srilanka</td>
-                <td class="hidden-phone">Enterprise Architecture</td>
-                <td class="center hidden-phone">a@gmail.com</td>
-                <th class="hidden-phone"><img src="{{ asset('backend/img/ui-sam.jpg') }}"></th>
-                </tr>
-                <tr class="gradeX">
-                <td>A</td>
-                <td>Senior Lecture, Sabaragamuwa University of Srilanka</td>
-                <td>BSC.Hons in IS, Sabaragamuwa University of Srilanka</td>
-                <td class="hidden-phone">Enterprise Architecture</td>
-                <td class="center hidden-phone">a@gmail.com</td>
-                <th class="hidden-phone"><img src="{{ asset('backend/img/ui-sam.jpg') }}"></th>
-                </tr>
-            </tbody>
+
+                @foreach($coordi as $row)
+                  <tr>
+                    <td>{{$row['fname']}}</td>
+                    <td>{{$row['lname']}}</td>
+                    <td>{{$row['gender']}}</td>
+                    <td>{{$row['position']}}</td>
+                    <td>{{$row['qualification']}}</td>
+                    <td>{{$row['subject']}}</td>
+                    <td>{{$row['appointment']}}</td>
+                    <td>{{$row['mobile']}}</td>
+                    <td>{{$row['email']}}</td>
+                    <td>{{$row['password']}}</td>
+                    <td>{{$row['image']}}</td>
+                    <td><a href="{{action('CoordinatorController@edit',$row['id'])}}" class="btn btn-theme"><i class="fa fa-pencil"></i></a></td>
+                    <td>
+                      <form method="post" class="delete_form" action="{{action('CoordinatorController@destroy',$row['id'])}}">
+                        {{csrf_field()}}
+                        <input type="hidden" name="_method" value="DELETE" />
+                        <button type="submit" class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
+                      </form>
+                    </td>
+                  </tr>
+                @endforeach
+            
             </table>
         </div>
         </div>

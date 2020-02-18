@@ -51,7 +51,7 @@
             <div class="form-group">
                   <label class="control-label col-md-3"><i class="fa fa-clock-o"></i> <span> </span> Vacancy Available</label>
                   <div class="col-md-4">
-                  <input type="date" name="vacancy" class="form-control round-form">
+                  <input type="text" name="vacancy" class="form-control round-form">
                   </div>
             </div>
             <div class="form-group">
@@ -75,11 +75,11 @@
             <div class="form-group">
                 <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-lock"></i><span> </span> Password</label>
                 <div class="col-sm-8">
-                <input type="password" name="password" class="form-control round-form" placeholder="">
+                <input type="password" name="password" class="form-control round-form" placeholder="*******">
                 </div>
             </div>
                 <div class="form-send">
-                <button type="submit" class="btn btn-large btn-danger" style="margin-left: 60%;">Add to List</button>
+                <button type="submit" class="btn btn-large btn-danger" style="margin-left: 60%;">Add Company</button>
             </div>
 
               </form>

@@ -11,6 +11,7 @@ class Companies extends Model
                         'businessType',
                         'achievement',
                         'active',
+                        'vacancy',
                         'contact',
                         'email',
                         'website',

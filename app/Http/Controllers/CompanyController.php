@@ -14,7 +14,8 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        //
+        $company=Companies::all()->toArray();
+        return view('administrator.companyOverview',compact('company'));
     }
 
     /**
@@ -59,7 +60,8 @@ class CompanyController extends Controller
      */
     public function edit($id)
     {
-        //
+        $com=Companies::find($id);
+        return view('administrator.editCompany',compact('com','id'));
     }
 
     /**
@@ -71,7 +73,33 @@ class CompanyController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'cname' => 'required',
+            'address' =>'required',
+            'businessType' => 'required',
+            'achievement' => 'required',
+            'active' => 'required',
+            'vacancy' => 'required',
+            'contact' => 'required',
+            'email' => 'required',
+            'website' => 'required',
+            'password' => 'required',
+        ]);
+        $com=Companies::find($id);
+        $com->cname = $request->get('cname');
+        $com->address = $request->get('address');
+        $com->businessType = $request->get('businessType');
+        $com->achievement = $request->get('achievement');
+        $com->active = $request->get('active');
+        $com->vacancy = $request->get('vacancy');
+        $com->contact = $request->get('contact');
+        $com->email = $request->get('email');
+        $com->website = $request->get('website');
+        $com->password = $request->get('password');
+
+        $com->save();
+        $details= Companies::all();
+        return view('administrator.companyOverview')->with('company',$details);
     }
 
     /**
@@ -82,6 +110,7 @@ class CompanyController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Companies::where('id',$id)->delete();
+        return redirect()->back()->with('success','Data Deleted Successfully!');
     }
 }
