@@ -30,26 +30,24 @@
                 <th>Type of the Business</th>
                 <th>Achivements</th>
                 <th>Active in Market</th>
+                <th>Vacancy Available</th>
+                <th>Phne</th>
                 <th>Email</th>
                 <th>Official Website</th>
-                <th>Vacancies Available</th>
                 </tr>
 
                 @foreach($company as $row)
                 <td>{{$row['fname']}}</td>
                     <td>{{$row['cname']}}</td>
-                    <td>{{$row['gender']}}</td>
-                    <td>{{$row['DOB']}}</td>
-                    <td>{{$row['Age']}}</td>
-                    <td>{{$row['Semester']}}</td>
-                    <td>{{$row['Registration_No']}}</td>
-                    <td>{{$row['PIN']}}</td>
-                    <td>{{$row['Course_Period']}}</td>
-                    <td>{{$row['email']}}</td>
-                    <td>{{$row['phone']}}</td>
                     <td>{{$row['address']}}</td>
-                    <td>{{$row['nationality']}}</td>
-                    <td>{{$row['image']}}</td>
+                    <td>{{$row['businessType']}}</td>
+                    <td>{{$row['achievement']}}</td>
+                    <td>{{$row['active']}}</td>
+                    <td>{{$row['vacancy']}}</td>
+                    <td>{{$row['contact']}}</td>
+                    <td>{{$row['email']}}</td>
+                    <td>{{$row['website']}}</td>
+                    <td>{{$row['password']}}</td>
                 @endforeach
             
             </table>
