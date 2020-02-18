@@ -12,7 +12,7 @@
 */
 
 /*Normal Pages */
-Auth::Routes(['verify'=>true]);
+Auth::routes(['verify'=>true]);
 /*
 Route::group(['middleware'=>'administrator'],function(){
 Route::get('Adminhome', 'AdministratorController@Adminhome'); 
@@ -93,9 +93,9 @@ Route::get('student', 'StudentController@student');
 
 
 //Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
 
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+// Route::get('/home', 'HomeController@index');

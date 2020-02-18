@@ -103,7 +103,10 @@ class addController extends Controller
         $student->nationality = $request->get('nationality');
         
         $student->save();
-        return redirect()->back()->with ('success', 'Data Updated Successfully !');
+
+        $details= Students::all();
+        //return redirect()->back()->with ('success', 'Data Updated Successfully !');
+        return view('administrator.studentOverview')->with('st',$details);
     }
 
     /**

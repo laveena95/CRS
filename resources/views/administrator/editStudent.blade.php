@@ -54,7 +54,7 @@
             <div class="form-group">
                 <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-calendar"></i><span> </span>Age</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control round-form" name="age" placeholder="age" style="width:200px;" value="{{$student->age}}">
+                    <input type="text" class="form-control round-form" name="age" placeholder="age" style="width:200px;" value="{{$student->Age}}">
                 </div>
             </div>
 
@@ -90,7 +90,7 @@
                 <label for="email" class="col-sm-2 col-sm-2 control-label"><i class="fa fa-envelope"></i>{{ __('E-Mail Address') }}</label>
 
                 <div class="col-md-6">
-                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required >
+                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $student->email }}" required >
 
                     @error('email')
                         <span class="invalid-feedback" role="alert">
@@ -110,7 +110,7 @@
             <div class="form-group">
                 <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-home"></i><span> </span>Address</label>
                 <div class="col-sm-8">
-                    <textarea class="form-control round-form"  name="address" placeholder="address" style="width:200px;" value="{{$student->address}}"></textarea>
+                    <textarea class="form-control round-form"  name="address" placeholder="address" style="width:200px;" >{{$student->address}}</textarea>
                 </div>
             </div>
 
