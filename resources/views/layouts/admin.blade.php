@@ -252,9 +252,6 @@
               </a>
             <ul class="sub">
               <li><a href="calendar.html">Calendar</a></li>
-              <li><a href="gallery.html">Gallery</a></li>
-              <li><a href="dropzone.html">Dropzone File Upload</a></li>
-              <li><a href="file_upload.html">Multiple File Upload</a></li>
             </ul>
           </li>
           <li class="sub-menu">
@@ -265,8 +262,6 @@
             <ul class="sub">
               <li><a href="adminLogin">Login</a></li>
               <li><a href="lock_screen.html">Lock Screen</a></li>
-              <li><a href="invoice.html">Invoice</a></li>
-              <li><a href="faq.html">FAQ</a></li>
             </ul>
           </li>
           <li class="sub-menu">
@@ -277,7 +272,6 @@
             <ul class="sub">
               <li><a href="addStudent"><i class="fa fa-plus"></i> Add Student</a></li>
               <li><a href="advanced_form_components.html">Manage Students</a></li>
-              <li><a href="form_validation.html">Form Validation</a></li>
               <li><a href="studentNotification"><i class="fa fa-bell"></i>Notification</a></li>
               <li><a href="studentOverview"><i class="fa fa-columns"></i>Student Table</a></li>
             </ul>
@@ -290,7 +284,6 @@
             <ul class="sub">
               <li><a href="addCoordinator"><i class="fa fa-plus"></i> Add Coordinator</a></li>
               <li><a href="advanced_form_components.html">Manage Coordinator</a></li>
-              <li><a href="form_validation.html">Form Validation</a></li>
               <li><a href="coordinatorNotification"><i class="fa fa-bell"></i>Notification</a></li>
               <li><a href="coordinatorOverview"><i class="fa fa-columns"></i>Coordinator Table</a></li>
             </ul>
@@ -303,7 +296,6 @@
             <ul class="sub">
               <li><a href="addCompany"><i class="fa fa-plus"></i>Add Company</a></li>
               <li><a href="advanced_form_components.html">Manage Company</a></li>
-              <li><a href="form_validation.html">Form Validation</a></li>
               <li><a href="companyNotification"><i class="fa fa-bell"></i>Notification</a></li>
               <li><a href="companyOverview"><i class="fa fa-columns"></i>Company Table</a></li>
             </ul>
@@ -315,17 +307,6 @@
               <span class="label label-theme pull-right mail-info">2</span>
               </a>
           </li>
-          
-          <li class="sub-menu">
-            <a href="javascript:;">
-              <i class="fa fa-comments-o"></i>
-              <span>Chat Room</span>
-              </a>
-            <ul class="sub">
-              <li><a href="chat_room.html"> Chat Room</a></li>
-            </ul>
-          </li>
-         
         </ul>
         <!-- sidebar menu end-->
       </div>

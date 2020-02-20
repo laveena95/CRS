@@ -1,5 +1,5 @@
 @extends('layouts.student')
-@section('title','Available Jobs')
+@section('title','Available Jobs by Category!')
 
 @section('style')
 @endsection

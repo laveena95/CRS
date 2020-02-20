@@ -18,6 +18,10 @@ class CompanyController extends Controller
         return view('administrator.companyOverview',compact('company'));
     }
 
+    public function viewCompany()
+    {
+        return view('layouts.company');
+    }
     /**
      * Show the form for creating a new resource.
      *

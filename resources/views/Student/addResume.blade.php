@@ -133,22 +133,16 @@
               </div>
               
               <div class="form-group">
-                    <label class="col-sm-2 col-sm-2 control-label">D.O.B</label>
-                    <div class="col-md-3 col-xs-11">
-                      <div data-date-viewmode="years" data-date-format="dd-mm-yyyy" data-date="01-01-2014" class="input-append date dpYears">
-                        <input type="text" readonly="" value="01-01-2014" size="16" class="form-control">
-                        <span class="input-group-btn add-on">
-                          <button class="btn btn-theme" type="button"><i class="fa fa-calendar"></i></button>
-                          </span>
-                      </div>
-                      <span class="help-block">Select date</span>
-                    </div>
-                  </div>
-                  <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">Age</label>
+                  <label class="col-sm-2 col-sm-2 control-label">D.O.B</label>
                   <div class="col-sm-8">
-                      <input type="text"  class="form-control round-form" placeholder="Years old">
-                  </div>
+                    <input type="date"  class="form-control round-form" placeholder="Date of Birth">
+                </div>  
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 col-sm-2 control-label">Age</label>
+                <div class="col-sm-8">
+                    <input type="text"  class="form-control round-form" placeholder="Years old">
+                </div>
               </div>
               <div class="form-group">
                   <label class="col-sm-2 col-sm-2 control-label">Address</label>

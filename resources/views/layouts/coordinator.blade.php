@@ -280,28 +280,16 @@
            
           <li>     
             <a href="addResume">
-              <i class="fa fa-pencil"></i>
-              <span>Add Resume</span>
+              <i class="fa fa-users"></i>
+              <span>Requests from students</span>
               </a>
           </li> 
           <li>    
             <a href="browse-job">
-              <i class="fa fa-envelope"></i>
-              <span>Browse Jobs</span>
+              <i class="fa fa-search"></i>
+              <span>Student Details</span>
               </a>
-          </li> 
-          <li>     
-            <a href="browse-categories">
-              <i class="fa fa-table"></i>
-              <span>Browse Categories</span>
-              </a>
-          </li> 
-          <li>     
-            <a href="jobAlert">
-              <i class="fa fa-bell"></i>
-              <span>Job Alerts</span>
-              </a>
-          </li> 
+          </li>    
           <li>     
             <a href="myMail">
               <i class="fa fa-envelope"></i>

@@ -17,7 +17,10 @@ class CoordinatorController extends Controller
         $coordi=Coordinators::all()->toArray();
         return view('administrator.coordinatorOverview',compact('coordi'));
     }
-
+    public function viewCoordinator()
+    {
+    return view('layouts.coordinator');
+    }
     /**
      * Show the form for creating a new resource.
      *

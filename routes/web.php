@@ -96,8 +96,15 @@ Route::get('changePassword', 'StudentController@changePassword');
 Route::get('myMail', 'StudentController@myMail');
 Route::get('student', 'StudentController@student');
 
-//coordinator
+Route::get('student', function () {
+    return view('layouts.student');
+});
 
+//coordinator
+Route::get('coordinator', 'CoordinatorController@viewCoordinator');
+
+//company
+Route::get('company', 'CompanyController@viewCompany');
 
 //Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');

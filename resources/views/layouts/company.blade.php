@@ -281,25 +281,20 @@
           <li>     
             <a href="addResume">
               <i class="fa fa-pencil"></i>
-              <span>Add Resume</span>
+              <span>Post Jobs</span>
               </a>
           </li> 
           <li>    
             <a href="browse-job">
               <i class="fa fa-envelope"></i>
-              <span>Browse Jobs</span>
+              <span>Student Details</span>
               </a>
           </li> 
-          <li>     
-            <a href="browse-categories">
-              <i class="fa fa-table"></i>
-              <span>Browse Categories</span>
-              </a>
-          </li> 
+          
           <li>     
             <a href="jobAlert">
               <i class="fa fa-bell"></i>
-              <span>Job Alerts</span>
+              <span>Message</span>
               </a>
           </li> 
           <li>     
