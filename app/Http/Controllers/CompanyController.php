@@ -12,6 +12,15 @@ class CompanyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
+    public function login()
+    {
+        return view('Pages.Login');
+    }
+    public function register()
+    {
+        return view('Employee.registration');
+    }
     public function index()
     {
         $company=Companies::all()->toArray();

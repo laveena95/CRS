@@ -25,8 +25,7 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('home', 'AdminlistratorController@home');
 });*/
 
-Route::get('Login', 'PageController@login');
-Route::get('registration', 'PageController@register');
+
 Route::get('app2', function () {
     return view('layouts.app');
 });
@@ -99,11 +98,15 @@ Route::get('student', 'StudentController@student');
 Route::get('student', function () {
     return view('layouts.student');
 });
-
+Route::get('common', function () {
+    return view('layouts.common');
+});
 //coordinator
 Route::get('coordinator', 'CoordinatorController@viewCoordinator');
 
 //company
+Route::get('Login', 'CompanyController@login');
+Route::get('registration', 'CompanyController@register');
 Route::get('company', 'CompanyController@viewCompany');
 
 //Auth::routes();
