@@ -60,4 +60,5 @@ class AdministratorController extends Controller
     {
         return view('administrator.companyNotification');
     }
+
 }

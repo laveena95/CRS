@@ -12,7 +12,7 @@
         <div class="col-lg-12">
         <div class="form-panel">
         
-            <form class="form-horizontal style-form" method="get" action="">
+            <form class="form-horizontal style-form" method="get" action="login">
             <div class="form-group">
                 <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-building"></i><span> </span>Name of the Company</label>
                 <div class="col-sm-8">

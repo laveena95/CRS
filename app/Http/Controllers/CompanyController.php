@@ -29,7 +29,7 @@ class CompanyController extends Controller
 
     public function viewCompany()
     {
-        return view('layouts.company');
+        return view('company.companyHome');
     }
     /**
      * Show the form for creating a new resource.
