@@ -31,6 +31,8 @@ class CompanyController extends Controller
     {
         return view('company.companyHome');
     }
+
+    
     /**
      * Show the form for creating a new resource.
      *

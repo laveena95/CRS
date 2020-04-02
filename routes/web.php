@@ -46,6 +46,10 @@ Route::get('resume-page', function () {
     return view('Pages.resume-page');
 });
 
+Route::get('common', function () {
+    return view('layouts.common');
+});
+
 // Administrator routes
 Route::get('Adminhome', 'AdministratorController@Adminhome')->name('admin')->middleware('Admin');
 Route::get('inbox', 'AdministratorController@inbox');
@@ -98,11 +102,16 @@ Route::get('student', 'StudentController@student');
 Route::get('student', function () {
     return view('layouts.student');
 });
-Route::get('common', function () {
-    return view('layouts.common');
-});
+
 //coordinator
 Route::get('CoordinatorHome', 'CoordinatorController@CoordinatorHome')->name('coordinator')->middleware('Coordinator');
+Route::get('changeCoPassword', 'CoordinatorController@changeCoPassword');
+Route::get('CMail', 'CoordinatorController@CMail');
+Route::get('CoCalender', 'CoordinatorController@CoCalender');
+Route::get('CoLock', 'CoordinatorController@changeCoLock');
+Route::get('coordinatorLogin', 'CoordinatorController@coordinatorLogin');
+Route::get('studentDetail', 'CoordinatorController@studentDetail');
+Route::get('studentRequest', 'CoordinatorController@studentRequest');
 
 //company
 Route::get('Login', 'CompanyController@login');
@@ -110,7 +119,7 @@ Route::get('registration', 'CompanyController@register');
 Route::get('companyHome', 'CompanyController@viewCompany')->name('company')->middleware('Company');
 
 //Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
+//Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
 
 
 Auth::routes();

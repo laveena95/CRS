@@ -21,6 +21,41 @@ class CoordinatorController extends Controller
     {
     return view('coordinator.CoordinatorHome');
     }
+
+    public function changeCoPassword()
+    {
+        return view('coordinator.changeCoPassword');
+    }
+
+    public function CMail()
+    {
+        return view('coordinator.CMail');
+    }
+
+    public function CoCalender()
+    {
+        return view('coordinator.CoCalender');
+    }
+
+    public function CoLock()
+    {
+        return view('coordinator.CoLock');
+    }
+
+    public function coordinatorLogin()
+    {
+        return view('coordinator.coordinatorLogin');
+    }
+
+    public function studentDetail()
+    {
+        return view('coordinator.studentDetail');
+    }
+
+    public function studentRequest()
+    {
+        return view('coordinator.studentRequest');
+    }
     /**
      * Show the form for creating a new resource.
      *

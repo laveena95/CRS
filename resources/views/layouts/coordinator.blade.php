@@ -262,9 +262,9 @@
               </a>
           </li>
           <li>     
-            <a href="calendar">
+            <a href="CoCalender">
               <i class="fa fa-calendar"></i>
-              <span>Calendar</span>
+              <span>Calender</span>
               </a>
           </li>
           <li class="sub-menu">
@@ -273,33 +273,33 @@
               <span>Pages</span>
               </a>
             <ul class="sub">
-              <li><a href="adminLogin">Login</a></li>
+              <li><a href="coordinatorLogin">Login</a></li>
               <li><a href="lock_screen.html">Lock Screen</a></li>
             </ul>
           </li>
            
           <li>     
-            <a href="addResume">
+            <a href="studentRequest">
               <i class="fa fa-users"></i>
               <span>Requests from students</span>
               </a>
           </li> 
           <li>    
-            <a href="browse-job">
+            <a href="studentDetail">
               <i class="fa fa-search"></i>
               <span>Student Details</span>
               </a>
           </li>    
           <li>     
-            <a href="myMail">
+            <a href="CMail">
               <i class="fa fa-envelope"></i>
-              <span>Mail</span>
+              <span>Messages</span>
               <span class="label label-theme pull-right mail-info">2</span>
               </a>
           </li>
           
           <li>     
-            <a href="changePassword">
+            <a href="changeCoPassword">
               <i class="fa fa-key"></i>
               <span>Change Password</span>
               </a>
