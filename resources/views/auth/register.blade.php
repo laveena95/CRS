@@ -9,7 +9,7 @@
                 <div class="card-header" style="font-weight: bold;"><i class="fa fa-pencil-square-o"> </i>{{  __('Basic Informations') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}" autocomplete="off">
+                    <form method="POST" action="{{ route('register') }}" autocomplete="off">
                         @csrf
 
                         <div class="form-group row">

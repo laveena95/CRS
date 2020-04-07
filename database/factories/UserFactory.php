@@ -1,9 +1,9 @@
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-use App\User;
+//use App\User;
 use Faker\Generator as Faker;
-use Illuminate\Support\Str;
+//use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,11 +17,11 @@ use Illuminate\Support\Str;
 */
 
 $factory->define(App\User::class, function (Faker $faker) {
-    $gender = $faker->randomElement($array= array('male','female'));
+    //$gender = $faker->randomElement($array= array('male','female'));
     return [
         'name' => $faker->name($gender),
         'email' => $faker->unique()->safeEmail,
-        'state' => $faker->state,
+        //'state' => $faker->state,
         'role' => $faker->numberBetween(1,4),
         'email_verified_at' => now(),
         'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password

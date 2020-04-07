@@ -171,7 +171,6 @@
               </a>
             <ul class="sub">
               <li><a href="addStudent"><i class="fa fa-plus"></i> Add Student</a></li>
-              <li><a href="advanced_form_components.html">Manage Students</a></li>
               <li><a href="studentNotification"><i class="fa fa-bell"></i>Notification</a></li>
               <li><a href="studentOverview"><i class="fa fa-columns"></i>Student Table</a></li>
             </ul>
@@ -183,7 +182,6 @@
               </a>
             <ul class="sub">
               <li><a href="addCoordinator"><i class="fa fa-plus"></i> Add Coordinator</a></li>
-              <li><a href="advanced_form_components.html">Manage Coordinator</a></li>
               <li><a href="coordinatorNotification"><i class="fa fa-bell"></i>Notification</a></li>
               <li><a href="coordinatorOverview"><i class="fa fa-columns"></i>Coordinator Table</a></li>
             </ul>
@@ -195,7 +193,6 @@
               </a>
             <ul class="sub">
               <li><a href="addCompany"><i class="fa fa-plus"></i>Add Company</a></li>
-              <li><a href="advanced_form_components.html">Manage Company</a></li>
               <li><a href="companyNotification"><i class="fa fa-bell"></i>Notification</a></li>
               <li><a href="companyOverview"><i class="fa fa-columns"></i>Company Table</a></li>
             </ul>
@@ -203,7 +200,7 @@
           <li>     
             <a href="inbox">
               <i class="fa fa-envelope"></i>
-              <span>Mail</span>
+              <span>Messages </span>
               <span class="label label-theme pull-right mail-info">2</span>
               </a>
           </li>
