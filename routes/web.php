@@ -114,14 +114,13 @@ Route::get('studentDetail', 'CoordinatorController@studentDetail');
 Route::get('studentRequest', 'CoordinatorController@studentRequest');
 
 //company
+Route::get('companyHome', 'CompanyController@viewCompany')->name('company')->middleware('Company');
 Route::get('Login', 'CompanyController@login');
 Route::get('registration', 'CompanyController@register');
-Route::get('companyHome', 'CompanyController@viewCompany')->name('company')->middleware('Company');
 
 //Auth::routes();
 //Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
 
 
 Auth::routes();
-
 // Route::get('/home', 'HomeController@index');

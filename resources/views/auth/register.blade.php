@@ -27,6 +27,19 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="role" class="col-md-4 col-form-label text-md-right">Register As</label>
+                            <div class="col-md-6">
+                                <select class="form-control" name="role">
+                                    <option selected disabled>...Select Role</option>
+                                    <option value='1'>Student</option>
+                                    <option value="2">Coordinator</option>
+                                    <option value="3">Recruiter</option>
+                                    <option value='4'>Admin</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">

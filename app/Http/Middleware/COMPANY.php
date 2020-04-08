@@ -20,19 +20,19 @@ class COMPANY
             return redirect()->route('login');
         }
         
-        if(Auth::user()->role ==1){
+        if(Auth::user()->role ==4){
             return redirect()->route('administrator.Adminhome');
         }
 
-        if(Auth::user()->role ==2){
+        if(Auth::user()->role ==1){
             return redirect()->route('Student.profile');
         }
 
-        if(Auth::user()->role ==3){
+        if(Auth::user()->role ==2){
             return redirect()->route('coordinator.CoordinatorHome');
         }
 
-        if(Auth::user()->role ==4){
+        if(Auth::user()->role ==3){
             return $next($request);
         }
     }

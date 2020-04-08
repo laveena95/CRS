@@ -100,14 +100,10 @@ class addController extends Controller
         $student->Course_Period = $request->get('Course_Period');
         $student->phone = $request->get('phone');
         $student->address = $request->get('address');
-        $student->nationality = $request->get('nationality');
-        
+        $student->nationality = $request->get('nationality');   
         $student->save();
-
         $details= Students::all();
-        //return redirect()->back()->with ('success', 'Data Updated Successfully !');
-        return view('administrator.studentOverview')->with('st',$details);
-    }
+        return view('administrator.studentOverview')->with('st',$details); }
 
     /**
      * Remove the specified resource from storage.

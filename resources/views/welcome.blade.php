@@ -69,101 +69,14 @@
                   </a>   
                 </li>
                 <li>
-                  <a href="#">
-                  Pages <i class="fa fa-angle-down"></i>
+                  <a href="about">
+                    About 
                   </a>
-                  <ul class="dropdown">
-                    <li>
-                      <a href="about">
-                      About
-                      </a>
-                    </li>
-                    <li>
-                      <a href="job-page">
-                      Job Page
-                      </a>
-                    </li>
-                    <li>
-                      <a href="job-detail">
-                      Job Details
-                      </a>
-                    </li>
-                    <li>
-                      <a href="resume-page">
-                      Resume Page
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                      FAQ
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="#">
-                  Candidates <i class="fa fa-angle-down"></i>
-                  </a>
-                  <ul class="dropdown">
-                    <li>
-                      <a href="browse-jobs.blade.php">
-                      Browse Jobs
-                      </a>
-                    </li>
-                    <li>
-                      <a href="browse-categories.blade.php">
-                      Browse Categories
-                      </a>
-                    </li>
-                    <li>
-                      <a href="add-resume.blade.php">
-                      Add Resume
-                      </a>
-                    </li>
-                    <li>
-                      <a href="manage-resumes.blade.php">
-                      Manage Resumes
-                      </a>
-                    </li>
-                    <li>
-                      <a href="job-alerts.blade.php">
-                      Job Alerts
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="#">
-                  Employers <i class="fa fa-angle-down"></i>
-                  </a>
-                  <ul class="dropdown">
-                    <li>
-                      <a href="post-job.blade.php">
-                      Add Job
-                      </a>
-                    </li>
-                    <li>
-                      <a href="manage-jobs.blade.php">
-                      Manage Jobs
-                      </a>
-                    </li>
-                    <li>
-                      <a href="manage-applications.blade.php">
-                      Manage Applications
-                      </a>
-                    </li>
-                    <li>
-                      <a href="browse-resumes.blade.php">
-                      Browse Resumes
-                      </a>
-                    </li>
-                  </ul>
-                </li>
+                  </li>       
               </ul>
               <ul class="nav navbar-nav navbar-right float-right">
-                <li class="left"><a href="registration"><i class="ti-pencil-alt"></i> Post A Job</a></li>
                 <li class="btn-m"><a href="login"><i class="ti-lock"></i>  Log In</a></li> 
-                <li class="btn-m"><a href="register"><i class="ti-lock"></i>  Register</a></li> 
+                <li class="btn-m"><a href="{{ route('register') }}"><i class="ti-lock"></i>  Register</a></li> 
               </ul>
             </div>                           
           </div>

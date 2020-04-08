@@ -174,7 +174,7 @@
                 </li>
               </ul>
               <ul class="nav navbar-nav navbar-right float-right">
-              <li class="left"><a href="registration"><i class="ti-pencil-alt"></i> Post A Job</a></li>
+              
                 <li class="btn-m"><a href="login"><i class="ti-lock"></i>  Log In</a></li> 
                 <li class="btn-m"><a href="register"><i class="ti-lock"></i>  Register</a></li>
               </ul>
