@@ -117,10 +117,12 @@ Route::get('studentRequest', 'CoordinatorController@studentRequest');
 Route::get('companyHome', 'CompanyController@viewCompany')->name('company')->middleware('Company');
 Route::get('Login', 'CompanyController@login');
 Route::get('registration', 'CompanyController@register');
+Route::get('applicants','CompanyController@applicants');
 
 //Auth::routes();
 //Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
 
 
 Auth::routes();
+
 // Route::get('/home', 'HomeController@index');

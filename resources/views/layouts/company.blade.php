@@ -285,7 +285,7 @@
               </a>
           </li> 
           <li>    
-            <a href="browse-job">
+            <a href="applicants">
               <i class="fa fa-envelope"></i>
               <span>Student Details</span>
               </a>

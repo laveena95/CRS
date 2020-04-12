@@ -28,6 +28,10 @@ class CompanyController extends Controller
         return view('Employee.companyHome');
     }
 
+    public function applicants()
+    {
+        return view('Employee.applicants');
+    }
     
     /**
      * Show the form for creating a new resource.
