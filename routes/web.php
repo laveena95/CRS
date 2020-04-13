@@ -118,6 +118,7 @@ Route::get('companyHome', 'CompanyController@viewCompany')->name('company')->mid
 Route::get('Login', 'CompanyController@login');
 Route::get('registration', 'CompanyController@register');
 Route::get('applicants','CompanyController@applicants');
+Route::get('postJobs','CompanyController@postJob');
 
 //Auth::routes();
 //Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');

@@ -32,6 +32,10 @@ class CompanyController extends Controller
     {
         return view('Employee.applicants');
     }
+    public function postJob()
+    {
+        return view('Employee.postJobs');
+    }
     
     /**
      * Show the form for creating a new resource.

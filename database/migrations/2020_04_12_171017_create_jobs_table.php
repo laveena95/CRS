@@ -22,8 +22,6 @@ class CreateJobsTable extends Migration
             $table->integer('status') -> nullable();
             $table->string('date_created');
             $table->string('experience');
-            $table->string('min_salary');
-            $table->string('max_salary');
             $table->integer('total_positions');
             $table->string('job_location');
             $table->string('gender');
