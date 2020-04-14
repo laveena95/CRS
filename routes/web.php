@@ -72,8 +72,6 @@ Route::get('studentOverview', 'AdministratorController@studentOverview');
 Route::get('studentNotification', 'AdministratorController@studentNotification');
 
 //Route::post('/addStudent','studentsController@store');
-
-
 Route::post('/students','addController@store');
 Route::get('studentOverview','addController@index');
 Route::get('studentOverview/{id}','addController@edit');
@@ -119,6 +117,11 @@ Route::get('Login', 'CompanyController@login');
 Route::get('registration', 'CompanyController@register');
 Route::get('applicants','CompanyController@applicants');
 Route::get('postJobs','CompanyController@postJob');
+//Route::post('/students','addController@store');
+Route::get('browseJob','JobsController@index');
+Route::get('browseJob/{id}','JobsController@edit');
+Route::patch('browseJob/{id}','JobsController@update');
+Route::delete('browseJob/{id}','JobsController@destroy');
 
 //Auth::routes();
 //Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');

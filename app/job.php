@@ -6,5 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class job extends Model
 {
-    protected $primaryKey = 'id';
+    protected $fillable=['company_name',
+                         'title',
+                         'description',
+                         'experience',
+                         'totalPositions',
+                         'jobLocation',
+                         'gender',
+                         'industry',
+                         'skills'];
 }

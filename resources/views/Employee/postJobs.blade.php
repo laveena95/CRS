@@ -8,7 +8,7 @@
         <div class="col-lg-12">
             <div class="form-panel">
                 <h4 class="mb"><i class="fa fa-pencil-square-o"></i> <span> </span> <b> Job Details</b></h4>
-                <form class="form-horizontal style-form" action="{{URL::to('save-job') }}" method="get" autocomplete="off">
+                <form class="form-horizontal style-form" action="/jobs" method="get" autocomplete="off">
                 {{csrf_field()}}
 
                 <div class="form-group">
