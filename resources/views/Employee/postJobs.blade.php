@@ -3,12 +3,27 @@
 
 @section('content')
 <section class="wrapper">
-    <h3><i class="fa fa-upload"></i> <b>Post Jobs</b></h3>
+<h3><i class="fa fa-desktop"></i> <b>Jobs</b> <i class="fa fa-angle-right"></i> <i class="fa fa-upload"></i> <b>@yield ('title')</b></h3>
     <div class="row mt">
         <div class="col-lg-12">
             <div class="form-panel">
+                <br>
+            @if(count($errors) > 0)
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach($errors->all() as $error)
+                    <li>{{$error}}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
+            @if(Session::has('success'))
+                <div class="alert alert-success">
+                    {{Session::get('success')}}
+                </div>
+            @endif
                 <h4 class="mb"><i class="fa fa-pencil-square-o"></i> <span> </span> <b> Job Details</b></h4>
-                <form class="form-horizontal style-form" action="/jobs" method="get" autocomplete="off">
+                <form class="form-horizontal style-form" action="/jobs" method="POST" autocomplete="off">
                 {{csrf_field()}}
 
                 <div class="form-group">
@@ -42,7 +57,7 @@
                 <div class="form-group">
                     <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-users"></i><span> </span>Total Positions</label>
                     <div class="col-sm-8">
-                        <select type="text" class="form-control round-form"  name="totalPositions">
+                        <select type="text" class="form-control round-form"  name="total_positions">
                             <option value="">--Select the no of vacancies--</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -55,9 +70,9 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-map-maker"></i><span> </span>Job Location</label>
+                    <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-map-marker"></i><span> </span>Job Location</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control round-form" name="jobLocation" placeholder="Location">
+                        <textarea class="form-control round-form" name="job_location" placeholder="Location" style="width:400px;"></textarea>
                     </div>
                 </div> 
 

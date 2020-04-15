@@ -113,15 +113,15 @@ Route::get('studentRequest', 'CoordinatorController@studentRequest');
 
 //company
 Route::get('companyHome', 'CompanyController@viewCompany')->name('company')->middleware('Company');
-Route::get('Login', 'CompanyController@login');
-Route::get('registration', 'CompanyController@register');
+//Route::get('Login', 'CompanyController@login');
+//Route::get('registration', 'CompanyController@register');
 Route::get('applicants','CompanyController@applicants');
 Route::get('postJobs','CompanyController@postJob');
-//Route::post('/students','addController@store');
-Route::get('browseJob','JobsController@index');
-Route::get('browseJob/{id}','JobsController@edit');
-Route::patch('browseJob/{id}','JobsController@update');
-Route::delete('browseJob/{id}','JobsController@destroy');
+Route::post('/jobs','JobsController@store');
+Route::get('myJobs','JobsController@index');
+Route::get('myJobs/{id}','JobsController@edit');
+Route::patch('myJobs/{id}','JobsController@update');
+Route::delete('myJobs/{id}','JobsController@destroy');
 
 //Auth::routes();
 //Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');

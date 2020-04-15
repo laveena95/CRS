@@ -10,8 +10,8 @@ class job extends Model
                          'title',
                          'description',
                          'experience',
-                         'totalPositions',
-                         'jobLocation',
+                         'total_positions',
+                         'job_location',
                          'gender',
                          'industry',
                          'skills'];

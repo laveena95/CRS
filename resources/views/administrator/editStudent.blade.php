@@ -27,62 +27,62 @@
             <div class="form-group">
                 <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-user"></i><span> </span>First Name</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control round-form" name="fname" placeholder="fname" value="{{$student->fname}}">
+                    <input type="text" class="form-control round-form" name="fname" value="{{$student->fname}}">
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-user"></i><span> </span>Last Name</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control round-form" name="lname" placeholder="lname" value="{{$student->lname}}">
+                    <input type="text" class="form-control round-form" name="lname"  value="{{$student->lname}}">
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-user"></i><span> </span>Gender</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control round-form" name="gender" placeholder="gender" value="{{$student->gender}}">
+                    <input type="text" class="form-control round-form" name="gender"  value="{{$student->gender}}">
                 </div>
             </div>
            
             <div class="form-group">
                 <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-clock-o"></i><span> </span>D.O.B</label>
                 <div class="col-sm-8">
-                    <input type="date" class="form-control " name="DOB" placeholder="DOB" style="width:200px;" value="{{$student->DOB}}">
+                    <input type="date" class="form-control " name="DOB" style="width:200px;" value="{{$student->DOB}}">
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-calendar"></i><span> </span>Age</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control round-form" name="age" placeholder="age" style="width:200px;" value="{{$student->Age}}">
+                    <input type="text" class="form-control round-form" name="age" style="width:200px;" value="{{$student->Age}}">
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-book"></i><span> </span>Semester</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control round-form"  name="Semester" placeholder="Semester" value="{{$student->Semester}}">
+                    <input type="text" class="form-control round-form"  name="Semester" value="{{$student->Semester}}">
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-pencil"></i><span> </span>Registration_No</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control round-form"  name="Registration_No" placeholder="Registration_No" style="width:200px;" value="{{$student->Registration_No}}">
+                    <input type="text" class="form-control round-form"  name="Registration_No" style="width:200px;" value="{{$student->Registration_No}}">
                 </div>
             </div>
             
             <div class="form-group">
                 <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-pencil"></i><span> </span>PIN</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control round-form"  name="PIN" placeholder="PIN" style="width:200px;" value="{{$student->PIN}}">
+                    <input type="text" class="form-control round-form"  name="PIN" style="width:200px;" value="{{$student->PIN}}">
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-clock-o"></i><span> </span>Course_Period</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control round-form"  name="Course_Period" placeholder="Course_Period" style="width:200px;" value="{{$student->Course_Period}}">
+                    <input type="text" class="form-control round-form"  name="Course_Period" style="width:200px;" value="{{$student->Course_Period}}">
                 </div>
             </div>
             
@@ -103,21 +103,21 @@
             <div class="form-group">
                 <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-mobile"></i><span> </span>Phone</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control round-form"  name="phone" placeholder="phone" style="width:200px;" value="{{$student->phone}}">
+                    <input type="text" class="form-control round-form"  name="phone" style="width:200px;" value="{{$student->phone}}">
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-home"></i><span> </span>Address</label>
                 <div class="col-sm-8">
-                    <textarea class="form-control round-form"  name="address" placeholder="address" style="width:200px;" >{{$student->address}}</textarea>
+                    <textarea class="form-control round-form"  name="address" style="width:200px;" >{{$student->address}}</textarea>
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-flag"></i><span> </span>Nationality</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control round-form"  name="nationality" placeholder="nationality" style="width:200px;" value="{{$student->nationality}}">
+                    <input type="text" class="form-control round-form"  name="nationality" style="width:200px;" value="{{$student->nationality}}">
                 </div>
             </div>
             <div class="form-group" align="right">

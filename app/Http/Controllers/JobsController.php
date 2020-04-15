@@ -14,7 +14,7 @@ class JobsController extends Controller
     public function index()
     {
         $job=Job::all()->toArray();
-        return view('Student.browseJob',compact('job'));
+        return view('Employee.myJobs',compact('job'));
     }
 
     /**
@@ -60,7 +60,7 @@ class JobsController extends Controller
     public function edit($id)
     {
         $jb=Job::find($id);
-        return view('administrator.editStudent',compact('jb','id'));
+        return view('Employee.editJob',compact('jb','id'));
     }
 
     /**
@@ -77,8 +77,8 @@ class JobsController extends Controller
                          'title' => 'required',
                          'description' => 'required',
                          'experience' => 'required',
-                         'totalPositions' => 'required',
-                         'jobLocation' => 'required',
+                         'total_positions' => 'required',
+                         'job_location' => 'required',
                          'gender' => 'required',
                          'industry' => 'required',
                          'skills' => 'required'
@@ -88,14 +88,14 @@ class JobsController extends Controller
         $jb->title = $request->get('title');
         $jb->description = $request->get('description');
         $jb->experience= $request->get('experience');
-        $jb->totalPositions = $request->get('totalPositions');
-        $jb->jobLocation = $request->get('jobLocation');
+        $jb->total_positions = $request->get('total_positions');
+        $jb->job_location = $request->get('job_location');
         $jb->gender = $request->get('gender');
         $jb->industry= $request->get('industry');
         $jb->skills= $request->get('skills');  
         $jb->save();
         $details= Job::all();
-        return view('Student.browseJob')->with('job',$details); 
+        return view('Employee.myJobs')->with('job',$details); 
     }
     
     /**
@@ -107,6 +107,6 @@ class JobsController extends Controller
     public function destroy($id)
     {
         Job::where('id',$id)->delete();
-        return redirect()->back()->with('success','Job Removed Successfully!'); 
+        return redirect()->back()->with('success','Job Removed From The List Successfully!'); 
     }
 }

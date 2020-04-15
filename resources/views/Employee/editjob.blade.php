@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<section class="wrapper">
+    <section class="wrapper">
     <div class="row">
         <div class="col-md-12">
             <br/>
@@ -20,41 +20,42 @@
                 </ul>
             </div>
             @endif
-            <form class="form-horizontal style-form" action="{{URL::to('save-job') }}" method="get" autocomplete="off">
+            <form class="form-horizontal style-form" action="{{ action('JobsController@update', $id) }}" method="post" autocomplete="off">
                 {{csrf_field()}}
+                <input type="hidden" name="_method" value="PATCH" />
 
                 <div class="form-group">
                     <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-building"></i><span> </span>Company</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control round-form" name="company_name" placeholder="Company Name">
+                        <input type="text" class="form-control round-form" name="company_name" value="{{$jb->company_name}}">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-laptop"></i><span> </span>Job Title</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control round-form" name="title" placeholder="Job Title">
+                        <input type="text" class="form-control round-form" name="title" value="{{$jb->title}}">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-edit"></i><span> </span>Job Description</label>
                     <div class="col-sm-8">
-                        <textarea class="form-control round-form"  name="description" placeholder="Description" style="width:400px;"></textarea>
+                        <textarea class="form-control round-form"  name="description" value="{{$jb->description}}" style="width:400px;"></textarea>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-eye"></i><span> </span>Experience</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control round-form" name="experience" placeholder="Required Experience">
+                        <input type="text" class="form-control round-form" name="experience" value="{{$jb->experience}}">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-users"></i><span> </span>Total Positions</label>
                     <div class="col-sm-8">
-                        <select type="text" class="form-control round-form"  name="totalPositions">
+                        <select type="text" class="form-control round-form"  name="total_positions" value="{{$jb->total_positions}}">
                             <option value="">--Select the no of vacancies--</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -67,16 +68,16 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-map-maker"></i><span> </span>Job Location</label>
+                    <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-map-marker"></i><span> </span>Job Location</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control round-form" name="jobLocation" placeholder="Location">
+                        <input type="text" class="form-control round-form" name="job_location" value="{{$jb->job_location}}">
                     </div>
                 </div> 
 
                  <div class="form-group">
                     <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-male"></i><span> </span>Gender Prefrence</label>
                     <div class="col-sm-8">
-                        <select type="text" class="form-control" id="gender" name="gender">
+                        <select type="text" class="form-control" id="gender" name="gender" value="{{$jb->gender}}">
                             <option value="">--Please Select--</option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
@@ -88,7 +89,7 @@
                 <div class="form-group">
                     <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-desktop"></i><span> </span>Industry</label>
                     <div class="col-sm-8">
-                        <select type="text" class="form-control" id="industry" name="industry">
+                        <select type="text" class="form-control" id="industry" name="industry" value="{{$jb->industry}}">
                             <option value="">--Please Select--</option>
                             <option value="Web and IT">Web and IT</option>
                             <option value="Engeenering">Engeenering</option>
@@ -97,14 +98,14 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-keyborad"></i><span> </span>Skills Required</label>
+                    <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-keyboard-o"></i><span> </span>Skills Required</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control round-form" name="skills" placeholder="separate by commas">
+                        <input type="text" class="form-control round-form" name="skills" value="{{$jb->skills}}">
                     </div>
                 </div> 
 
                  <div class="form-send">
-                    <button type="submit" class="btn btn-large btn-danger" style="margin-left: 60%;"  value="update"></button>
+                    <button type="submit" class="btn btn-large btn-danger" style="margin-left: 60%;">UPDATE</button>
                 </div>  
             </form>           
 @endsection

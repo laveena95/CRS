@@ -223,7 +223,7 @@
       </div>
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
-          <li><a class="logout" href="{{ route('welcome') }}"><i class="fa fa-power-off"></i></a></li>
+          <li><a class="logout" href="{{ route('welcome') }}"><i class="fa fa-power-off"><span> </span> {{ Auth::user()->name}}</i></a></li>
          <!--newly added for user name on top of the dashboard--> 
          <li class="nav-item dropdown">
                 

@@ -114,6 +114,6 @@ class addController extends Controller
     public function destroy($id)
     {
         Students::where('id',$id)->delete();
-        return redirect()->back()->with('success','Data Deleted Successfully!');   
+        return redirect()->back()->with('success','Stdent Removed From The List Successfully!');   
     }
 }
