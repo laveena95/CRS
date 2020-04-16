@@ -20,11 +20,9 @@ class CreateCompaniesTable extends Migration
             $table->string('businessType'); 
             $table->string('achievement'); 
             $table->date('active');
-            $table->string('vacancy'); 
             $table->string('contact');
             $table->string('email')->unique();
             $table->string('website'); 
-            $table->string('password'); 
             $table->timestamps();
         });
     }

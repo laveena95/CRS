@@ -30,11 +30,9 @@
                 <th>Type of the Business</th>
                 <th>Achivements</th>
                 <th>Active in Market</th>
-                <th>Vacancy Available</th>
                 <th>Phne</th>
                 <th>Email</th>
                 <th>Official Website</th>
-                <th>Password</th>
                 <th>Edit</th>
                 <th>Delete</th>
                 </tr>
@@ -45,11 +43,9 @@
                     <td>{{$row['businessType']}}</td>
                     <td>{{$row['achievement']}}</td>
                     <td>{{$row['active']}}</td>
-                    <td>{{$row['vacancy']}}</td>
                     <td>{{$row['contact']}}</td>
                     <td>{{$row['email']}}</td>
                     <td>{{$row['website']}}</td>
-                    <td>{{$row['password']}}</td>
                     <td><a href="{{action('CompanyController@edit',$row['id'])}}" class="btn btn-theme"><i class="fa fa-pencil"></i></a></td>
                     <td>
                       <form method="post" class="delete_form" action="{{action('CompanyController@destroy',$row['id'])}}">

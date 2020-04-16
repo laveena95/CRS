@@ -54,12 +54,7 @@
                         <input type="text" class="form-control round-form" name="active" placeholder="active" value="{{$com->active}}">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-building"></i><span> </span>Vacancy Available</label>
-                    <div class="col-sm-8">
-                        <input type="text" class="form-control round-form" name="vacancy" placeholder="vacancy" value="{{$com->vacancy}}">
-                    </div>
-                </div>
+             
                 <div class="form-group">
                     <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-building"></i><span> </span>Contact</label>
                     <div class="col-sm-8">
@@ -78,12 +73,7 @@
                         <input type="text" class="form-control round-form" name="website" placeholder="website" value="{{$com->website}}">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-building"></i><span> </span>Password</label>
-                    <div class="col-sm-8">
-                        <input type="password" class="form-control round-form" name="password" placeholder="password" value="{{$com->password}}">
-                    </div>
-                </div>
+                
                 <div class="form-group" align="right">
                     <input type="submit" class="btn btn-danger" value="update" />
                 </div>

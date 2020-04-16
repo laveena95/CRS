@@ -97,9 +97,7 @@ Route::get('changePassword', 'StudentController@changePassword');
 Route::get('myMail', 'StudentController@myMail');
 Route::get('student', 'StudentController@student');
 
-Route::get('student', function () {
-    return view('layouts.student');
-});
+Route::post('/students','StudentController@store');
 
 //coordinator
 Route::get('CoordinatorHome', 'CoordinatorController@CoordinatorHome')->name('coordinator')->middleware('Coordinator');
@@ -110,6 +108,8 @@ Route::get('CoLock', 'CoordinatorController@changeCoLock');
 Route::get('coordinatorLogin', 'CoordinatorController@coordinatorLogin');
 Route::get('studentDetail', 'CoordinatorController@studentDetail');
 Route::get('studentRequest', 'CoordinatorController@studentRequest');
+Route::post('/coordinators','CoordinatorController@storeProfile');
+
 
 //company
 Route::get('companyHome', 'CompanyController@viewCompany')->name('company')->middleware('Company');
@@ -122,10 +122,7 @@ Route::get('myJobs','JobsController@index');
 Route::get('myJobs/{id}','JobsController@edit');
 Route::patch('myJobs/{id}','JobsController@update');
 Route::delete('myJobs/{id}','JobsController@destroy');
-
-//Auth::routes();
-//Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
-
+Route::post('/companies','CompanyController@storeProfile');
 
 Auth::routes();
 

@@ -80,6 +80,13 @@ class CoordinatorController extends Controller
         return redirect()->back()->with('success','Coordinator added successfully!');
     }
 
+    public function storeProfile(Request $request)
+    {
+        $data =$request->all();
+        $lastid =Coordinators::create($data)->id;
+        return view('coordinator.coordinatorProfile',compact('lastid'));
+    }
+
     /**
      * Display the specified resource.
      *

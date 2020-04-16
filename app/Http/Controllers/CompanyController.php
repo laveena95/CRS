@@ -60,6 +60,13 @@ class CompanyController extends Controller
         return redirect()->back()->with('success','Company added successfully!');
     }
 
+    public function storeProfile(Request $request)
+    {
+        $data =$request->all();
+        $lastid =Companies::create($data)->id;
+        //return redirect()->back()->with('success','Your Details Have been Added successfully!');
+        return view('Employee.companyProfile',compact('lastid'));
+    }
     /**
      * Display the specified resource.
      *
@@ -98,11 +105,9 @@ class CompanyController extends Controller
             'businessType' => 'required',
             'achievement' => 'required',
             'active' => 'required',
-            'vacancy' => 'required',
             'contact' => 'required',
             'email' => 'required',
             'website' => 'required',
-            'password' => 'required',
         ]);
         $com=Companies::find($id);
         $com->cname = $request->get('cname');
@@ -110,11 +115,9 @@ class CompanyController extends Controller
         $com->businessType = $request->get('businessType');
         $com->achievement = $request->get('achievement');
         $com->active = $request->get('active');
-        $com->vacancy = $request->get('vacancy');
         $com->contact = $request->get('contact');
         $com->email = $request->get('email');
         $com->website = $request->get('website');
-        $com->password = $request->get('password');
 
         $com->save();
         $details= Companies::all();

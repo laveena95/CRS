@@ -3,7 +3,7 @@
 
 @section('content')
 <section class="wrapper">
-<h3><i class="fa fa-desktop"></i> <b>Jobs</b> <i class="fa fa-angle-right"></i> <i class="fa fa-upload"></i> <b>@yield ('title')</b></h3>
+<h3 style="margin-top:-20px;"><i class="fa fa-desktop"></i> <b>Jobs</b> <i class="fa fa-angle-right"></i> <i class="fa fa-upload"></i> <b>@yield ('title')</b></h3>
     <div class="row mt">
         <div class="col-lg-12">
             <div class="form-panel">
@@ -29,35 +29,35 @@
                 <div class="form-group">
                     <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-building"></i><span> </span>Company</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control round-form" name="company_name" placeholder="Company Name">
+                        <input type="text" class="form-control round-form" name="company_name" placeholder="Company Name" required>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-laptop"></i><span> </span>Job Title</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control round-form" name="title" placeholder="Job Title">
+                        <input type="text" class="form-control round-form" name="title" placeholder="Job Title" required>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-edit"></i><span> </span>Job Description</label>
                     <div class="col-sm-8">
-                        <textarea class="form-control round-form"  name="description" placeholder="Description" style="width:400px;"></textarea>
+                        <textarea class="form-control round-form"  name="description" placeholder="Description" style="width:400px;" required></textarea>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-eye"></i><span> </span>Experience</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control round-form" name="experience" placeholder="Required Experience">
+                        <input type="text" class="form-control round-form" name="experience" placeholder="Required Experience" required>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-users"></i><span> </span>Total Positions</label>
                     <div class="col-sm-8">
-                        <select type="text" class="form-control round-form"  name="total_positions">
+                        <select type="text" class="form-control round-form"  name="total_positions" required>
                             <option value="">--Select the no of vacancies--</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -72,14 +72,14 @@
                 <div class="form-group">
                     <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-map-marker"></i><span> </span>Job Location</label>
                     <div class="col-sm-8">
-                        <textarea class="form-control round-form" name="job_location" placeholder="Location" style="width:400px;"></textarea>
+                        <textarea class="form-control round-form" name="job_location" placeholder="Location" style="width:400px;" required></textarea>
                     </div>
                 </div> 
 
                  <div class="form-group">
                     <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-male"></i><span> </span>Gender Prefrence</label>
                     <div class="col-sm-8">
-                        <select type="text" class="form-control" id="gender" name="gender">
+                        <select type="text" class="form-control" id="gender" name="gender" required>
                             <option value="">--Please Select--</option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
@@ -91,7 +91,7 @@
                 <div class="form-group">
                     <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-desktop"></i><span> </span>Industry</label>
                     <div class="col-sm-8">
-                        <select type="text" class="form-control" id="industry" name="industry">
+                        <select type="text" class="form-control" id="industry" name="industry" required>
                             <option value="">--Please Select--</option>
                             <option value="Web and IT">Web and IT</option>
                             <option value="Engeenering">Engeenering</option>
@@ -102,7 +102,7 @@
                 <div class="form-group">
                     <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-keyborad"></i><span> </span>Skills Required</label>
                     <div class="col-sm-8">
-                        <input type="text" class="form-control round-form" name="skills" placeholder="separate by commas">
+                        <input type="text" class="form-control round-form" name="skills" placeholder="separate by commas" required>
                     </div>
                 </div> 
 
