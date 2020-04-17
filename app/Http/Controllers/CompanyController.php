@@ -60,13 +60,13 @@ class CompanyController extends Controller
         return redirect()->back()->with('success','Company added successfully!');
     }
 
-    public function storeProfile(Request $request)
+   /* public function storeProfile(Request $request)
     {
         $data =$request->all();
         $lastid =Companies::create($data)->id;
         //return redirect()->back()->with('success','Your Details Have been Added successfully!');
         return view('Employee.companyProfile',compact('lastid'));
-    }
+    }*/
     /**
      * Display the specified resource.
      *

@@ -28,7 +28,7 @@ class CreateStudentsTable extends Migration
             $table->string('phone');
             $table->string('address');
             $table->string('nationality');
-            $table->string('image')->nullable();
+            $table->string('image')->default('backend/img/student.png');
             $table->rememberToken();     
             $table->timestamps();
         });

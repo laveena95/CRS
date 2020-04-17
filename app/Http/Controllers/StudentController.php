@@ -53,19 +53,14 @@ class StudentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+ /*   public function store(Request $request)
     {
         $data=$request->all();
         $lastid=Students::create($data)->id;
         //return redirect()->back()->with('success','Your Details have been Saved!');
         return view('Student.StudentHome',compact('lastid')); 
     }
-    public function storeProfile(Request $request)
-    {
-        $data =$request->all();
-        $lastid =Students::create($data)->id;
-        return view('Student.StudentHome',compact('lastid'));
-    }
+ */
 
     /**
      * Display the specified resource.

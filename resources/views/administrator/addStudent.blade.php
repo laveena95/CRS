@@ -25,7 +25,7 @@
             </div>
           @endif
             <h4 class="mb"><i class="fa fa-pencil-square-o"></i> <span> </span> <b> Student Informations</b></h4>
-            <form class="form-horizontal style-form" method="POST" action="/students"  autocomplete="off">
+            <form class="form-horizontal style-form" method="POST" action="/students"  autocomplete="off" enctype="multipart/form-data">
             {{csrf_field()}}
 
             <div class="form-group">
@@ -131,7 +131,7 @@
                 <div class="col-md-9" name="image" placeholder="image">
                 <div class="fileupload fileupload-new" data-provides="fileupload">
                     <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-                    <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image" alt="" />
+
                     </div>
                     <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
                     <div>

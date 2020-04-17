@@ -38,6 +38,32 @@ class addController extends Controller
         //return $request;
         $data=$request->all();
         $lastid=Students::create($data)->id;
+        /*$data=new Students();
+        $data->fname=$request->input('fname');
+        $data->lname=$request->input('lname');
+        $data->gender=$request->input('gender');
+        $data->DOB=$request->input('DOB');
+        $data->age=$request->input('age');
+        $data->Semester=$request->input('Semester');
+        $data->Registration_No=$request->input('Registration_No');
+        $data->PIN=$request->input('PIN');
+        $data->Course_Period=$request->input('Course_Period');
+        $data->email=$request->input('email');
+        $data->phone=$request->input('phone');
+        $data->faddress=$request->input('address');
+        $data->nationality=$request->input('nationality');
+        
+        if($request->hasfile('image')){
+            $file=$request->file('image');
+            $extension=$file->getClientOriginalExtension();
+            $filename=time() . '.' .$extension;
+            $file->move('backend/img/',$filename);
+            $data->image=$filename;
+        }else{
+            return $request;
+            $data->image ='';
+        }
+        $data->save();*/
         return redirect()->back()->with('success','Student added successfully!');   
     }
 
@@ -86,7 +112,8 @@ class addController extends Controller
             'Course_Period' => 'required',
             'phone' => 'required',
             'address' => 'required',
-            'nationality' => 'required'
+            'nationality' => 'required',
+            'image' => ['sometimes','image','mimes:jpg,jpeg,png,bmp,svg','max:5000']
         ]);
         $student=Students::find($id);
         $student->fname = $request->get('fname');
@@ -100,7 +127,8 @@ class addController extends Controller
         $student->Course_Period = $request->get('Course_Period');
         $student->phone = $request->get('phone');
         $student->address = $request->get('address');
-        $student->nationality = $request->get('nationality');   
+        $student->nationality = $request->get('nationality');  
+        $student->image = $request->get('image');
         $student->save();
         $details= Students::all();
         return view('administrator.studentOverview')->with('st',$details); }
