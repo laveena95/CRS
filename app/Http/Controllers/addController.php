@@ -35,10 +35,9 @@ class addController extends Controller
      */
     public function store(Request $request)
     {
-        //return $request;
-        $data=$request->all();
-        $lastid=Students::create($data)->id;
-        /*$data=new Students();
+        //$data=$request->all();
+        //$lastid=Students::create($data)->id;
+        $data=new Students();
         $data->fname=$request->input('fname');
         $data->lname=$request->input('lname');
         $data->gender=$request->input('gender');
@@ -50,20 +49,18 @@ class addController extends Controller
         $data->Course_Period=$request->input('Course_Period');
         $data->email=$request->input('email');
         $data->phone=$request->input('phone');
-        $data->faddress=$request->input('address');
+        $data->address=$request->input('address');
         $data->nationality=$request->input('nationality');
         
         if($request->hasfile('image')){
             $file=$request->file('image');
             $extension=$file->getClientOriginalExtension();
             $filename=time() . '.' .$extension;
-            $file->move('backend/img/',$filename);
+            $file->move('uploads/candidate/',$filename);
             $data->image=$filename;
-        }else{
-            return $request;
-            $data->image ='';
         }
-        $data->save();*/
+        
+        $data->save();
         return redirect()->back()->with('success','Student added successfully!');   
     }
 

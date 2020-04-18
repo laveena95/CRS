@@ -18,7 +18,7 @@ class CreateCoordinatorsTable extends Migration
             $table->string('fname'); 
             $table->string('lname'); 
             $table->string('gender');
-            $table->string('position'); 
+            $table->string('position')->default('Lecturer'); 
             $table->string('qualification'); 
             $table->string('subject');
             $table->date ('appointment'); 

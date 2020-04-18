@@ -74,9 +74,30 @@ class CoordinatorController extends Controller
      */
     public function store(Request $request)
     {
-        //return $request;
-        $data =$request->all();
-        $lastid =Coordinators::create($data)->id;
+       // $data =$request->all();
+        //$lastid =Coordinators::create($data)->id;
+
+        $data=new Coordinators();
+        $data->fname=$request->input('fname');
+        $data->lname=$request->input('lname');
+        $data->gender=$request->input('gender');
+        $data->position=$request->input('position');
+        $data->qualification=$request->input('qualification');
+        $data->subject=$request->input('subject');
+        $data->appointment=$request->input('appointment');
+        $data->mobile=$request->input('mobile');
+        $data->email=$request->input('email');
+        $data->password=$request->input('password');
+
+        if($request->hasfile('image')){
+            $file=$request->file('image');
+            $extension=$file->getClientOriginalExtension();
+            $filename=time() . '.' .$extension;
+            $file->move('uploads/coordinator/',$filename);
+            $data->image=$filename;
+        }
+        
+        $data->save();
         return redirect()->back()->with('success','Coordinator added successfully!');
     }
 
