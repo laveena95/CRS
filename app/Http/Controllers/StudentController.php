@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Students;
+use Auth;
+use App\StudentProfile;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
     public function profile()
     {
-        return view('Student.profile');
+        return view('Student.profile',array('user'=>Auth::user()));
     }
+   
     public function addResume()
     {
         return view('Student.addResume');
@@ -53,14 +55,34 @@ class StudentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
- /*   public function store(Request $request)
+    public function store(Request $request)
     {
-        $data=$request->all();
-        $lastid=Students::create($data)->id;
-        //return redirect()->back()->with('success','Your Details have been Saved!');
-        return view('Student.StudentHome',compact('lastid')); 
+        $data=new StudentProfile();
+        $data->fname=$request->input('fname');
+        $data->lname=$request->input('lname');
+        $data->gender=$request->input('gender');
+        $data->DOB=$request->input('DOB');
+        $data->age=$request->input('age');
+        $data->Semester=$request->input('Semester');
+        $data->Registration_No=$request->input('Registration_No');
+        $data->Course_Period=$request->input('Course_Period');
+        $data->email=$request->input('email');
+        $data->phone=$request->input('phone');
+        $data->address=$request->input('address');
+        $data->nationality=$request->input('nationality');
+        
+        if($request->hasfile('image')){
+            $file=$request->file('image');
+            $extension=$file->getClientOriginalExtension();
+            $filename=time() . '.' .$extension;
+            $file->move('uploads/candidate/',$filename);
+            $data->image=$filename;
+        }
+        
+        $data->save();
+        return redirect()->back()->with('success','Your details have been successfully!');   
     }
- */
+ 
 
     /**
      * Display the specified resource.

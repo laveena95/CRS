@@ -53,7 +53,7 @@
                     <td>{{$row['mobile']}}</td>
                     <td>{{$row['email']}}</td>
                     <td>{{$row['password']}}</td>
-                    <td>{{$row['image']}}</td>
+                    <td><img src="{{ asset('uploads/coordinator/' . $row['image']) }}" width="100px;" height="100px;" alt="Image"></td>
                     <td><a href="{{action('CoordinatorController@edit',$row['id'])}}" class="btn btn-theme"><i class="fa fa-pencil"></i></a></td>
                     <td>
                       <form method="post" class="delete_form" action="{{action('CoordinatorController@destroy',$row['id'])}}">

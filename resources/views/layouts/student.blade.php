@@ -130,7 +130,7 @@
       <div id="sidebar" class="nav-collapse "  style="background-color:;">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href=""><img src="{{ asset('frontend/img/') }}" class="img-circle" width="80"></a></p>
+          <p class="centered"><a href=""><img src="/uploads/candidate/{{$user->image}}" class="img-circle" width="80"></a></p>
           <h5 class="centered"></h5>
           <li class="mt">
             <a class="active" href="profile">
