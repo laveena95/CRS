@@ -100,7 +100,7 @@
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
         
-          <li><a class="logout" href="{{ route('welcome') }}"><i class="fa fa-power-off"> <span> </span> {{ Auth::user()->name}}</i></a></li>
+          <li><a class="logout" href="{{ route('welcome') }}"><i class="fa fa-power-off"></i></a></li>
          <!--newly added for user name on top of the dashboard--> 
          <li class="nav-item dropdown">
                 
@@ -130,8 +130,8 @@
       <div id="sidebar" class="nav-collapse "  style="background-color:;">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href=""><img src="/uploads/candidate/{{$user->image}}" class="img-circle" width="80"></a></p>
-          <h5 class="centered"></h5>
+          <p class="centered"><a href=""><img src="/uploads/candidate/{{Auth::user()->image}}" class="img-circle" style="width:100px; height:100px;"></a></p>
+          <h5 class="centered">{{Auth::user()->name}}</h5>
           <li class="mt">
             <a class="active" href="profile">
               <i class="fa fa-dashboard"></i>

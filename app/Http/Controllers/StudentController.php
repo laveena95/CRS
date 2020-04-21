@@ -2,15 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
+use Illuminate\Suppot\Facades\DB;
 use App\StudentProfile;
+use App\User;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
     public function profile()
     {
-        return view('Student.profile',array('user'=>Auth::user()));
+        return view('Student.profile');
+    }
+
+    public function profileS()
+    {
+        return view('layouts.student',array('user'=>Auth::user()));
     }
    
     public function addResume()
@@ -115,8 +121,20 @@ class StudentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        //
+    { 
+        $data=new User();
+        if($request->hasfile('image')){
+            $file=$request->file('image');
+            $extension=$file->getClientOriginalExtension();
+            $filename=time() . '.' .$extension;
+            $file->move('uploads/candidate/',$filename);
+            $data->image=$filename;
+            $user = Auth::user();
+            $user->image=$filename;
+            $user->save();
+        }
+        
+        return redirect()->back()->with('success','Your details have been successfully!'); 
     }
 
     /**

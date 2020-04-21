@@ -27,7 +27,7 @@ class CreateStudentProfileTable extends Migration
             $table->string('phone');
             $table->string('address');
             $table->string('nationality');
-            $table->string('image')->default('student.png');
+            $table->string('image')->default('default.png');
             $table->rememberToken();     
             $table->timestamps();
         });

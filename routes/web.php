@@ -97,6 +97,7 @@ Route::get('changePassword', 'StudentController@changePassword');
 Route::get('myMail', 'StudentController@myMail');
 Route::get('student', 'StudentController@student');
 
+Route::get('student', 'StudentController@update');
 Route::post('/studentProfile','StudentController@store');
 
 //coordinator

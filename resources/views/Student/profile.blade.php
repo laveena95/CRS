@@ -23,6 +23,7 @@
                 {{Session::get('success')}}
             </div>
           @endif
+          
             <h4 class="mb"><i class="fa fa-pencil-square-o"></i> <span> </span> <b> About Me</b></h4>
             <form class="form-horizontal style-form" method="POST" action="/studentProfile"  autocomplete="off"  enctype="multipart/form-data">
             {{csrf_field()}}
