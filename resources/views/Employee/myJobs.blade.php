@@ -25,8 +25,8 @@
                     <th>Job Description</th>
                     <th>Required Experience</th>
                     <th>No of Vacancies</th>
+                    <th>Location</th>
                     <th>Gender Preference</th>
-                    <th>Registration_No</th>
                     <th>Field of Work</th>
                     <th>Skills Required</th>
                     <th>Edit</th>

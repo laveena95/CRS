@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Suppot\Facades\DB;
+
 use App\StudentProfile;
 use App\User;
+use App\Job;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
@@ -40,10 +42,24 @@ class StudentController extends Controller
         return view('Student.student');
     }
 
+    public function browseJob()
+    {   
+        $job=Job::paginate(10);
+        return view('Student.browse-job',compact('job'));
+    }
+
+
     public function index()
     {
-        //
+        //return view('search');
     }
+ 
+    public function search(Request $request)
+    {     
+        $search = $request->get('search');
+        $job = DB::table('jobs')->where('title', 'LIKE', '%'. $search. '%')->paginate(5);
+        return view('Student.browse-job',compact('search'));
+    } 
 
     /**
      * Show the form for creating a new resource.

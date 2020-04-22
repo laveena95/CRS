@@ -14,7 +14,7 @@ class CreateStudentProfileTable extends Migration
     public function up()
     {
         Schema::create('studentProfile', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('student_id');
             $table->string('fname'); 
             $table->string('lname'); 
             $table->string('gender');

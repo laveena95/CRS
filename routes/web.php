@@ -96,9 +96,11 @@ Route::get('jobAlert', 'StudentController@jobAlert');
 Route::get('changePassword', 'StudentController@changePassword');
 Route::get('myMail', 'StudentController@myMail');
 Route::get('student', 'StudentController@student');
-
+Route::get('browse-job', 'StudentController@browseJob');
 Route::get('student', 'StudentController@update');
 Route::post('/studentProfile','StudentController@store');
+Route::get('/search', 'StudentController@search');
+
 
 //coordinator
 Route::get('CoordinatorHome', 'CoordinatorController@CoordinatorHome')->name('coordinator')->middleware('Coordinator');

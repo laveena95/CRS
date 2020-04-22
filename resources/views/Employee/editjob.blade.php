@@ -8,7 +8,6 @@
     <section class="wrapper">
     <div class="row">
         <div class="col-md-12">
-            <br/>
             <h3><i class="fa fa-pencil-square-o"></i> Edit Record</h3>
             <br/>
             @if(count($errors)>0)

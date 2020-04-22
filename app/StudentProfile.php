@@ -20,4 +20,5 @@ class StudentProfile extends Model
     'address',
     'nationality',
     'image'];
+
 }

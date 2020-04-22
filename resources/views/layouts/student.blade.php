@@ -138,39 +138,20 @@
               <span>Home</span>
               </a>
           </li>
-          <li>     
-            <a href="calendar">
-              <i class="fa fa-calendar"></i>
-              <span>Calendar</span>
-              </a>
-          </li>
           <li class="sub-menu">
             <a href="javascript:;">
               <i class="fa fa-book"></i>
               <span>Pages</span>
-              </a>
+            </a>
             <ul class="sub">
               <li><a href="adminLogin">Login</a></li>
               <li><a href="lock_screen.html">Lock Screen</a></li>
             </ul>
           </li>
-           
-          <li>     
-            <a href="addResume">
-              <i class="fa fa-pencil"></i>
-              <span>Add Resume</span>
-              </a>
-          </li> 
           <li>    
             <a href="browse-job">
-              <i class="fa fa-envelope"></i>
+              <i class="fa fa-search"></i>
               <span>Browse Jobs</span>
-              </a>
-          </li> 
-          <li>     
-            <a href="browse-categories">
-              <i class="fa fa-table"></i>
-              <span>Browse Categories</span>
               </a>
           </li> 
           <li>     
@@ -182,16 +163,20 @@
           <li>     
             <a href="myMail">
               <i class="fa fa-envelope"></i>
-              <span>Mail</span>
-              <span class="label label-theme pull-right mail-info">2</span>
+              <span>Messages</span>
+              <span class="label label-theme pull-right mail-info"></span>
               </a>
           </li>
           
-          <li>     
-            <a href="changePassword">
-              <i class="fa fa-key"></i>
-              <span>Change Password</span>
-              </a>
+          <li class="sub-menu">
+            <a href="javascript:;">
+              <i class="fa fa-cog"></i>
+              <span>Settings</span>
+            </a>
+            <ul class="sub">
+              <li><a href="adminLogin"><i class="fa fa-user"> </i> Profile</a></li>
+              <li><a href="lock_screen.html"><i class="fa fa-key"> </i> Change Password</a></li>
+            </ul>
           </li>
          
         </ul>
