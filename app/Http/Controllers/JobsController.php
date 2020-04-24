@@ -13,7 +13,7 @@ class JobsController extends Controller
      */
     public function index()
     {
-        $job=Job::all()->toArray();
+        $job=Job::paginate(2);
         return view('Employee.myJobs',compact('job'));
     }
 

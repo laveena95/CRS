@@ -91,16 +91,16 @@ Route::delete('companyOverview/{id}','CompanyController@destroy');
 
 //student
 Route::get('profile', 'StudentController@profile')->name('student')->middleware('Student');
-Route::get('addResume', 'StudentController@addResume');
 Route::get('jobAlert', 'StudentController@jobAlert');
 Route::get('changePassword', 'StudentController@changePassword');
 Route::get('myMail', 'StudentController@myMail');
 Route::get('student', 'StudentController@student');
 Route::get('browse-job', 'StudentController@browseJob');
-Route::get('student', 'StudentController@update');
+Route::get('student','StudentController@update');
 Route::post('/studentProfile','StudentController@store');
-Route::get('/search', 'StudentController@search');
-
+Route::get('/search','StudentController@search');
+Route::get('addResume','ResumeController@index');
+Route::post('/resumes','ResumeController@store');
 
 //coordinator
 Route::get('CoordinatorHome', 'CoordinatorController@CoordinatorHome')->name('coordinator')->middleware('Coordinator');

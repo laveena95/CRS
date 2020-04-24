@@ -11,7 +11,7 @@
 
 @section('content')
     <section class="wrapper">
-        <h3 style="margin-top:-20px;"> <i class="fa fa-laptop"> </i> @yield('title')</h3>
+        <h3 le="margin-top:-20pxsty;"> <i class="fa fa-laptop"> </i> @yield('title')</h3>
             <!-- page start-->
             @if($message = Session::get('success'))
             <div class="alert alert-success">
@@ -81,20 +81,6 @@
     <script src="{{ asset('backend/lib/advanced-datatable/js/DT_bootstrap.js')}}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
-    <script>
-      $(document).ready(function(){
-          $('.delete_form').on('submit',function(){
-              if(confirm("Are your sure you want to delete this Job?"))
-              {
-              return true;
-              }
-              else{
-              return false;
-              }
-          });
-      });
-    </script>
-
   <script type="text/javascript">
     /* Formating function for row details */
     function fnFormatDetails(oTable, nTr) {

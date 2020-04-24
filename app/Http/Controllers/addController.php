@@ -13,7 +13,7 @@ class addController extends Controller
      */
     public function index()
     {
-        $st=Students::all()->toArray();
+        $st=Students::paginate(10);
         return view('administrator.studentOverview',compact('st'));
     }
 

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Suppot\Facades\DB;
+use Illuminate\Support\Facades\DB;
 
 use App\StudentProfile;
 use App\User;
@@ -21,10 +21,6 @@ class StudentController extends Controller
         return view('layouts.student',array('user'=>Auth::user()));
     }
    
-    public function addResume()
-    {
-        return view('Student.addResume');
-    }
     public function jobAlert()
     {
         return view('Student.jobAlert');
@@ -102,7 +98,7 @@ class StudentController extends Controller
         }
         
         $data->save();
-        return redirect()->back()->with('success','Your details have been successfully!');   
+        return redirect()->back()->with('success','Your details have been saved successfully!');   
     }
  
 

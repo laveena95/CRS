@@ -144,12 +144,12 @@
                     </span>
                 </div>
             </div>
-                <div class="form-send">
-                    <button type="submit" class="btn btn-large btn-danger" style="margin-left: 60%;">SAVE</button>
-                </div>
+            <div class="form-send">
+                <button type="submit" class="btn btn-large btn-danger" style="margin-left: 60%;">SAVE</button>
             </div>
+        </div>
             
-            </form>
+    </form>
         </div>
         </div>
         <!-- col-lg-12-->
