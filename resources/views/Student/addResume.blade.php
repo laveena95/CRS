@@ -3,7 +3,7 @@
 
 @section('content')
   <section class="wrapper">
-    <h3 style="margin-top:-20px;"><i class="fa fa-search"></i> <b>Browse Jobs</b> <i class="fa fa-angle-right"></i> <i class="fa fa-certificate"></i> <b>@yield('title')</b></h3>
+    <h3 style="margin-top:-20px;"><i class="fa fa-laptop"></i> <b>Jobs</b> <i class="fa fa-angle-right"></i> <i class="fa fa-certificate"></i> <b>@yield('title')</b></h3>
     <!-- BASIC FORM ELELEMNTS -->
     <div class="row mt">
       <div class="col-lg-12">

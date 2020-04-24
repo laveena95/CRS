@@ -25,7 +25,8 @@ class ResumeController extends Controller
      */
     public function create()
     {
-        //
+        $cv=Resume::all();
+        return view('Student.jobsApplied',compact('cv'));
     }
 
     /**
@@ -42,34 +43,15 @@ class ResumeController extends Controller
         $data->phone=$request->input('phone');
         $data->company=$request->input('company');
         $data->position=$request->input('position');
-        $data->cv=$request->input('cv');
-
-       
-        // file validation
-        $validator      =   Validator::make($data->all(),
-            ['cv'      =>   'required|mimes:pdf,docx|max:2048']);
-
-        // if validation fails
-        if($validator->fails()) {
-            return back()->withErrors($validator->errors());
-        }
-
-        // if validation success
-        if($file   =   $data->file('cv')) {
-
-        $name      =   time().time().'.'.$file->getClientOriginalExtension();
         
-        $target_path    =   public_path('/uploads/Candidate/CV/');
-        
-            if($file->move($target_path, $name)) {
-               
-                // save file name in the database
-                $file   =   Resume::create(['cv' => $name]);
-            
-                return back()->with("success", "Resume sent for aproval successfully");
-            }
+        if($request->file('cv')){
+            $file = $request->file('cv');
+            $filename=time().'.'.$file->getClientOriginalExtension();
+            $file->move('uploads/candidate/CV/',$filename);
+            $data->cv=$filename;
         }
- 
+        $data->save();
+        return redirect()->back()->with('success','Your details have been sent for approval!');
     }
 
     /**

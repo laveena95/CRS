@@ -99,12 +99,9 @@
       </div>
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
-        
           <li><a class="logout" href="{{ route('welcome') }}"><i class="fa fa-power-off"></i></a></li>
          <!--newly added for user name on top of the dashboard--> 
          <li class="nav-item dropdown">
-                
-
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
@@ -140,29 +137,25 @@
           </li>
           <li class="sub-menu">
             <a href="javascript:;">
-              <i class="fa fa-book"></i>
-              <span>Pages</span>
+              <i class="fa fa-laptop"></i>
+              <span>Jobs</span>
             </a>
             <ul class="sub">
-              <li><a href="adminLogin">Login</a></li>
-              <li><a href="lock_screen.html">Lock Screen</a></li>
+              <li>
+                <a href="browse-job">
+                  <i class="fa fa-search"></i>Browse Jobs
+                </a>
+              </li>
+              <li>
+                <a href="jobsApplied">
+                  <i class="fa fa-check-square-o"></i>Jobs Appiled
+                </a>
+              </li>
             </ul>
-          </li>
-          <li>    
-            <a href="browse-job">
-              <i class="fa fa-search"></i>
-              <span>Browse Jobs</span>
-              </a>
-          </li> 
-          <li>     
-            <a href="jobAlert">
-              <i class="fa fa-bell"></i>
-              <span>Job Alerts</span>
-              </a>
           </li> 
           <li>     
             <a href="myMail">
-              <i class="fa fa-envelope"></i>
+              <i class="fa fa-bell"></i>
               <span>Messages</span>
               <span class="label label-theme pull-right mail-info"></span>
               </a>

@@ -40,7 +40,7 @@ class StudentController extends Controller
 
     public function browseJob()
     {   
-        $job=Job::paginate(10);
+        $job=Job::all();
         return view('Student.browse-job',compact('job'));
     }
 

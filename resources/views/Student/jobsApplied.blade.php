@@ -1,5 +1,5 @@
 @extends('layouts.student')
-@section('title','Available Jobs')
+@section('title','Jobs Applied')
 
 @section('style')
     <link href="{{ asset('backend/lib/advanced-datatable/css/demo_page.css') }}" rel="stylesheet" />
@@ -10,55 +10,28 @@
 @endsection
 
 @section('content')
-  <section class="wrapper">
-    <h3 style="margin-top:-20px;"><i class="fa fa-laptop"></i> <b>Jobs</b> <i class="fa fa-angle-right"></i> <i class="fa fa-search"></i> <b>@yield ('title')</b></h3>
-          <!-- page start-->
-      @if($message = Session::get('success'))
-      <div class="alert alert-success">
-          <p>{{$message}}</p>
-      </div>
-      @endif
-
+<section class="wrapper">
+    <h3 style="margin-top:-20px;"><i class="fa fa-laptop"></i> <b>Jobs</b> <i class="fa fa-angle-right"></i> <i class="fa fa-check-square-o"></i> <b>@yield ('title')</b></h3>
         <div class="row mb">
-          <div class="content-panel">           
-              <div class="adv-table">
-                <table cellpadding="0" cellspacing="0" class="display table table-bordered" id="hidden-table-info">
-                    <thead>
-                        <th>Company Name</th>
-                        <th>Job Title</th>
-                        <th>Job Description</th>
-                        <th>Required Experience</th>
-                        <th>No of Vacancies</th>
-                        <th>Location</th>
-                        <th>Gender Preference</th>
-                        <th>Field of Work</th>
-                        <th>Skills Required</th>
-                        <tn></th>
-                        <th></th>
-                    </thead>
-                    @foreach($job as $row)
-                    <tr class="gradeA">
-                        <td >{{$row['company_name']}}</td>
-                        <td>{{$row['title']}}</td>
-                        <td>{{$row['description']}}</td>
-                        <td>{{$row['experience']}}</td>
-                        <td>{{$row['total_positions']}}</td>
-                        <td>{{$row['job_location']}}</td>
-                        <td>{{$row['gender']}}</td>
-                        <td>{{$row['industry']}}</td>
-                        <td>{{$row['skills']}}</td>
-                        <td>
-                          <button type="submit" class="btn btn-danger"><a href="addResume" style="color:white;"><i class="fa fa-external-link"> </i> APPLY </a></button> 
-                        </td>
-                    </tr>
-                    @endforeach
-                </table>
-              </div>
-          </div>
-        </div>
-        
-          <!-- /row -->
-  </section>
+            <div class="content-panel">           
+                <div class="adv-table">
+                    <table cellpadding="0" cellspacing="0" class="display table table-bordered" id="hidden-table-info" style="width:600px;">
+                        <thead>
+                            <th>Company Name</th>
+                            <th>Job Title</th>
+                        </thead>
+                        @foreach($cv as $row)
+                        <tr class="gradeA">
+                            <td>{{$row['company']}}</td>
+                            <td>{{$row['position']}}</td>
+                        </tr>
+                        @endforeach
+                    </table>
+                    
+                </div>
+            </div>
+        </div>       
+</section>
 @endsection
 
 @section('script')

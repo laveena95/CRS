@@ -36,7 +36,7 @@
         TOP BAR CONTENT & NOTIFICATIONS
         *********************************************************************************************************************************************************** -->
     <!--header start-->
-    <header class="header black-bg">
+    <header class="header black-bg"  style="margin-top:-20px;">
       <div class="sidebar-toggle-box">
         <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
       </div>
@@ -50,67 +50,15 @@
           <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
               <i class="fa fa-tasks"></i>
-              <span class="badge bg-theme">4</span>
+              <span class="badge bg-theme"></span>
               </a>
             <ul class="dropdown-menu extended tasks-bar">
               <div class="notify-arrow notify-arrow-green"></div>
               <li>
-                <p class="green">You have 4 pending tasks</p>
-              </li>
-              <li>
-                <a href="index.html#">
-                  <div class="task-info">
-                    <div class="desc">Students Update </div>
-                    <div class="percent">40%</div>
-                  </div>
-                  <div class="progress progress-striped">
-                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                      <span class="sr-only">40% Complete (success)</span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="index.html#">
-                  <div class="task-info">
-                    <div class="desc">Coordinator Update</div>
-                    <div class="percent">60%</div>
-                  </div>
-                  <div class="progress progress-striped">
-                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                      <span class="sr-only">60% Complete (warning)</span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="index.html#">
-                  <div class="task-info">
-                    <div class="desc"></div>AddCompanies
-                    <div class="percent">80%</div>
-                  </div>
-                  <div class="progress progress-striped">
-                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                      <span class="sr-only">80% Complete</span>
-                    </div>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="index.html#">
-                  <div class="task-info">
-                    <div class="desc">Notifications Sent</div>
-                    <div class="percent">70%</div>
-                  </div>
-                  <div class="progress progress-striped">
-                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
-                      <span class="sr-only">70% Complete (Important)</span>
-                    </div>
-                  </div>
-                </a>
+                <p class="green"></p>
               </li>
               <li class="external">
-                <a href="#">See All Tasks</a>
+                <a href="#"></a>
               </li>
             </ul>
           </li>
@@ -119,63 +67,15 @@
           <li id="header_inbox_bar" class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
               <i class="fa fa-envelope-o"></i>
-              <span class="badge bg-theme">5</span>
+              <span class="badge bg-theme"></span>
               </a>
             <ul class="dropdown-menu extended inbox">
               <div class="notify-arrow notify-arrow-green"></div>
               <li>
-                <p class="green">You have 5 new messages</p>
+                <p class="green"></p>
               </li>
               <li>
-                <a href="index.html#">
-                  <span class="photo"><img alt="avatar" src="{{ asset('backend/img/ui-zac.jpg') }}"></span>
-                  <span class="subject">
-                  <span class="from">Zac Snider</span>
-                  <span class="time">Just now</span>
-                  </span>
-                  <span class="message">
-                  Hi mate, how is everything?
-                  </span>
-                  </a>
-              </li>
-              <li>
-                <a href="index.html#">
-                  <span class="photo"><img alt="avatar" src="{{ asset('backend/img/ui-divya.jpg') }}"></span>
-                  <span class="subject">
-                  <span class="from">Divya Manian</span>
-                  <span class="time">40 mins.</span>
-                  </span>
-                  <span class="message">
-                  Hi, I need your help with this.
-                  </span>
-                  </a>
-              </li>
-              <li>
-                <a href="index.html#">
-                  <span class="photo"><img alt="avatar" src="{{ asset('backend/img/ui-danro.jpg') }}"></span>
-                  <span class="subject">
-                  <span class="from">Dan Rogers</span>
-                  <span class="time">2 hrs.</span>
-                  </span>
-                  <span class="message">
-                  Love your new Dashboard.
-                  </span>
-                  </a>
-              </li>
-              <li>
-                <a href="index.html#">
-                  <span class="photo"><img alt="avatar" src="{{ asset('backend/img/ui-sherman.jpg') }}"></span>
-                  <span class="subject">
-                  <span class="from">Dj Sherman</span>
-                  <span class="time">4 hrs.</span>
-                  </span>
-                  <span class="message">
-                  Please, answer asap.
-                  </span>
-                  </a>
-              </li>
-              <li>
-                <a href="index.html#">See all messages</a>
+                <a href="index.html#"></a>
               </li>
             </ul>
           </li>
@@ -184,36 +84,12 @@
           <li id="header_notification_bar" class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
               <i class="fa fa-bell-o"></i>
-              <span class="badge bg-warning">6</span>
+              <span class="badge bg-warning"></span>
               </a>
             <ul class="dropdown-menu extended notification">
               <div class="notify-arrow notify-arrow-yellow"></div>
               <li>
-                <p class="yellow">You have 6 new notifications</p>
-              </li>
-              <li>
-                <a href="index.html#">
-                  <span class="label label-danger"><i class="fa fa-bolt"></i></span>
-                  New Company Requests!
-                  <span class="small italic">4 mins.</span>
-                  </a>
-              </li>
-              <li>
-                <a href="index.html#">
-                  <span class="label label-warning"><i class="fa fa-bell"></i></span>
-                  Company Posted A New Job
-                  <span class="small italic">30 mins.</span>
-                  </a>
-              </li>
-              <li>
-                <a href="index.html#">
-                  <span class="label label-success"><i class="fa fa-plus"></i></span>
-                  New User Registered.
-                  <span class="small italic">3 hrs.</span>
-                  </a>
-              </li>
-              <li>
-                <a href="index.html#">See all notifications</a>
+                <p class="yellow"></p>
               </li>
             </ul>
           </li>
@@ -223,25 +99,21 @@
       </div>
       <div class="top-menu">
         <ul class="nav pull-right top-menu">
-          <li><a class="logout" href="{{ route('welcome') }}"><i class="fa fa-power-off"><span> </span> {{ Auth::user()->name}}</i></a></li>
+        <li><a class="logout" href="{{ route('welcome') }}"><i class="fa fa-power-off"></i></a></li>
          <!--newly added for user name on top of the dashboard--> 
          <li class="nav-item dropdown">
-                
-
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a>
-
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
-                </div>
-            </li>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+            </div>
+          </li>
         </ul>
-
       </div>
     </header>
     <!--header end-->
@@ -253,18 +125,12 @@
       <div id="sidebar" class="nav-collapse "  style="background-color:;">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href=""><img src="{{ asset('frontend/img/') }}" class="img-circle" width="80"></a></p>
-          <h5 class="centered"></h5>
+          <p class="centered"><a href=""><img src="/uploads/candidate/{{Auth::user()->image}}" class="img-circle" style="width:100px; height:100px;"></a></p>
+          <h5 class="centered">{{Auth::user()->name}}</h5>
           <li class="mt">
             <a class="active" href="profile">
               <i class="fa fa-dashboard"></i>
               <span>Home</span>
-              </a>
-          </li>
-          <li>     
-            <a href="CoCalender">
-              <i class="fa fa-calendar"></i>
-              <span>Calender</span>
               </a>
           </li>
           <li class="sub-menu">
@@ -289,6 +155,24 @@
               <i class="fa fa-search"></i>
               <span>Student Details</span>
               </a>
+          </li>
+          <li class="sub-menu">
+            <a href="javascript:;">
+              <i class="fa fa-laptop"></i>
+              <span>Jobs</span>
+            </a>
+            <ul class="sub">
+              <li>
+                <a href="browse-job-coordinator">
+                  <i class="fa fa-search"></i>Browse Jobs
+                </a>
+              </li>
+              <li>
+                <a href="jobsApplied-coordinator">
+                  <i class="fa fa-check-square-o"></i>Jobs Appiled
+                </a>
+              </li>
+            </ul>
           </li>    
           <li>     
             <a href="CMail">
@@ -297,12 +181,25 @@
               <span class="label label-theme pull-right mail-info">2</span>
               </a>
           </li>
-          
-          <li>     
-            <a href="changeCoPassword">
-              <i class="fa fa-key"></i>
-              <span>Change Password</span>
+          <li class="sub-menu">
+            <a href="javascript:;">
+              <i class="fa fa-cog"></i>
+              <span>Settings</span>
               </a>
+            <ul class="sub">                 
+              <li>     
+                <a href="changeCoPassword">
+                  <i class="fa fa-user"></i>
+                  <span>Profile</span>
+                  </a>
+              </li>                  
+              <li>     
+                <a href="changeCoPassword">
+                  <i class="fa fa-key"></i>
+                  <span>Change Password</span>
+                  </a>
+              </li>
+            </ul>
           </li>
          
         </ul>
