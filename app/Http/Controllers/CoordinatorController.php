@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Coordinators;
+use App\Resume;
 
 class CoordinatorController extends Controller
 {
@@ -54,7 +55,8 @@ class CoordinatorController extends Controller
 
     public function studentRequest()
     {
-        return view('coordinator.studentRequest');
+        $cv=Resume::all();
+        return view('coordinator.studentRequest',compact('cv'));
     }
     /**
      * Show the form for creating a new resource.

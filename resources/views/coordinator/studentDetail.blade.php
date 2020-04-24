@@ -6,8 +6,6 @@
     <h3><i class="fa fa-users"></i> <b>Students</b> <i class="fa fa-angle-right"></i> <i class="fa fa-folder-open"></i> @yield('title')</h3>
     <div class="row mb">
         <!-- page start-->
-       
-        
         <div class="adv-table">
             <table cellpadding="0" cellspacing="0" class="display table table-bordered" id="hidden-table-info">
                 <tr style="background-color:silver; font-weight:bold;color:black;"> 
