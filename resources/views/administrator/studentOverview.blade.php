@@ -1,11 +1,12 @@
 @extends('layouts.admin')
 @section('title','Students Overview')
-@section('style')
-<link rel="stylesheet" type="text/css" href="{{ asset('backend/lib/bootstrap-datetimepicker/datertimepicker.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ asset('backend/lib/advanced-datatable/css/demo_page.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ asset('backend/lib/advanced-datatable/css/demo_table.css') }}" />
-<link rel="stylesheet" type="text/css" href="{{ asset('backend/lib/advanced-datatable/css/DT_bootstrap.css') }}" />
 
+@section('style')
+    <link href="{{ asset('backend/lib/advanced-datatable/css/demo_page.css') }}" rel="stylesheet" />
+    <link href="{{ asset('backend/lib/advanced-datatable/css/demo_table.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset('backend/lib/advanced-datatable/css/DT_bootstrap.css') }}" />
+    <link href="{{ asset('backend/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('backend/css/style-responsive.css') }}" rel="stylesheet">
 @endsection
 
 @section('content')
@@ -13,16 +14,16 @@
     <h3><i class="fa fa-users"></i> <b>Students</b> <i class="fa fa-angle-right"></i> <i class="fa fa-folder-open"></i> @yield('title')</h3>
     <div class="row mb" style="width:1400px;">
         <!-- page start-->
-        @if($message = Session::get('success'))
-          <div class="alert alert-success">
-            <p>{{$message}}</p>
-          </div>
-        @endif
+      @if($message = Session::get('success'))
+        <div class="alert alert-success">
+          <p>{{$message}}</p>
+        </div>
+      @endif
         <div style="margin-left:1100px;">
           <a href="addStudent" class="btn btn-theme ">ADD</a><br><br>
         </div>
         <div class="content-panel">
-        <div class="adv-table">
+          <div class="adv-table">
             <table cellpadding="0" cellspacing="0" class="display table table-bordered" id="hidden-table-info">
               <thead>
                   <th>First Name</th>
@@ -71,12 +72,9 @@
                   </tr>
                 @endforeach
             </table>
+          </div>
         </div>
-        </div>
-        </div>
-        <!-- page end-->
     </div>
-        <!-- /row -->
 </section>
 @endsection
 
