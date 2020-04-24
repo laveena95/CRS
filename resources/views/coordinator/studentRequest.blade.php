@@ -23,13 +23,21 @@
                             <th>Company Applied</th>
                             <td>Position</td>
                             <td>Resume of the Student</td>
+                            <td>Confirmation</td>
+                            <td></td>
                         </thead>
                         @foreach($cv as $row)
                         <tr class="gradeA">
-                            <td>{{$row['name']}Registration_No}</td>
-                            <td>{{$row['']}}</td>
+                            <td>{{$row['name']}}</td>
+                            <td>{{$row['Registration_No']}}</td>
+                            <td>{{$row['phone']}}</td>
                             <td>{{$row['company']}}</td>
                             <td>{{$row['position']}}</td>
+                            <td>{{$row['cv']}}</td>
+                            <td> 
+                                <button type="submit" class="btn btn-danger"><a href="addResume" style="color:white;"><i class="fa fa-check"> </i> APROVE </a></button> 
+                                <button type="submit" class="btn btn-danger"><a href="addResume" style="color:white;"><i class="fa fa-times"> </i> PENDING </a></button> 
+                            </td>
                         </tr>
                         @endforeach
                     </table>
