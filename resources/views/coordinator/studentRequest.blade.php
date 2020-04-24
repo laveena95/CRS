@@ -17,15 +17,17 @@
                 <div class="adv-table">
                     <table cellpadding="0" cellspacing="0" class="display table table-bordered" id="hidden-table-info" style="width:600px;">
                         <thead>
-                            <th>Company Name</th>
-                            <th>Job Title</th>
-                            <th>Company Name</th>
-                            <th>Job Title</th>
+                            <th>Name</th>
+                            <th>Registration_No</th>
+                            <th>Phone</th>
+                            <th>Company Applied</th>
+                            <td>Position</td>
+                            <td>Resume of the Student</td>
                         </thead>
                         @foreach($cv as $row)
                         <tr class="gradeA">
-                            <td>{{$row['company']}}</td>
-                            <td>{{$row['position']}}</td>
+                            <td>{{$row['name']}Registration_No}</td>
+                            <td>{{$row['']}}</td>
                             <td>{{$row['company']}}</td>
                             <td>{{$row['position']}}</td>
                         </tr>
