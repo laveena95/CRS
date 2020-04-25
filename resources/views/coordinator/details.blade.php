@@ -11,10 +11,16 @@
 
 @section('content')
     <section class="wrapper">
-        <i class></i><h2>Name of the Student : {{$data->name}}</h2>
-        <h2>Vacancy applied for : {{$data->position}}</h2>
-        <p>
-            <iframe src="{{url('/uploads/candidate/CV/'.$data->cv)}}" style="width:600px;height:600px;align:center;"></iframe>
-        </p>
+        <h3 style="margin-top:-20px;"><i class="fa fa-users"></i> <b>Student Requests</b> <i class="fa fa-angle-right"></i> <i class="fa fa-eye"></i> @yield ('title')</h3>
+        <div class="row mb">
+            <div class="content-panel" style="background-color:#2f323a; color:silver;width:1000px; margin-left:75px;margin-top:20px;"> 
+                <h4 style="margin-left:25px;"><i class="fa fa-user"> </i> Name of the Student : {{$data->name}}</h4>
+                <h4 style="margin-left:25px;"><i class="fa fa-building"> </i> Name of the Company : {{$data->company}}</h4>
+                <h4 style="margin-left:25px;"><i class="fa fa-desktop"> </i> Vacancy applied for : {{$data->position}}</h4><br><br>
+                <p style="margin-left:35%; margin-top:-130px;"> 
+                    <iframe src="{{url('/uploads/candidate/CV/'.$data->cv)}}" style="width:600px;height:600px;align:center;"></iframe>
+                </p>
+            </div>
+        </div>
     </section>
 @endsection
