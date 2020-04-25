@@ -18,6 +18,12 @@ class ResumeController extends Controller
       return view('Student.addResume');
     }
 
+    public function request()
+    {
+        $cv=Resume::all();
+        return view('coordinator.studentRequest',compact('cv'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

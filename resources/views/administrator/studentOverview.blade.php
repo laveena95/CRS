@@ -41,8 +41,7 @@
                   <th>Nationality</th>
                   <th>Image</th>
                   <th>Edit</th>
-                  <th>Delete</th>
-                  
+                  <th>Delete</th> 
               </thead>
             
                 @foreach($st as $row)

@@ -22,7 +22,8 @@
                             <th>Phone</th>
                             <th>Company Applied</th>
                             <td>Position</td>
-                            <td>Resume of the Student</td>
+                            <td>View Resume</td>
+                            <td>Download Resume</td>
                             <td>Approve</td>
                             <td>Pending</td>
                             <td>Reject</td>
@@ -34,7 +35,8 @@
                             <td>{{$row['phone']}}</td>
                             <td>{{$row['company']}}</td>
                             <td>{{$row['position']}}</td>
-                            <td>{{$row['cv']}}</td>
+                            <td><a href="/files/{{['id']}}">View Resume</a></td>
+                            <td><a href="/file/download/{{$row['cv']}}">Download Resume</a></td>
                             <td> 
                                 <button type="submit" class="btn btn-success"><a href="addResume" style="color:white;"><i class="fa fa-check"> </i> </a></button>  
                             </td>

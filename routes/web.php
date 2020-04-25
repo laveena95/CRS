@@ -110,7 +110,9 @@ Route::get('CoCalender', 'CoordinatorController@CoCalender');
 Route::get('CoLock', 'CoordinatorController@changeCoLock');
 Route::get('coordinatorLogin', 'CoordinatorController@coordinatorLogin');
 Route::get('studentDetail', 'CoordinatorController@studentDetail');
-Route::get('studentRequest', 'CoordinatorController@studentRequest');
+Route::get('/studentRequest', 'CoordinatorController@studentRequest');
+Route::get('/files/{id}', 'ResumeController@request');
+Route::get('/file/download/{cv}', 'ResumeController@download');
 //Route::post('/coordinators','CoordinatorController@storeProfile');
 
 
