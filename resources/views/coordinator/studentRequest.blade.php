@@ -35,8 +35,8 @@
                             <td>{{$data->phone}}</td>
                             <td>{{$data->company}}</td>
                             <td>{{$data->position}}</td>
-                            <td><a href="/resumes/{{$data->id}}">View Resume</a></td>
-                            <td><a href="/resumes/download/{{$data->cv}}">Download Resume</a></td>
+                            <td> <button type="submit" class="btn btn-info"><a href="/resumes/{{$data->id}}" style="color:black;"><i class="fa fa-eye"> </i></a></button></td>
+                            <td> <button type="submit" class="btn btn-info"><a href="/resumes/download/{{$data->cv}}" style="color:black;"><i class="fa fa-download"> </i></a></button></td>
                             <td> <button type="submit" class="btn btn-success"><a href="addResume" style="color:white;"><i class="fa fa-check"> </i> </a></button></td>
                             <td> <button type="submit" class="btn btn-warning"><a href="addResume" style="color:white;"><i class="fa fa-exclamation-circle"> </i> </a></button></td>
                             <td> <button type="submit" class="btn btn-danger"><a href="addResume" style="color:white;"><i class="fa fa-times"> </i> </a></button></td>

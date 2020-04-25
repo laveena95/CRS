@@ -54,7 +54,7 @@
               <div class="form-group">
                 <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-file"></i><span> </span>Resume</label>
                 <div class="col-sm-8">
-                    <input type="file" class="form-control round-form" name="cv" placeholder="Your CV here...." required="">
+                    <input type="file" class="form-control round-form" name="cv" placeholder="Your CV.pdf here...." required="">
                 </div>
               </div>
 
