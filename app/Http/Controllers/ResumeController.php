@@ -53,7 +53,7 @@ class ResumeController extends Controller
         if($request->file('cv')){
             $file = $request->file('cv');
             $filename=time().'.'.$file->getClientOriginalExtension();
-            $file->move('uploads/candidate/CV/',$filename);
+            $file->move('/uploads/candidate/CV/',$filename);
             $data->cv=$filename;
         }
         $data->save();
@@ -68,7 +68,13 @@ class ResumeController extends Controller
      */
     public function show($id)
     {
-        //
+        $data=Resume::find($id);
+        return view('coordinator.details',compact('data'));
+    }
+
+    public function download($file)
+    {
+        return response()->download('uploads/candidate/CV/'.$file);
     }
 
     /**

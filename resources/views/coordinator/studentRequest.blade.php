@@ -11,7 +11,7 @@
 
 @section('content')
 <section class="wrapper">
-<h3 style="margin-top:-20px;"><i class="fa fa-users"></i> <b>Student Requests</b> <i class="fa fa-angle-right"></i> <i class="fa fa-bell"></i> @yield ('title')</h3>
+  <h3 style="margin-top:-20px;"><i class="fa fa-users"></i> <b>Student Requests</b> <i class="fa fa-angle-right"></i> <i class="fa fa-bell"></i> @yield ('title')</h3>
         <div class="row mb">
             <div class="content-panel">           
                 <div class="adv-table">
@@ -28,18 +28,16 @@
                             <td>Pending</td>
                             <td>Reject</td>
                         </thead>
-                        @foreach($cv as $row)
+                        @foreach($cv as $key=>$data)
                         <tr class="gradeA">
-                            <td>{{$row['name']}}</td>
-                            <td>{{$row['Registration_No']}}</td>
-                            <td>{{$row['phone']}}</td>
-                            <td>{{$row['company']}}</td>
-                            <td>{{$row['position']}}</td>
-                            <td><a href="/files/{{['id']}}">View Resume</a></td>
-                            <td><a href="/file/download/{{$row['cv']}}">Download Resume</a></td>
-                            <td> 
-                                <button type="submit" class="btn btn-success"><a href="addResume" style="color:white;"><i class="fa fa-check"> </i> </a></button>  
-                            </td>
+                            <td>{{$data->name}}</td>
+                            <td>{{$data->Registration_No}}</td>
+                            <td>{{$data->phone}}</td>
+                            <td>{{$data->company}}</td>
+                            <td>{{$data->position}}</td>
+                            <td><a href="/resumes/{{$data->id}}">View Resume</a></td>
+                            <td><a href="/resumes/download/{{$data->cv}}">Download Resume</a></td>
+                            <td> <button type="submit" class="btn btn-success"><a href="addResume" style="color:white;"><i class="fa fa-check"> </i> </a></button></td>
                             <td> <button type="submit" class="btn btn-warning"><a href="addResume" style="color:white;"><i class="fa fa-exclamation-circle"> </i> </a></button></td>
                             <td> <button type="submit" class="btn btn-danger"><a href="addResume" style="color:white;"><i class="fa fa-times"> </i> </a></button></td>
                         </tr>
