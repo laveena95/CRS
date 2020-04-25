@@ -143,18 +143,43 @@
               <li><a href="lock_screen.html">Lock Screen</a></li>
             </ul>
           </li>
-           
-          <li>     
-            <a href="studentRequest">
+          <li class="sub-menu">
+            <a href="javascript:;">
               <i class="fa fa-users"></i>
               <span>Requests from students</span>
-              </a>
-          </li> 
+            </a>
+            <ul class="sub">
+              <li>    
+                <a href="studentRequest">
+                  <i class="fa fa-bell"></i>
+                  <span>Requests</span>
+                </a>
+              </li>
+              <li>    
+                <a href="approved">
+                  <i class="fa fa-search"></i>
+                  <span>Approved Requests</span>
+                </a>
+              </li>
+              <li>    
+                <a href="pending">
+                  <i class="fa fa-exclamation-circle"></i>
+                  <span>Pending Requests</span>
+                </a>
+              </li>
+              <li>    
+                <a href="rejected">
+                  <i class="fa fa-times"></i>
+                  <span>Rejected Requests</span>
+                </a>
+              </li>
+            </ul>
+          </li>
           <li>    
             <a href="studentDetail">
               <i class="fa fa-search"></i>
               <span>Student Details</span>
-              </a>
+            </a>
           </li>
           <li class="sub-menu">
             <a href="javascript:;">

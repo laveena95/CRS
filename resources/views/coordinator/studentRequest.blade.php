@@ -1,5 +1,5 @@
 @extends('layouts.coordinator')
-@section('title','Student requests')
+@section('title','Requests')
 
 @section('style')
     <link href="{{ asset('backend/lib/advanced-datatable/css/demo_page.css') }}" rel="stylesheet" />
@@ -11,7 +11,7 @@
 
 @section('content')
 <section class="wrapper">
-    <h3 style="margin-top:-20px;"><i class="fa fa-users"></i> <b>Student Requests</b></h3>
+<h3 style="margin-top:-20px;"><i class="fa fa-users"></i> <b>Student Requests</b> <i class="fa fa-angle-right"></i> <i class="fa fa-bell"></i> @yield ('title')</h3>
         <div class="row mb">
             <div class="content-panel">           
                 <div class="adv-table">
@@ -23,8 +23,9 @@
                             <th>Company Applied</th>
                             <td>Position</td>
                             <td>Resume of the Student</td>
-                            <td>Confirmation</td>
-                            <td></td>
+                            <td>Approve</td>
+                            <td>Pending</td>
+                            <td>Reject</td>
                         </thead>
                         @foreach($cv as $row)
                         <tr class="gradeA">
@@ -35,9 +36,10 @@
                             <td>{{$row['position']}}</td>
                             <td>{{$row['cv']}}</td>
                             <td> 
-                                <button type="submit" class="btn btn-danger"><a href="addResume" style="color:white;"><i class="fa fa-check"> </i> APROVE </a></button> 
-                                <button type="submit" class="btn btn-danger"><a href="addResume" style="color:white;"><i class="fa fa-times"> </i> PENDING </a></button> 
+                                <button type="submit" class="btn btn-success"><a href="addResume" style="color:white;"><i class="fa fa-check"> </i> </a></button>  
                             </td>
+                            <td> <button type="submit" class="btn btn-warning"><a href="addResume" style="color:white;"><i class="fa fa-exclamation-circle"> </i> </a></button></td>
+                            <td> <button type="submit" class="btn btn-danger"><a href="addResume" style="color:white;"><i class="fa fa-times"> </i> </a></button></td>
                         </tr>
                         @endforeach
                     </table>
