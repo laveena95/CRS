@@ -157,7 +157,7 @@
               </li>
               <li>    
                 <a href="approved">
-                  <i class="fa fa-search"></i>
+                  <i class="fa fa-check-circle"></i>
                   <span>Approved Requests</span>
                 </a>
               </li>

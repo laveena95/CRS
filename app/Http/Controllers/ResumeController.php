@@ -77,6 +77,11 @@ class ResumeController extends Controller
         return response()->download('uploads/candidate/CV/'.$file);
     }
     
+    public function approve()
+    {
+        $cv=Resume::all();
+        return view('coordinator.approved',compact('cv'));
+    }
     /**
      * Show the form for editing the specified resource.
      *
