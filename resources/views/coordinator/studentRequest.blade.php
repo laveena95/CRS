@@ -10,43 +10,43 @@
 @endsection
 
 @section('content')
-<section class="wrapper">
-  <h3 style="margin-top:-20px;"><i class="fa fa-users"></i> <b>Student Requests</b> <i class="fa fa-angle-right"></i> <i class="fa fa-bell"></i> @yield ('title')</h3>
-        <div class="row mb">
-            <div class="content-panel">           
-                <div class="adv-table">
-                    <table cellpadding="0" cellspacing="0" class="display table table-bordered" id="hidden-table-info" style="width:600px;">
-                        <thead>
-                            <th>Name</th>
-                            <th>Registration_No</th>
-                            <th>Phone</th>
-                            <th>Company Applied</th>
-                            <td>Position</td>
-                            <td>View Resume</td>
-                            <td>Download Resume</td>
-                            <td>Approve</td>
-                            <td>Pending</td>
-                            <td>Reject</td>
-                        </thead>
-                        @foreach($cv as $key=>$data)
-                        <tr class="gradeA">
-                            <td>{{$data->name}}</td>
-                            <td>{{$data->Registration_No}}</td>
-                            <td>{{$data->phone}}</td>
-                            <td>{{$data->company}}</td>
-                            <td>{{$data->position}}</td>
-                            <td> <button type="submit" class="btn btn-info"><a href="/resumes/{{$data->id}}" style="color:black;"><i class="fa fa-eye"> </i></a></button></td>
-                            <td> <button type="submit" class="btn btn-info"><a href="/resumes/download/{{$data->cv}}" style="color:black;"><i class="fa fa-download"> </i></a></button></td>
-                            <td> <button type="submit" class="btn btn-success"><a href="addResume" style="color:white;"><i class="fa fa-check"> </i> </a></button></td>
-                            <td> <button type="submit" class="btn btn-warning"><a href="addResume" style="color:white;"><i class="fa fa-exclamation-circle"> </i> </a></button></td>
-                            <td> <button type="submit" class="btn btn-danger"><a href="addResume" style="color:white;"><i class="fa fa-times"> </i> </a></button></td>
-                        </tr>
-                        @endforeach
-                    </table>
-                </div>
-            </div>
-        </div>       
-</section>
+  <section class="wrapper">
+    <h3 style="margin-top:-20px;"><i class="fa fa-users"></i> <b>Student Requests</b> <i class="fa fa-angle-right"></i> <i class="fa fa-bell"></i> @yield ('title')</h3>
+          <div class="row mb">
+              <div class="content-panel">           
+                  <div class="adv-table">
+                      <table cellpadding="0" cellspacing="0" class="display table table-bordered" id="hidden-table-info" style="width:600px;">
+                          <thead>
+                              <th>Name</th>
+                              <th>Registration_No</th>
+                              <th>Phone</th>
+                              <th>Company Applied</th>
+                              <td>Position</td>
+                              <td>View Resume</td>
+                              <td>Download Resume</td>
+                              <td>Approve</td>
+                              <td>Pending</td>
+                              <td>Reject</td>
+                          </thead>
+                          @foreach($cv as $key=>$data)
+                          <tr class="gradeA">
+                              <td>{{$data->name}}</td>
+                              <td>{{$data->Registration_No}}</td>
+                              <td>{{$data->phone}}</td>
+                              <td>{{$data->company}}</td>
+                              <td>{{$data->position}}</td>
+                              <td> <button type="submit" class="btn btn-info"><a href="/resumes/{{$data->id}}" style="color:black;"><i class="fa fa-eye"> </i></a></button></td>
+                              <td> <button type="submit" class="btn btn-info"><a href="/resumes/download/{{$data->cv}}" style="color:black;"><i class="fa fa-download"> </i></a></button></td>
+                              <td> <button type="submit" class="btn btn-success"><a href="addResume" style="color:white;"><i class="fa fa-check"> </i> </a></button></td>
+                              <td> <button type="submit" class="btn btn-warning"><a href="addResume" style="color:white;"><i class="fa fa-exclamation-circle"> </i> </a></button></td>
+                              <td> <button type="submit" class="btn btn-danger"><a href="addResume" style="color:white;"><i class="fa fa-times"> </i> </a></button></td>
+                          </tr>
+                          @endforeach
+                      </table>
+                  </div>
+              </div>
+          </div>       
+  </section>
 @endsection
 
 @section('script')

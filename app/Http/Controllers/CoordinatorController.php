@@ -65,7 +65,7 @@ class CoordinatorController extends Controller
      */
     public function create()
     {
-        //
+        return view('coordinator.approved');
     }
 
     /**

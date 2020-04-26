@@ -113,7 +113,7 @@ Route::get('studentDetail', 'CoordinatorController@studentDetail');
 Route::get('/studentRequest', 'CoordinatorController@studentRequest');
 Route::get('/resumes/{id}', 'ResumeController@show');
 Route::get('/resumes/download/{cv}', 'ResumeController@download');
-//Route::post('/coordinators','CoordinatorController@storeProfile');
+Route::get('approved','CoordinatorController@create');
 
 
 //company

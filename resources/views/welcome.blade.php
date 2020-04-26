@@ -471,7 +471,7 @@
           Looking for an Intership
         </h1>
         <p>Join thousand of intern and earn what you deserve!</p>
-        <a href="my-account.blade.php" class="btn btn-common">Get Started Now</a>
+        <a href="login" class="btn btn-common">Get Started Now</a>
       </div>
     </div>
   </div>

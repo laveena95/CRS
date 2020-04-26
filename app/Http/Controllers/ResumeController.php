@@ -76,7 +76,7 @@ class ResumeController extends Controller
     {
         return response()->download('uploads/candidate/CV/'.$file);
     }
-
+    
     /**
      * Show the form for editing the specified resource.
      *
