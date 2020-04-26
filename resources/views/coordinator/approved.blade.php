@@ -35,7 +35,7 @@
                               <td>{{$data->position}}</td>
                               <td> <button type="submit" class="btn btn-info"><a href="/resumes/{{$data->id}}" style="color:black;"><i class="fa fa-eye"> </i></a></button></td>
                               <td> <button type="submit" class="btn btn-info"><a href="/resumes/download/{{$data->cv}}" style="color:black;"><i class="fa fa-download"> </i></a></button></td>
-                              <td> <button type="submit" class="btn btn-success" name="approve"><a href="addResume" style="color:white;"><i class="fa fa-check"> </i> </a></button></td>
+                              <td> <button type="submit" class="btn btn-danger" name="approve"><a href="sendCompany" style="color:white;"><i class="fa fa-check"> </i> </a>SEND TO COMPANY</button></td>
                           </tr>
                           @endforeach
                       </table>
