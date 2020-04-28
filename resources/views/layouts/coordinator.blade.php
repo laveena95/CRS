@@ -82,14 +82,14 @@
           <!-- inbox dropdown end -->
           <!-- notification dropdown start-->
           <li id="header_notification_bar" class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="studentRequest">
               <i class="fa fa-bell-o"></i>
-              <span class="badge bg-warning"></span>
+              <span class="badge bg-warning">@yield('notification')</span>
               </a>
             <ul class="dropdown-menu extended notification">
               <div class="notify-arrow notify-arrow-yellow"></div>
               <li>
-                <p class="yellow"></p>
+                <p class="yellow">You have @yield('notification') student resumes to approve</p>
               </li>
             </ul>
           </li>

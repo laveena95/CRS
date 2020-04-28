@@ -9,12 +9,16 @@
     <link href="{{ asset('backend/css/style-responsive.css') }}" rel="stylesheet">
 @endsection
 
+@section('notification')
+  {{ $cv->count() }}
+@endsection
+
 @section('content')
   <section class="wrapper">
-    <h3 style="margin-top:-20px;"><i class="fa fa-users"></i> <b>Student Requests</b> <i class="fa fa-angle-right"></i> <i class="fa fa-bell"></i> @yield ('title')</h3>
+    <h3 style="margin-top:-20px;"><i class="fa fa-users"></i> <b>Student Requests</b> <i class="fa fa-angle-right"></i> <i class="fa fa-bell"><span class="badge bg-warning">{{ $cv->count() }}</span></i> @yield ('title')</h3>
           <div class="row mb">
               <div class="content-panel">           
-                  <div class="adv-table">
+                  <div class="adv-table">                    
                       <table cellpadding="0" cellspacing="0" class="display table table-bordered" id="hidden-table-info" style="width:600px;">
                           <thead>
                               <th>Name</th>
