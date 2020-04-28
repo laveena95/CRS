@@ -28,9 +28,9 @@
                               <td>Position</td>
                               <td>View Resume</td>
                               <td>Download Resume</td>
-                              <td>Approve</td>
+                              <td>is_Approved</td>
                               <!--<td>Pending</td>-->
-                              <td>Reject</td>
+                              <td>Status</td>
                           </thead>
                           @foreach($cv as $key=>$data)
                           <tr class="gradeA">
@@ -41,11 +41,9 @@
                               <td>{{$data->position}}</td>
                               <td> <button type="submit" class="btn btn-info"><a href="/resumes/{{$data->id}}" style="color:black;"><i class="fa fa-eye"> </i></a></button></td>
                               <td> <button type="submit" class="btn btn-info"><a href="/resumes/download/{{$data->cv}}" style="color:black;"><i class="fa fa-download"> </i></a></button></td>
-                              <td>approve</td>
-                              <td>reject</td>
-                              <!--<td> <button type="submit" class="btn btn-success" name="approve"><a href="addResume" style="color:white;"><i class="fa fa-check"> </i> </a></button></td>
+                              <td><a onlick="approve(id)" class="btn btn-success">Approve</a></td>
                               <td> <button type="submit" class="btn btn-warning"><a href="addResume" style="color:white;"><i class="fa fa-exclamation-circle"> </i> </a></button></td>
-                              <td> <button type="submit" class="btn btn-danger"><a href="addResume" style="color:white;"><i class="fa fa-times"> </i> </a></button></td>-->
+                              <!--td> <button type="submit" class="btn btn-danger"><a href="addResume" style="color:white;"><i class="fa fa-times"> </i> </a></button></td>-->
                           </tr>
                           @endforeach
                       </table>
@@ -150,4 +148,19 @@
       });
  
   </script> 
+
+  /* script to approve  student resume */
+  <script>
+    function approve(id)
+    {
+      $.ajax({
+        type: 'post'
+                url:"{{url('coordinator.studentRequest')}}"
+                data:"id="+id,
+                success:function(data){
+                  alert('updated')
+                }
+      });
+    }
+  </script>
 @endsection
