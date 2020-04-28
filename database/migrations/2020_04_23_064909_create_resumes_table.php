@@ -14,9 +14,9 @@ class CreateResumesTable extends Migration
     public function up()
     {
         Schema::create('resumes', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('student_id')->unsigned();
-            $table->foreign('student_id')
+            $table->bigIncrements('student_id');
+            $table->unsignedBigInteger('id')->unsigned();
+            $table->foreign('id')
                     ->references('id')->on('users')
                     ->onDelete('cascade');
             $table->string('name');
