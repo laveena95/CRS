@@ -25,7 +25,7 @@
                               <td>View Resume</td>
                               <td>Download Resume</td>
                               <td>Approve</td>
-                              <td>Pending</td>
+                              <!--<td>Pending</td>-->
                               <td>Reject</td>
                           </thead>
                           @foreach($cv as $key=>$data)
@@ -37,9 +37,11 @@
                               <td>{{$data->position}}</td>
                               <td> <button type="submit" class="btn btn-info"><a href="/resumes/{{$data->id}}" style="color:black;"><i class="fa fa-eye"> </i></a></button></td>
                               <td> <button type="submit" class="btn btn-info"><a href="/resumes/download/{{$data->cv}}" style="color:black;"><i class="fa fa-download"> </i></a></button></td>
-                              <td> <button type="submit" class="btn btn-success" name="approve"><a href="addResume" style="color:white;"><i class="fa fa-check"> </i> </a></button></td>
+                              <td>approve</td>
+                              <td>reject</td>
+                              <!--<td> <button type="submit" class="btn btn-success" name="approve"><a href="addResume" style="color:white;"><i class="fa fa-check"> </i> </a></button></td>
                               <td> <button type="submit" class="btn btn-warning"><a href="addResume" style="color:white;"><i class="fa fa-exclamation-circle"> </i> </a></button></td>
-                              <td> <button type="submit" class="btn btn-danger"><a href="addResume" style="color:white;"><i class="fa fa-times"> </i> </a></button></td>
+                              <td> <button type="submit" class="btn btn-danger"><a href="addResume" style="color:white;"><i class="fa fa-times"> </i> </a></button></td>-->
                           </tr>
                           @endforeach
                       </table>
