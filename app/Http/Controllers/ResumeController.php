@@ -22,7 +22,7 @@ class ResumeController extends Controller
     {
         $cv=Resume::all();
         //new
-       // $cv=['id']->$request-user()->id;
+        $cv=['id']->$request-user()->id;
         return view('coordinator.studentRequest',compact('cv'));
     }
 
