@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Resume extends Model
 {
     protected $table= 'resumes';
-    protected $fillable=['name',
+    protected $fillable=['id','name',
     'Registration_No',
     'phone',
     'company',

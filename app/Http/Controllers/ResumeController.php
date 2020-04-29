@@ -21,6 +21,8 @@ class ResumeController extends Controller
     public function request()
     {
         $cv=Resume::all();
+        //new
+       // $cv=['id']->$request-user()->id;
         return view('coordinator.studentRequest',compact('cv'));
     }
 
@@ -102,10 +104,7 @@ class ResumeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $id=$request->id;
-        $model = new Resume();
-        $updated = $model->find($id)->update(['approved'=>1]);
-        return $updated;
+      
     }
 
     /**

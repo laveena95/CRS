@@ -150,17 +150,5 @@
   </script> 
 
   /* script to approve  student resume */
-  <script>
-    function approve(id)
-    {
-      $.ajax({
-        type: 'post'
-                url:"{{url('coordinator.studentRequest')}}"
-                data:"id="+id,
-                success:function(data){
-                  alert('updated')
-                }
-      });
-    }
-  </script>
+
 @endsection
