@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use App\Resume;
 //use Validator,Redirect,Response,File;
 use Illuminate\Http\Request;
@@ -15,14 +16,13 @@ class ResumeController extends Controller
      */
     public function index()
     {
+        
       return view('Student.addResume');
     }
 
-    public function request()
+    public function request($request)
     {
         $cv=Resume::all();
-        //new
-        $cv=['id']->$request-user()->id;
         return view('coordinator.studentRequest',compact('cv'));
     }
 
@@ -45,6 +45,7 @@ class ResumeController extends Controller
      */
     public function store(Request $request)
     {
+        
         $data=new Resume();
         $data->name=$request->input('name');
         $data->Registration_No=$request->input('Registration_No');
@@ -58,6 +59,7 @@ class ResumeController extends Controller
             $file->move('/uploads/candidate/CV/',$filename);
             $data->cv=$filename;
         }
+        $data->student_id=Auth::id();
         $data->save();
         return redirect()->back()->with('success','Your details have been sent for approval!');
     }
