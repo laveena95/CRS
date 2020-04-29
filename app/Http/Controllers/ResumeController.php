@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Auth;
+use App\User;
 use App\Resume;
 //use Validator,Redirect,Response,File;
 use Illuminate\Http\Request;
@@ -81,10 +82,19 @@ class ResumeController extends Controller
         return response()->download('uploads/candidate/CV/'.$file);
     }
     
-    public function approve()
+    public function approve($id)
     {
-        $cv=Resume::all();
-        return view('coordinator.approved',compact('cv'));
+        $cv=Resume::find($id);
+        if($cv->is_approved==0)
+        {
+            $cv->is_approved=1;
+            $cv->save();
+            $cv->alert('Resume approved');
+
+            $students=User::all();
+            
+        }
+        return view('coordinator.studentRequest',compact('cv'));
     }
     /**
      * Show the form for editing the specified resource.
