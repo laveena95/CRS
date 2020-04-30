@@ -82,6 +82,12 @@ class ResumeController extends Controller
         return response()->download('uploads/candidate/CV/'.$file);
     }
     
+    public function pending($id)
+    {
+        $pending=Resume::where('is_approved',0)->get();
+        return view('coordinator.pending',compact('pending'));
+    }
+
     public function approve($id)
     {
         $cv=Resume::find($id);
