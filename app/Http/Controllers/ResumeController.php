@@ -98,7 +98,10 @@ class ResumeController extends Controller
             $cv->alert('Resume approved');
 
             $students=User::all();
-            
+            alert("Request successfully Approved"); 
+        }
+        else{
+            alert("Request already approved!");
         }
         return view('coordinator.studentRequest',compact('cv'));
     }

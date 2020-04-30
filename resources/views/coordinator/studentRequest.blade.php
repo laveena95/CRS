@@ -30,7 +30,6 @@
                               <td>Download Resume</td>
                               <td>is_Approved</td>
                               <!--<td>Pending</td>-->
-                              <td>Status</td>
                           </thead>
                           @foreach($cv as $key=>$data)
                           <tr class="gradeA">
@@ -41,21 +40,13 @@
                               <td>{{$data->position}}</td>
                               <td> <button type="submit" class="btn btn-info"><a href="/resumes/{{$data->id}}" style="color:black;"><i class="fa fa-eye"> </i></a></button></td>
                               <td> <button type="submit" class="btn btn-info"><a href="/resumes/download/{{$data->cv}}" style="color:black;"><i class="fa fa-download"> </i></a></button></td>
-                              <!--<td>
-                                @if($data->is_approved == 1)
-                                  <span class="badge bg-blue">Approved</span>
-                                  @else
-                                  <span class="badge bg-pink">Pending</span>
-                                @endif
-                              </td>-->
-
                               <td>
-                                @if($data->is_approved == 0)
-                                  <button class="btn btn-success" onclick="approvePost"></button>
-                                  <span class="badge bg-pink">Pending</span>
+                                @if($data->is_approved == 1)
+                                  <span class="btn btn-success">Approved</span>
+                                  @else
+                                  <span class="btn btn-danger"> <i class="fa fa-exclamation-circle"> </i> Pending</span>
                                 @endif
                               </td>
-                              <td> <button type="submit" class="btn btn-warning"><a href="addResume" style="color:white;"><i class="fa fa-exclamation-circle"> </i> </a></button></td>
                               <!--td> <button type="submit" class="btn btn-danger"><a href="addResume" style="color:white;"><i class="fa fa-times"> </i> </a></button></td>-->
                           </tr>
                           @endforeach
