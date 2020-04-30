@@ -326,6 +326,8 @@
   </script>
   <!--Script for tables-->
 
+  <!--script for sweet alert-->
+   <script src="https://cdjns.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2min.js"></script>
 </body>
 
 </html>
