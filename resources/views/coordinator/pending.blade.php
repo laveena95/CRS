@@ -14,6 +14,7 @@
 @endsection
 
 @section('content')
+  
 @endsection
 
 @section('script')
@@ -22,6 +23,7 @@
     <script src="{{ asset('backend/lib/advanced-datatable/js/DT_bootstrap.js')}}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
+    <script src="https://cdjns.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2min.js"></script>
     <script type="text/javascript">
     /* Formating function for row details */
       function fnFormatDetails(oTable, nTr) {
