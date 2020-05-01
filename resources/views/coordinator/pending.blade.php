@@ -52,14 +52,14 @@
                                     <button type="button" class="btn btn-success waves-effect" onclick="approvePost({{ $data->id }})">
                                         <i class="fa fa-check"></i>
                                     </button>
-                                    <form method="post" action="{{ action('studentRequest',$data->id) }}" id="approval-form-{{ $data->id }}" style="display: none">
+                                    <form method="post" action="{{ action('CoordinatorController@studentRequest',$data->id) }}" id="approval-form-{{ $data->id }}" style="display: none">
                                         @csrf
                                         @method('PUT')
                                     </form>
                                 @endif
                               </td>
                               <!--td> <button type="submit" class="btn btn-danger"><a href="addResume" style="color:white;"><i class="fa fa-times"> </i> </a></button></td>-->
-                          </tr>-->
+                          </tr>
                           @endforeach
                       </table>
                   </div>
@@ -171,7 +171,7 @@
     function approvePost(id) {
           swal({
               title: 'Are you sure?',
-              text: "You went to approve this post ",
+              text: "You want to approve this Resume ",
               type: 'warning',
               showCancelButton: true,
               confirmButtonColor: '#3085d6',
@@ -192,7 +192,7 @@
               ) {
                   swal(
                       'Cancelled',
-                      'The post remain pending :)',
+                      'The Student Resume Remain PENDING!!! :)',
                       'info'
                   )
               }
