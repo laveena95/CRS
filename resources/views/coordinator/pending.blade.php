@@ -14,7 +14,59 @@
 @endsection
 
 @section('content')
-  
+  <section class="wrapper">
+    <h3 style="margin-top:-20px;"><i class="fa fa-users"></i> <b>Student Requests</b> <i class="fa fa-angle-right"></i> <i class="fa fa-bell"><span class="badge bg-warning">{{ $cv->count() }}</span></i> @yield ('title')</h3>
+          <div class="row mb">
+              <div class="content-panel">           
+                  <div class="adv-table">                    
+                      <table cellpadding="0" cellspacing="0" class="display table table-bordered" id="hidden-table-info" style="width:600px;">
+                          <thead>
+                              <th>Name</th>
+                              <th>Registration_No</th>
+                              <th>Phone</th>
+                              <th>Company Applied</th>
+                              <td>Position</td>
+                              <td>View Resume</td>
+                              <td>Download Resume</td>
+                              <td>is_Approved</td>
+                              <!--<td>Pending</td>-->
+                          </thead>
+                          @foreach($cv as $key=>$data)
+                          <tr class="gradeA">
+                              <td>{{$data->name}}</td>
+                              <td>{{$data->Registration_No}}</td>
+                              <td>{{$data->phone}}</td>
+                              <td>{{$data->company}}</td>
+                              <td>{{$data->position}}</td>
+                              <td> <button type="submit" class="btn btn-info"><a href="/resumes/{{$data->id}}" style="color:black;"><i class="fa fa-eye"> </i></a></button></td>
+                              <td> <button type="submit" class="btn btn-info"><a href="/resumes/download/{{$data->cv}}" style="color:black;"><i class="fa fa-download"> </i></a></button></td>
+                              <td>
+                                @if($data->is_approved == 1)
+                                  <span class="btn btn-success">Approved</span>
+                                  @else
+                                  <span class="btn btn-danger"> <i class="fa fa-exclamation-circle"> </i> Pending</span>
+                                @endif
+                              </td>
+                              <td class="text-center">
+                                @if($data->is_approved == 0)
+                                    <button type="button" class="btn btn-success waves-effect" onclick="approvePost({{ $data->id }})">
+                                        <i class="fa fa-check"></i>
+                                    </button>
+                                    <form method="post" action="{{ route('coordinator.studentRequest',$data->id) }}" id="approval-form-{{ $data->id }}" style="display: none">
+                                        @csrf
+                                        @method('PUT')
+                                    </form>
+                                @endif
+                              </td>
+                              <!--td> <button type="submit" class="btn btn-danger"><a href="addResume" style="color:white;"><i class="fa fa-times"> </i> </a></button></td>-->
+                          </tr>
+                          @endforeach
+                      </table>
+                  </div>
+                  
+              </div>
+          </div>       
+  </section>
 @endsection
 
 @section('script')
@@ -23,7 +75,6 @@
     <script src="{{ asset('backend/lib/advanced-datatable/js/DT_bootstrap.js')}}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
-    <script src="https://cdjns.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2min.js"></script>
     <script type="text/javascript">
     /* Formating function for row details */
       function fnFormatDetails(oTable, nTr) {
@@ -112,4 +163,8 @@
       });
  
   </script> 
+
+  /* script to approve  student resume */
+  <script src="https://cdjns.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2min.js"></script>
+
 @endsection

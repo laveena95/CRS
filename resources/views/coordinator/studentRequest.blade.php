@@ -44,7 +44,7 @@
                                 @if($data->is_approved == 1)
                                   <span class="btn btn-success">Approved</span>
                                   @else
-                                  <span class="btn btn-danger"> <i class="fa fa-exclamation-circle"> </i> Pending</span>
+                                  <span class="btn btn-danger" onlick="route{{ coordinator.pending}}"> <i class="fa fa-exclamation-circle"> </i> Pending</span>
                                 @endif
                               </td>
                               <!--td> <button type="submit" class="btn btn-danger"><a href="addResume" style="color:white;"><i class="fa fa-times"> </i> </a></button></td>-->
