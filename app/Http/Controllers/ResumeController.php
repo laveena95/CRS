@@ -85,6 +85,7 @@ class ResumeController extends Controller
     public function pending()
     {
         $pending=Resume::where('is_approved',0)->get();
+        //$cv= Resume::all();
         return view('coordinator.pending',compact('pending'));
     }
 

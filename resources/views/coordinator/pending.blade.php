@@ -10,12 +10,12 @@
 @endsection
 
 @section('notification')
-  {{ $cv->count() }}
+{{ $pending->count() }}
 @endsection
 
 @section('content')
   <section class="wrapper">
-    <h3 style="margin-top:-20px;"><i class="fa fa-users"></i> <b>Student Requests</b> <i class="fa fa-angle-right"></i> <i class="fa fa-bell"><span class="badge bg-warning">{{ $cv->count() }}</span></i> @yield ('title')</h3>
+    <h3 style="margin-top:-20px;"><i class="fa fa-users"></i> <b>Student Requests</b> <i class="fa fa-angle-right"></i> <i class="fa fa-exclamation-circle"><span class="badge bg-warning">{{ $pending->count() }}</span></i> @yield ('title')</h3>
           <div class="row mb">
               <div class="content-panel">           
                   <div class="adv-table">                    
@@ -31,7 +31,7 @@
                               <td>is_Approved</td>
                               <!--<td>Pending</td>-->
                           </thead>
-                          @foreach($cv as $key=>$data)
+                          @foreach($pending as $key=>$data)
                           <tr class="gradeA">
                               <td>{{$data->name}}</td>
                               <td>{{$data->Registration_No}}</td>
@@ -52,14 +52,14 @@
                                     <button type="button" class="btn btn-success waves-effect" onclick="approvePost({{ $data->id }})">
                                         <i class="fa fa-check"></i>
                                     </button>
-                                    <form method="post" action="{{ route('coordinator.studentRequest',$data->id) }}" id="approval-form-{{ $data->id }}" style="display: none">
+                                    <form method="post" action="{{ action('studentRequest',$data->id) }}" id="approval-form-{{ $data->id }}" style="display: none">
                                         @csrf
                                         @method('PUT')
                                     </form>
                                 @endif
                               </td>
                               <!--td> <button type="submit" class="btn btn-danger"><a href="addResume" style="color:white;"><i class="fa fa-times"> </i> </a></button></td>-->
-                          </tr>
+                          </tr>-->
                           @endforeach
                       </table>
                   </div>

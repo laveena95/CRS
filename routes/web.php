@@ -115,7 +115,7 @@ Route::get('/resumes/{id}', 'ResumeController@show');
 Route::get('/resumes/download/{cv}', 'ResumeController@download');
 Route::get('approved','CoordinatorController@create');
 Route::put('resumes/{id}','ResumeController@approve');
-Route::get('pending','ResumeController@pending');
+Route::get('/pending','ResumeController@pending');
 
 
 
