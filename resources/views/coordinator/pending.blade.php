@@ -165,6 +165,39 @@
   </script> 
 
   /* script to approve  student resume */
-  <script src="https://cdjns.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2min.js"></script>
+  <script src="https://unpkg.com/sweetalert2@7.19.1/dist/sweetalert2.all.js"></script>
+
+  <script type="text/javascript">
+    function approvePost(id) {
+          swal({
+              title: 'Are you sure?',
+              text: "You went to approve this post ",
+              type: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'Yes, approve it!',
+              cancelButtonText: 'No, cancel!',
+              confirmButtonClass: 'btn btn-success',
+              cancelButtonClass: 'btn btn-danger',
+              buttonsStyling: false,
+              reverseButtons: true
+          }).then((result) => {
+              if (result.value) {
+                  event.preventDefault();
+                  document.getElementById('approval-form-'+ id).submit();
+              } else if (
+                  // Read more about handling dismissals
+                  result.dismiss === swal.DismissReason.cancel
+              ) {
+                  swal(
+                      'Cancelled',
+                      'The post remain pending :)',
+                      'info'
+                  )
+              }
+          })
+      }
+  </script>
 
 @endsection
