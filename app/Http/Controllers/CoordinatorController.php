@@ -33,12 +33,7 @@ class CoordinatorController extends Controller
     {
         return view('coordinator.CMail');
     }
-
-    public function CoCalender()
-    {
-        return view('coordinator.CoCalender');
-    }
-
+    
     public function CoLock()
     {
         return view('coordinator.CoLock');

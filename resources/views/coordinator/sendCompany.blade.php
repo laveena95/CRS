@@ -1,5 +1,5 @@
 @extends('layouts.coordinator')
-@section('title','Approved Requests')
+@section('title','Send For Placements!!!')
 
 @section('style')
 @endsection

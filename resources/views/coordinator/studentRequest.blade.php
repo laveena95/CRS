@@ -47,7 +47,11 @@
                               <td> <button type="submit" class="btn btn-info"><a href="/resumes/download/{{$data->cv}}" style="color:black;"><i class="fa fa-download"> </i></a></button></td>
                               <td>
                                 @if($data->is_approved == 1)
-                                  <span class="btn btn-success"><i class="fa fa-check"> </i> Approved</span>
+                                  <span class="btn btn-success" onclick="sendCompany({{ $data->id }})"><i class="fa fa-check"> </i> Approved</span>
+                                  <form id="send-form-{{ $data->id }}" action="{{ action('ResumeController@sendCompany',$data->id) }}" method="POST" style="display: none;">
+                                    @csrf
+                                    @method('')
+                                  </form>
                                   @else
                                   <span class="btn btn-warning"><a href="pending" style="color:white;"> <i class="fa fa-exclamation-circle"> </i> Pending</a></span>
                                 @endif
@@ -188,6 +192,37 @@
             if (result.value) {
                 event.preventDefault();
                 document.getElementById('delete-form-'+id).submit();
+            } else if (
+                // Read more about handling dismissals
+                result.dismiss === swal.DismissReason.cancel
+            ) {
+                swal(
+                    'Cancelled',
+                    'Your data is safe :)',
+                    'error'
+                )
+            }
+        })
+    }
+
+    function sendCompany(id) {
+        swal({
+            title: 'Are you sure?',
+            text: "You want to send this resume for the placement?",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, send this!',
+            cancelButtonText: 'No, cancel!',
+            confirmButtonClass: 'btn btn-success',
+            cancelButtonClass: 'btn btn-danger',
+            buttonsStyling: false,
+            reverseButtons: true
+        }).then((result) => {
+            if (result.value) {
+                event.preventDefault();
+                document.getElementById('send-form-'+id).submit();
             } else if (
                 // Read more about handling dismissals
                 result.dismiss === swal.DismissReason.cancel

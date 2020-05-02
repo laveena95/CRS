@@ -106,7 +106,6 @@ Route::get('jobsApplied','ResumeController@create');
 Route::get('CoordinatorHome', 'CoordinatorController@CoordinatorHome')->name('coordinator')->middleware('Coordinator');
 Route::get('changeCoPassword', 'CoordinatorController@changeCoPassword');
 Route::get('CMail', 'CoordinatorController@CMail');
-Route::get('CoCalender', 'CoordinatorController@CoCalender');
 Route::get('CoLock', 'CoordinatorController@changeCoLock');
 Route::get('coordinatorLogin', 'CoordinatorController@coordinatorLogin');
 Route::get('studentDetail', 'CoordinatorController@studentDetail');
@@ -117,12 +116,14 @@ Route::get('/resumes/download/{cv}', 'ResumeController@download');
 
 Route::get('approved','CoordinatorController@create');
 
+//Main functionality of a coordinator
+
 Route::get('/show','ResumeController@showRequest');
 
 Route::get('/pending','ResumeController@pending');
 Route::put('resumes/{id}','ResumeController@approve');
 Route::delete('studentRequest/{id}','ResumeController@destroy');
-
+Route::get('/sendCompany', 'ResumeController@sendCompany');
 
 
 

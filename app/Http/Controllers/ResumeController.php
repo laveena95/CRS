@@ -111,6 +111,12 @@ class ResumeController extends Controller
         }
         return view('coordinator.studentRequest',compact('cv'));
     }
+    
+    public function sendCompany()
+    {
+        return view('coordinator.sendCompany');
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
