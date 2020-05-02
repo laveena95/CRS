@@ -28,8 +28,8 @@
                               <td>Position</td>
                               <td>View Resume</td>
                               <td>Download Resume</td>
-                              <td>is_Approved</td>
-                              <!--<td>Pending</td>-->
+                              <td>Status</td>
+                              <td>Approve</td>
                           </thead>
                           @foreach($pending as $key=>$data)
                           <tr class="gradeA">
@@ -49,7 +49,7 @@
                               </td>
                               <td class="text-center">
                                 @if($data->is_approved == 0)
-                                    <button type="button" class="btn btn-success waves-effect" onclick="approvePost({{ $data->id }})">
+                                    <button type="button" class="btn btn-success waves-effect" onclick="approveResume({{ $data->id }})">
                                         <i class="fa fa-check"></i>
                                     </button>
                                     <form method="post" action="{{ action('CoordinatorController@studentRequest',$data->id) }}" id="approval-form-{{ $data->id }}" style="display: none">
@@ -164,11 +164,11 @@
  
   </script> 
 
-  /* script to approve  student resume */
+  
   <script src="https://unpkg.com/sweetalert2@7.19.1/dist/sweetalert2.all.js"></script>
 
   <script type="text/javascript">
-    function approvePost(id) {
+    function approveResume(id) {
           swal({
               title: 'Are you sure?',
               text: "You want to approve this Resume ",

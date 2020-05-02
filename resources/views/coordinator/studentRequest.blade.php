@@ -42,9 +42,9 @@
                               <td> <button type="submit" class="btn btn-info"><a href="/resumes/download/{{$data->cv}}" style="color:black;"><i class="fa fa-download"> </i></a></button></td>
                               <td>
                                 @if($data->is_approved == 1)
-                                  <span class="btn btn-success">Approved</span>
+                                  <span class="btn btn-success"><i class="fa fa-check"> </i> Approved</span>
                                   @else
-                                  <span class="btn btn-danger"><a href="pending"> <i class="fa fa-exclamation-circle"> </i> Pending</a></span>
+                                  <span class="btn btn-danger"><a href="pending" style="color:white;"> <i class="fa fa-exclamation-circle"> </i> Pending</a></span>
                                 @endif
                               </td>
                               <!--td> <button type="submit" class="btn btn-danger"><a href="addResume" style="color:white;"><i class="fa fa-times"> </i> </a></button></td>-->
