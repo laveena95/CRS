@@ -17,6 +17,11 @@
   <section class="wrapper">
     <h3 style="margin-top:-20px;"><i class="fa fa-users"></i> <b>Student Requests</b> <i class="fa fa-angle-right"></i> <i class="fa fa-exclamation-circle"><span class="badge bg-warning">{{ $pending->count() }}</span></i> @yield ('title')</h3>
           <div class="row mb">
+            @if($message = Session::get('success'))
+              <div class="alert alert-success">
+                <p>{{$message}}</p>
+              </div>
+            @endif
               <div class="content-panel">           
                   <div class="adv-table">                    
                       <table cellpadding="0" cellspacing="0" class="display table table-bordered" id="hidden-table-info" style="width:600px;">
@@ -45,11 +50,10 @@
                                 @if($data->is_approved == 1)
                                   <span class="btn btn-success">Approved</span>
                                   @else
-                                  <span class="btn btn-danger"> <i class="fa fa-exclamation-circle"> </i> Pending</span>
+                                  <span class="btn btn-warning"> <i class="fa fa-exclamation-circle"> </i> Pending</span>
                                 @endif
                                 
                               </td>
-                              <td><button class="btn btn-danger"><i class="fa fa-times"> </i> Reject</button></td>
                               <td class="text-center">
                                 @if($data->is_approved == 0)
                                     <button type="button" class="btn btn-success waves-effect" onclick="approveResume({{ $data->id }})">
@@ -60,6 +64,15 @@
                                         @method('PUT')
                                     </form>
                                 @endif
+                              </td>
+                              <td>
+                                <button type="button" class="btn btn-danger" onclick="deleteRequest({{ $data->id }})">
+                                  <i class="fa fa-trash-o"> </i>
+                                </button>
+                                <form id="delete-form-{{ $data->id }}" action="{{ action('ResumeController@destroy',$data->id) }}" method="POST" style="display: none;">
+                                    @csrf
+                                    @method('DELETE')
+                                </form>
                               </td>
                               <!--td> <button type="submit" class="btn btn-danger"><a href="addResume" style="color:white;"><i class="fa fa-times"> </i> </a></button></td>-->
                           </tr>
@@ -201,6 +214,37 @@
               }
           })
       }
+
+      function deleteRequest(id) {
+        swal({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'No, cancel!',
+            confirmButtonClass: 'btn btn-success',
+            cancelButtonClass: 'btn btn-danger',
+            buttonsStyling: false,
+            reverseButtons: true
+        }).then((result) => {
+            if (result.value) {
+                event.preventDefault();
+                document.getElementById('delete-form-'+id).submit();
+            } else if (
+                // Read more about handling dismissals
+                result.dismiss === swal.DismissReason.cancel
+            ) {
+                swal(
+                    'Cancelled',
+                    'Your data is safe :)',
+                    'error'
+                )
+            }
+        })
+    }
   </script>
 
 @endsection

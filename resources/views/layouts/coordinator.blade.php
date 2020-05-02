@@ -167,12 +167,6 @@
                   <span>Pending Requests</span>
                 </a>
               </li>
-              <li>    
-                <a href="rejected">
-                  <i class="fa fa-times"></i>
-                  <span>Rejected Requests</span>
-                </a>
-              </li>
             </ul>
           </li>
           <li>    

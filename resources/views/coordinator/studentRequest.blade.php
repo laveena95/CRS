@@ -17,6 +17,11 @@
   <section class="wrapper">
     <h3 style="margin-top:-20px;"><i class="fa fa-users"></i> <b>Student Requests</b> <i class="fa fa-angle-right"></i> <i class="fa fa-bell"><span class="badge bg-warning">{{ $cv->count() }}</span></i> @yield ('title')</h3>
           <div class="row mb">
+            @if($message = Session::get('success'))
+              <div class="alert alert-success">
+                <p>{{$message}}</p>
+              </div>
+            @endif
               <div class="content-panel">           
                   <div class="adv-table">                    
                       <table cellpadding="0" cellspacing="0" class="display table table-bordered" id="hidden-table-info" style="width:600px;">
@@ -44,11 +49,11 @@
                                 @if($data->is_approved == 1)
                                   <span class="btn btn-success"><i class="fa fa-check"> </i> Approved</span>
                                   @else
-                                  <span class="btn btn-danger"><a href="pending" style="color:white;"> <i class="fa fa-exclamation-circle"> </i> Pending</a></span>
+                                  <span class="btn btn-warning"><a href="pending" style="color:white;"> <i class="fa fa-exclamation-circle"> </i> Pending</a></span>
                                 @endif
                               </td>
                               <td> 
-                                <button type="button" class="btn btn-success waves-effect" onclick="deleteRequest({{ $data->id }})">
+                                <button type="button" class="btn btn-danger" onclick="deleteRequest({{ $data->id }})">
                                   <i class="fa fa-trash-o"> </i>
                                 </button>
                                   <form id="delete-form-{{ $data->id }}" action="{{ action('ResumeController@destroy',$data->id) }}" method="POST" style="display: none;">
@@ -165,36 +170,36 @@
   <script src="https://unpkg.com/sweetalert2@7.19.1/dist/sweetalert2.all.js"></script>
 
   <script type="text/javascript">
-        function deleteRequest(id) {
-            swal({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
-                type: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!',
-                cancelButtonText: 'No, cancel!',
-                confirmButtonClass: 'btn btn-success',
-                cancelButtonClass: 'btn btn-danger',
-                buttonsStyling: false,
-                reverseButtons: true
-            }).then((result) => {
-                if (result.value) {
-                    event.preventDefault();
-                    document.getElementById('delete-form-'+id).submit();
-                } else if (
-                    // Read more about handling dismissals
-                    result.dismiss === swal.DismissReason.cancel
-                ) {
-                    swal(
-                        'Cancelled',
-                        'Your data is safe :)',
-                        'error'
-                    )
-                }
-            })
-        }
+    function deleteRequest(id) {
+        swal({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!',
+            cancelButtonText: 'No, cancel!',
+            confirmButtonClass: 'btn btn-success',
+            cancelButtonClass: 'btn btn-danger',
+            buttonsStyling: false,
+            reverseButtons: true
+        }).then((result) => {
+            if (result.value) {
+                event.preventDefault();
+                document.getElementById('delete-form-'+id).submit();
+            } else if (
+                // Read more about handling dismissals
+                result.dismiss === swal.DismissReason.cancel
+            ) {
+                swal(
+                    'Cancelled',
+                    'Your data is safe :)',
+                    'error'
+                )
+            }
+        })
+    }
 </script>
 
 @endsection
