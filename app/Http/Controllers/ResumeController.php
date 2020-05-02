@@ -85,8 +85,13 @@ class ResumeController extends Controller
     public function pending()
     {
         $pending=Resume::where('is_approved',0)->get();
-        //$cv= Resume::all();
         return view('coordinator.pending',compact('pending'));
+    }
+
+    public function showRequest()
+    {
+        $pending=Resume::where('is_approved',0)->get();
+        return view('coordinator.show',compact('pending'));
     }
 
     public function approve($id)
@@ -96,13 +101,13 @@ class ResumeController extends Controller
         {
             $cv->is_approved=1;
             $cv->save();
-            $cv->alert('Resume approved');
+            return redirect()->back()->with('success','Approved!');
 
             $students=User::all();
-            alert("Request successfully Approved"); 
+            return redirect()->back()->with('success','Approved!');
         }
         else{
-            alert("Request already approved!");
+            return redirect()->back()->with('success','already Approved!');
         }
         return view('coordinator.studentRequest',compact('cv'));
     }

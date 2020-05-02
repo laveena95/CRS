@@ -1,5 +1,5 @@
 @extends('layouts.coordinator')
-@section('title','Requests')
+@section('title','View Resume')
 
 @section('style')
     <link href="{{ asset('backend/lib/advanced-datatable/css/demo_page.css') }}" rel="stylesheet" />

@@ -29,7 +29,6 @@
                               <td>View Resume</td>
                               <td>Download Resume</td>
                               <td>is_Approved</td>
-                              <!--<td>Pending</td>-->
                           </thead>
                           @foreach($cv as $key=>$data)
                           <tr class="gradeA">
@@ -46,6 +45,7 @@
                                   @else
                                   <span class="btn btn-danger"><a href="pending" style="color:white;"> <i class="fa fa-exclamation-circle"> </i> Pending</a></span>
                                 @endif
+                                <button class="btn btn-danger"><i class="fa fa-times"> </i>Reject</button>
                               </td>
                               <!--td> <button type="submit" class="btn btn-danger"><a href="addResume" style="color:white;"><i class="fa fa-times"> </i> </a></button></td>-->
                           </tr>

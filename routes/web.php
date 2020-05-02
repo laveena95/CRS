@@ -111,11 +111,17 @@ Route::get('CoLock', 'CoordinatorController@changeCoLock');
 Route::get('coordinatorLogin', 'CoordinatorController@coordinatorLogin');
 Route::get('studentDetail', 'CoordinatorController@studentDetail');
 Route::get('/studentRequest', 'CoordinatorController@studentRequest');
+
 Route::get('/resumes/{id}', 'ResumeController@show');
 Route::get('/resumes/download/{cv}', 'ResumeController@download');
+
 Route::get('approved','CoordinatorController@create');
-Route::put('resumes/{id}','ResumeController@approve');
+
+Route::get('/show','ResumeController@showRequest');
+
 Route::get('/pending','ResumeController@pending');
+Route::put('resumes/{id}','ResumeController@approve');
+
 
 
 
