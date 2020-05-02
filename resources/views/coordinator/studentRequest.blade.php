@@ -1,5 +1,5 @@
 @extends('layouts.coordinator')
-@section('title','Requests')
+@section('title','All Requests')
 
 @section('style')
     <link href="{{ asset('backend/lib/advanced-datatable/css/demo_page.css') }}" rel="stylesheet" />
@@ -18,9 +18,9 @@
     <h3 style="margin-top:-20px;"><i class="fa fa-users"></i> <b>Student Requests</b> <i class="fa fa-angle-right"></i> <i class="fa fa-bell"><span class="badge bg-warning">{{ $cv->count() }}</span></i> @yield ('title')</h3>
           <div class="row mb">
             @if($message = Session::get('success'))
-              <div class="alert alert-success">
+              div class="alert alert-success">
                 <p>{{$message}}</p>
-              </div>
+              </div><
             @endif
               <div class="content-panel">           
                   <div class="adv-table">                    
