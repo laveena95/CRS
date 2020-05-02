@@ -29,6 +29,7 @@
                               <td>View Resume</td>
                               <td>Download Resume</td>
                               <td>is_Approved</td>
+                              <td>Reject</td>
                           </thead>
                           @foreach($cv as $key=>$data)
                           <tr class="gradeA">
@@ -45,9 +46,16 @@
                                   @else
                                   <span class="btn btn-danger"><a href="pending" style="color:white;"> <i class="fa fa-exclamation-circle"> </i> Pending</a></span>
                                 @endif
-                                <button class="btn btn-danger"><i class="fa fa-times"> </i>Reject</button>
                               </td>
-                              <!--td> <button type="submit" class="btn btn-danger"><a href="addResume" style="color:white;"><i class="fa fa-times"> </i> </a></button></td>-->
+                              <td> 
+                                <button type="button" class="btn btn-success waves-effect" onclick="deleteRequest({{ $data->id }})">
+                                  <i class="fa fa-trash-o"> </i>
+                                </button>
+                                  <form id="delete-form-{{ $data->id }}" action="{{ action('ResumeController@destroy',$data->id) }}" method="POST" style="display: none;">
+                                    @csrf
+                                    @method('DELETE')
+                                  </form>
+                              </td>
                           </tr>
                           @endforeach
                       </table>
@@ -153,7 +161,40 @@
  
   </script> 
 
-  /* script to approve  student resume */
-  <script src="https://cdjns.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2min.js"></script>
+  /* script to reject student resume */
+  <script src="https://unpkg.com/sweetalert2@7.19.1/dist/sweetalert2.all.js"></script>
+
+  <script type="text/javascript">
+        function deleteRequest(id) {
+            swal({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!',
+                cancelButtonText: 'No, cancel!',
+                confirmButtonClass: 'btn btn-success',
+                cancelButtonClass: 'btn btn-danger',
+                buttonsStyling: false,
+                reverseButtons: true
+            }).then((result) => {
+                if (result.value) {
+                    event.preventDefault();
+                    document.getElementById('delete-form-'+id).submit();
+                } else if (
+                    // Read more about handling dismissals
+                    result.dismiss === swal.DismissReason.cancel
+                ) {
+                    swal(
+                        'Cancelled',
+                        'Your data is safe :)',
+                        'error'
+                    )
+                }
+            })
+        }
+</script>
 
 @endsection

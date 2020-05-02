@@ -142,6 +142,7 @@ class ResumeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Resume::where('id',$id)->delete();
+        return redirect()->back()->with('success','Rejected Successfully!');
     }
 }

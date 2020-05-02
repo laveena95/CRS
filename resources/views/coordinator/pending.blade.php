@@ -30,6 +30,7 @@
                               <td>Download Resume</td>
                               <td>Status</td>
                               <td>Approve</td>
+                              <td>Reject</td>
                           </thead>
                           @foreach($pending as $key=>$data)
                           <tr class="gradeA">
@@ -46,7 +47,9 @@
                                   @else
                                   <span class="btn btn-danger"> <i class="fa fa-exclamation-circle"> </i> Pending</span>
                                 @endif
+                                
                               </td>
+                              <td><button class="btn btn-danger"><i class="fa fa-times"> </i> Reject</button></td>
                               <td class="text-center">
                                 @if($data->is_approved == 0)
                                     <button type="button" class="btn btn-success waves-effect" onclick="approveResume({{ $data->id }})">

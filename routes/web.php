@@ -121,6 +121,8 @@ Route::get('/show','ResumeController@showRequest');
 
 Route::get('/pending','ResumeController@pending');
 Route::put('resumes/{id}','ResumeController@approve');
+Route::delete('studentRequest/{id}','ResumeController@destroy');
+
 
 
 
