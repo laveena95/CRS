@@ -200,27 +200,12 @@
               <span class="label label-theme pull-right mail-info">2</span>
               </a>
           </li>
-          <li class="sub-menu">
-            <a href="javascript:;">
-              <i class="fa fa-cog"></i>
-              <span>Settings</span>
+          <li>     
+            <a href="changeCoPassword">
+              <i class="fa fa-key"></i>
+              <span>Change Password</span>
               </a>
-            <ul class="sub">                 
-              <li>     
-                <a href="changeCoPassword">
-                  <i class="fa fa-user"></i>
-                  <span>Profile</span>
-                  </a>
-              </li>                  
-              <li>     
-                <a href="changeCoPassword">
-                  <i class="fa fa-key"></i>
-                  <span>Change Password</span>
-                  </a>
-              </li>
-            </ul>
           </li>
-         
         </ul>
         <!-- sidebar menu end-->
       </div>
