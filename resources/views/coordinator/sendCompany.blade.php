@@ -5,6 +5,8 @@
 @endsection
 
 @section('content')
+
+  
 @endsection
 
 @section('script')

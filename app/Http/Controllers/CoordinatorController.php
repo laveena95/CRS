@@ -20,8 +20,8 @@ class CoordinatorController extends Controller
     }
     public function CoordinatorHome()
     {
-    $cv = Resume::all();
-    return view('coordinator.CoordinatorHome');
+        $cv = Resume::all();
+        return view('coordinator.CoordinatorHome');
     }
 
     public function changeCoPassword()
