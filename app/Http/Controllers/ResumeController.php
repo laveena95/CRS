@@ -91,7 +91,7 @@ class ResumeController extends Controller
     public function approved()
     {
         $cv=Resume::where('is_approved',1)->get();
-        return view('coordinator.pending',compact('cv'));
+        return view('coordinator.approved',compact('cv'));
     }
 
     public function approve($id)

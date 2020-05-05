@@ -35,7 +35,16 @@
                               <td>{{$data->position}}</td>
                               <td> <button type="submit" class="btn btn-info"><a href="/resumes/{{$data->id}}" style="color:black;"><i class="fa fa-eye"> </i></a></button></td>
                               <td> <button type="submit" class="btn btn-info"><a href="/resumes/download/{{$data->cv}}" style="color:black;"><i class="fa fa-download"> </i></a></button></td>
-                              <td> <button type="submit" class="btn btn-danger" name=""><a href="sendCompany" style="color:white;"><i class="fa fa-check"> </i> </a>SEND TO COMPANY</button></td>
+                              <td>
+                               <button type="submit" class="btn btn-danger" name="" onclick="sendResume({{ $data->id }})">
+                                <a href="sendCompany" style="color:white;"><i class="fa fa-check"> </i> </a>
+                                  SEND TO COMPANY
+                                </button>
+                                <form method="post" action="{{ action('ResumeController@sendCompany',$data->id) }}" id="send-form-{{ $data->id }}" style="display: none">
+                                    @csrf
+                                    @method('PUT')
+                                </form>
+                              </td>
                           </tr>
                           @endforeach
                       </table>
@@ -138,6 +147,40 @@
         minLength: 1
     });
       });
- 
-  </script> 
+  </script>
+
+<script src="https://unpkg.com/sweetalert2@7.19.1/dist/sweetalert2.all.js"></script>
+
+<script type="text/javascript">
+  function sendResume(id) {
+        swal({
+            title: 'Are you sure?',
+            text: "You want to send this Resume for the company ",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, approve it!',
+            cancelButtonText: 'No, cancel!',
+            confirmButtonClass: 'btn btn-success',
+            cancelButtonClass: 'btn btn-danger',
+            buttonsStyling: false,
+            reverseButtons: true
+        }).then((result) => {
+            if (result.value) {
+                event.preventDefault();
+                document.getElementById('send-form-'+ id).submit();
+            } else if (
+                // Read more about handling dismissals
+                result.dismiss === swal.DismissReason.cancel
+            ) {
+                swal(
+                    'Cancelled',
+                    'The Student Resume Remain PENDING!!! :)',
+                    'info'
+                )
+            }
+        })
+    }
+
 @endsection
