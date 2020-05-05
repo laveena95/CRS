@@ -3,6 +3,7 @@
 
 @section('content')
   <section class="wrapper site-min-height">
+  <h3 style="margin-top:-20px;"><i class="fa fa-home"></i> @yield ('title')</h3>
     <div class="row mt">
       <div class="col-lg-12">
         <div class="row content-panel">
@@ -88,94 +89,19 @@
                     <div class="row centered mt mb">
                       <div class="col-sm-4">
                         <h1><i class="fa fa-edit"></i></h1>
-                        <h3>$22,980</h3>
-                        <h6>LIFETIME EARNINGS</h6>
+                        <h3>Count</h3>
+                        <h6>APPROVED RESUMES</h6>
                       </div>
                       <div class="col-sm-4">
-                        <h1><i class="fa fa-trophy"></i></h1>
-                        <h3>37</h3>
-                        <h6>COMPLETED TASKS</h6>
+                        <h1><i class="fa fa-bell"></i></h1>
+                        <h3>count</h3>
+                        <h6>PENDING RESUMES</h6>
                       </div>
                       <div class="col-sm-4">
-                        <h1><i class="fa fa-shopping-cart"></i></h1>
-                        <h3>1980</h3>
-                        <h6>ITEMS SOLD</h6>
+                        <h1><i class="fa fa-check"></i></h1>
+                        <h3>count</h3>
+                        <h6>JOBS APPLIED</h6>
                       </div>
-                    </div>
-                    <!-- /row -->
-                    <h4>My Friends</h4>
-                    <div class="row centered mb">
-                      <ul class="my-friends">
-                        <li>
-                          <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-01.jpg"></div>
-                        </li>
-                        <li>
-                          <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-02.jpg"></div>
-                        </li>
-                        <li>
-                          <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-03.jpg"></div>
-                        </li>
-                        <li>
-                          <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-04.jpg"></div>
-                        </li>
-                        <li>
-                          <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-05.jpg"></div>
-                        </li>
-                        <li>
-                          <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-06.jpg"></div>
-                        </li>
-                        <li>
-                          <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-07.jpg"></div>
-                        </li>
-                        <li>
-                          <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-08.jpg"></div>
-                        </li>
-                        <li>
-                          <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-09.jpg"></div>
-                        </li>
-                        <li>
-                          <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-10.jpg"></div>
-                        </li>
-                        <li>
-                          <div class="friends-pic"><img class="img-circle" width="35" height="35" src="img/friends/fr-11.jpg"></div>
-                        </li>
-                      </ul>
-                      <div class="row mt">
-                        <div class="col-md-4 col-md-offset-4">
-                          <h6><a href="#">VIEW ALL</a></h6>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- /row -->
-                    <h4>Pending Tasks</h4>
-                    <div class="row centered">
-                      <div class="col-md-8 col-md-offset-2">
-                        <h5>Dashboard Update (40%)</h5>
-                        <div class="progress">
-                          <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                            <span class="sr-only">40% Complete (success)</span>
-                          </div>
-                        </div>
-                        <h5>Unanswered Messages (80%)</h5>
-                        <div class="progress">
-                          <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                            <span class="sr-only">80% Complete (success)</span>
-                          </div>
-                        </div>
-                        <h5>Product Review (60%)</h5>
-                        <div class="progress">
-                          <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
-                            <span class="sr-only">60% Complete (success)</span>
-                          </div>
-                        </div>
-                        <h5>Friend Requests (90%)</h5>
-                        <div class="progress">
-                          <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
-                            <span class="sr-only">90% Complete (success)</span>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- /col-md-8 -->
                     </div>
                     <!-- /row -->
                   </div>
@@ -194,12 +120,9 @@
                     <h4>Location</h4>
                     <div class="col-md-8 col-md-offset-2 mt">
                       <p>
-                        Postal Address<br/> PO BOX 12988, Sutter Ave<br/> Brownsville, New York.
+                        Postal Address<br/> 
                       </p>
                       <br>
-                      <p>
-                        Headquarters<br/> 844 Sutter Ave,<br/> 9003, New York.
-                      </p>
                     </div>
                     <h4>Contacts</h4>
                     <div class="col-md-8 col-md-offset-2 mt">
@@ -208,7 +131,7 @@
                       </p>
                       <br>
                       <p>
-                        Email: hello@dashiotheme.com<br/> Skype: UseDashio<br/> Website: http://Alvarez.is
+                        Email: hello@dashiotheme.com<br/> Skype: UseDashio<br/> 
                       </p>
                     </div>
                   </div>
@@ -229,7 +152,7 @@
                         </div>
                       </div>
                       <div class="form-group">
-                        <label class="col-lg-2 control-label">Company</label>
+                        <label class="col-lg-2 control-label">Institute</label>
                         <div class="col-lg-6">
                           <input type="text" placeholder=" " id="c-name" class="form-control">
                         </div>
@@ -241,7 +164,7 @@
                         </div>
                       </div>
                       <div class="form-group">
-                        <label class="col-lg-2 control-label">Country</label>
+                        <label class="col-lg-2 control-label">Home town</label>
                         <div class="col-lg-6">
                           <input type="text" placeholder=" " id="country" class="form-control">
                         </div>
@@ -310,7 +233,7 @@
             <!-- /tab-content -->
           </div>
           <!-- /panel-body -->
-          </div>
+        </div>
         <!-- /col-lg-12 -->
       </div>
       <!-- /row -->
