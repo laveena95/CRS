@@ -114,11 +114,10 @@ Route::get('/studentRequest', 'CoordinatorController@studentRequest');
 Route::get('/resumes/{id}', 'ResumeController@show');
 Route::get('/resumes/download/{cv}', 'ResumeController@download');
 
-Route::get('approved','CoordinatorController@create');
 
 //Main functionality of a coordinator
 
-Route::get('/show','ResumeController@showRequest');
+Route::get('approved','ResumeController@approved');
 
 Route::get('/pending','ResumeController@pending');
 Route::put('resumes/{id}','ResumeController@approve');

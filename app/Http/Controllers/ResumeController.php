@@ -88,10 +88,10 @@ class ResumeController extends Controller
         return view('coordinator.pending',compact('pending'));
     }
 
-    public function showRequest()
+    public function approved()
     {
-        $pending=Resume::where('is_approved',0)->get();
-        return view('coordinator.show',compact('pending'));
+        $cv=Resume::where('is_approved',1)->get();
+        return view('coordinator.pending',compact('cv'));
     }
 
     public function approve($id)
