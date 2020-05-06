@@ -16,14 +16,6 @@
           </div>
            <!-- /col-md-4 -->
           <div class="col-md-4 centered"style="margin-left:125px;">
-            <!--<form  enctype="multipart/form-data" action="/coordinatorAvatar" method="POST"> 
-              <div class="profile-pic" name="image">
-              <input type="file" name="image" class="form-control">
-              <input type="hidden" class="form-control" name="_token" value="{{ csrf_token() }}">
-              <button class="btn btn-success" type="submit">upload</button>
-              </div>
-            </form>-->
-
             <div class="profile-pic">
                 <form  enctype="multipart/form-data" action="/coordinatorAvatar" method="POST">
                   <div class="fileupload fileupload-new" data-provides="fileupload">
@@ -33,8 +25,8 @@
                     <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;border-color:white;"></div>
                       <div>
                         <span class="btn btn-theme02 btn-file" >
-                            <span class="fileupload-new"><i class="fa fa-paperclip"></i> Change</span>
-                            <span class="fileupload-exists" ><i class="fa fa-undo"></i> Cancel</span>
+                            <span class="fileupload-new"><i class="fa fa-paperclip"></i> Select image</span>
+                            <span class="fileupload-exists" ><i class="fa fa-undo"></i> change</span>
                             <input type="file" class="default" name="image" />
                             <input type="hidden" class="form-control" name="_token" value="{{ csrf_token() }}">
                         </span>
@@ -164,12 +156,6 @@
                   <div class="col-lg-8 col-lg-offset-2 detailed">
                     <h4 class="mb">Personal Information</h4>
                     <form role="form" class="form-horizontal">
-                      <div class="form-group">
-                        <label class="col-lg-2 control-label"> Avatar</label>
-                        <div class="col-lg-6">
-                          <input type="file" id="exampleInputFile" class="file-pos">
-                        </div>
-                      </div>
                       <div class="form-group">
                         <label class="col-lg-2 control-label">Institute</label>
                         <div class="col-lg-6">
