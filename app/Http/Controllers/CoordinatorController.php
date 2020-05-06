@@ -25,9 +25,20 @@ class CoordinatorController extends Controller
         return view('coordinator.CoordinatorHome');
     }
 
-    public function CoordinatorAvatar()
+    public function CoordinatorAvatar(Request $request)
     {
+        $avatar=new User();
+        if($request->hasfile('image')){
+            $file=$request->file('image');
+            $extension=$file->getClientOriginalExtension();
+            $filename=time() . '.' .$extension;
+            $file->move('uploads/candidate/Avatar',$filename);
+            $avatar->image=$filename;
+        }
         
+        $avatar->save();
+        return redirect('coordinator.CoordinatorHome');
+    
     }
 
     public function changeCoPassword()
@@ -78,9 +89,6 @@ class CoordinatorController extends Controller
      */
     public function store(Request $request)
     {
-       // $data =$request->all();
-        //$lastid =Coordinators::create($data)->id;
-
         $data=new Coordinators();
         $data->fname=$request->input('fname');
         $data->lname=$request->input('lname');

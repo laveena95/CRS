@@ -3,7 +3,7 @@
 
 @section('content')
   <section class="wrapper site-min-height">
-    <h3 style="margin-top:-20px;"><i class="fa fa-home"></i> @yield ('title')</h3>
+    <h3 style=""><i class="fa fa-home"></i> @yield ('title')</h3>
     <div class="row mt">
       <div class="col-lg-12">
         <div class="row content-panel">
@@ -29,8 +29,9 @@
                         <span class="fileupload-new"><i class="fa fa-paperclip"></i> Select image</span>
                         <span class="fileupload-exists"><i class="fa fa-undo"></i> Change</span>
                         <input type="file" class="default" name="image"/>
+                        <button type="submit">save</button>
                     </span>
-                    <a href="advanced_form_components.html#" class="btn btn-theme04 fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash-o"></i> Remove</a>
+                      <a href="advanced_form_components.html#" class="btn btn-theme04 fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash-o"></i> Remove</a>
                     </div>
                 </div>
               </div>
