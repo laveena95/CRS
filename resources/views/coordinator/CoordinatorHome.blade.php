@@ -3,13 +3,13 @@
 
 @section('content')
   <section class="wrapper site-min-height">
-  <h3 style="margin-top:-20px;"><i class="fa fa-home"></i> @yield ('title')</h3>
+    <h3 style="margin-top:-20px;"><i class="fa fa-home"></i> @yield ('title')</h3>
     <div class="row mt">
       <div class="col-lg-12">
         <div class="row content-panel">
           <div class="col-md-4 profile-text" style="margin-left:125px;">
             <h3>{{Auth::user()->name}}</h3>
-            <h6>Position</h6>
+            <h6>INDUSTRIAL COORDINATOR</h6>
             <p>Department of Computing & Information Systems, <br> Faculty of Applied Sciences, <br>Sabaragamuwa University of Srilanka</p>
             <br>
             <p><button class="btn btn-theme"><i class="fa fa-pencil"></i> Edit</button></p>

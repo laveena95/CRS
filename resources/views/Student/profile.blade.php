@@ -1,160 +1,243 @@
 @extends('layouts.student')
 @section('title','My account')
 
-@section('content')
-<section class="wrapper">
-    <h3  style="margin-top:-20px;"><i class="fa fa-home"></i> <b>Home</b> <i class="fa fa-angle-right"></i> <i class="fa fa-user"></i> <b>My Profile</b></h3>
-    <!-- BASIC FORM ELELEMNTS -->
-    <div class="row mt">
+@section('content') 
+    <section class="wrapper site-min-height">
+        <h3 style="margin-top:-20px;"><i class="fa fa-home"></i> @yield ('title')</h3>
+        <div class="row mt">
         <div class="col-lg-12">
-        <div class="form-panel">
-          <br>
-          @if(count($errors) > 0)
-          <div class="alert alert-danger">
-            <ul>
-                @foreach($errors->all() as $error)
-                <li>{{$error}}</li>
-                @endforeach
-            </ul>
-          </div>
-          @endif
-          @if(Session::has('success'))
-            <div class="alert alert-success" style="width:400px;">
-                {{Session::get('success')}}
+            <div class="row content-panel">
+            <div class="col-md-4 profile-text" style="margin-left:125px;">
+                <h3>{{Auth::user()->name}}</h3>
+                <h6>UNDERGRADUATE</h6>
+                <p>Department of Computing & Information Systems, <br> Faculty of Applied Sciences, <br>Sabaragamuwa University of Srilanka</p>
+                <br>
+                <p><button class="btn btn-theme"><i class="fa fa-pencil"></i> Edit</button></p>
             </div>
-          @endif
-          
-            <h4 class="mb"><i class="fa fa-pencil-square-o"></i> <span> </span> <b> About Me</b></h4>
-            <form class="form-horizontal style-form" method="POST" action="/studentProfile"  autocomplete="off"  enctype="multipart/form-data">
-            {{csrf_field()}}
-
-            <div class="form-group">
-                <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-user"></i><span> </span>First Name</label>
-                <div class="col-sm-8">
-                    <input type="text" class="form-control round-form" name="fname" placeholder="fname">
+            <!-- /col-md-4 -->
+            <div class="col-md-4 centered"style="margin-left:125px;background-color:black;">
+                <div class="profile-pic">
+                <p><img src="/uploads/candidate/{{Auth::user()->image}}" class="img-circle"></p>
+                <p>
+                    <button class="btn btn-theme02"><i class="fa fa-pencil"></i> Change</button>
+                    <button class="btn btn-danger"><i class="fa fa-trash-o"></i> Remove</button>
+                </p>
                 </div>
             </div>
-
-            <div class="form-group">
-                <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-user"></i><span> </span>Last Name</label>
-                <div class="col-sm-8">
-                    <input type="text" class="form-control round-form" name="lname" placeholder="lname">
-                </div>
+            <!-- /col-md-4 -->
             </div>
-
-            <div class="form-group">
-                <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-male"></i><span> </span>Gender</label>
-                <div class="col-sm-8">
-                    <input type="text" class="form-control round-form" name="gender" placeholder="gender">
-                </div>
+            <!-- /row -->
+        </div>
+        <!-- /col-lg-12 -->
+        <div class="col-lg-12 mt">
+            <div class="row content-panel">
+            <div class="panel-heading">
+                <ul class="nav nav-tabs nav-justified">
+                <li class="active">
+                    <a data-toggle="tab" href="#overview">Overview</a>
+                </li>
+                <li>
+                    <a data-toggle="tab" href="#contact" class="contact-map">Contact</a>
+                </li>
+                <li>
+                    <a data-toggle="tab" href="#edit">Edit Profile</a>
+                </li>
+                </ul>
             </div>
-           
-            <div class="form-group">
-                <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-calendar"></i><span> </span>D.O.B</label>
-                <div class="col-sm-8">
-                    <input type="date" class="form-control " name="DOB" placeholder="DOB" style="width:200px;">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-clock-o"></i><span> </span>Age</label>
-                <div class="col-sm-8">
-                    <input type="text" class="form-control round-form" name="age" placeholder="age" style="width:200px;">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-book"></i><span> </span>Semester</label>
-                <div class="col-sm-8">
-                    <input type="text" class="form-control round-form"  name="Semester" placeholder="Semester">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-pencil"></i><span> </span>Registration_No</label>
-                <div class="col-sm-8">
-                    <input type="text" class="form-control round-form"  name="Registration_No" placeholder="Registration_No" style="width:200px;">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-clock-o"></i><span> </span>Course_Period</label>
-                <div class="col-sm-8">
-                    <input type="text" class="form-control round-form"  name="Course_Period" placeholder="Course_Period" style="width:200px;">
-                </div>
-            </div>
-            
-            <div class="form-group">
-                <label for="email" class="col-sm-2 col-sm-2 control-label"><i class="fa fa-envelope"></i> {{ __('E-Mail Address') }}</label>
-
-                <div class="col-md-6">
-                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                    @error('email')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-mobile"></i><span> </span>Phone</label>
-                <div class="col-sm-8">
-                    <input type="text" class="form-control round-form"  name="phone" placeholder="phone" style="width:200px;">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-home"></i><span> </span>Address</label>
-                <div class="col-sm-8">
-                    <textarea class="form-control round-form"  name="address" placeholder="address" style="width:200px;"></textarea>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label class="col-sm-2 col-sm-2 control-label"><i class="fa fa-flag"></i><span> </span>Nationality</label>
-                <div class="col-sm-8">
-                    <input type="text" class="form-control round-form"  name="nationality" placeholder="nationality" style="width:200px;">
-                </div>
-            </div>
-
-            <div class="form-group last">
-                <label class="control-label col-md-3"><i class="fa fa-picture-o"></i> Image Upload</label>
-                <div class="col-md-9">
-                <div class="fileupload fileupload-new" data-provides="fileupload">
-                    <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;" name="image" type="file">
-                    
+            <!-- /panel-heading -->
+            <div class="panel-body">
+                <div class="tab-content">
+                <div id="overview" class="tab-pane active">
+                    <div class="row">
+                    <div class="col-md-6">
+                        <textarea rows="3" class="form-control" placeholder="Whats on your mind?"></textarea>
+                        <div class="grey-style">
+                        <div class="pull-left">
+                            <button class="btn btn-sm btn-theme"><i class="fa fa-camera"></i></button>
+                            <button class="btn btn-sm btn-theme"><i class="fa fa-map-marker"></i></button>
+                        </div>
+                        <div class="pull-right">
+                            <button class="btn btn-sm btn-theme03">POST</button>
+                        </div>
+                        </div>
+                        <div class="detailed mt">
+                        <h4>Recent Activity</h4>
+                        <div class="recent-activity">
+                            <div class="activity-icon bg-theme"><i class="fa fa-check"></i></div>
+                            <div class="activity-panel">
+                            <h5>1 HOUR AGO</h5>
+                            <p>Sent resumes for approval.</p>
+                            </div>
+                            <div class="activity-icon bg-theme02"><i class="fa fa-trophy"></i></div>
+                            <div class="activity-panel">
+                            <h5>5 HOURS AGO</h5>
+                            <p>Browse Jobs.</p>
+                            </div>
+                            <div class="activity-icon bg-theme04"><i class="fa fa-rocket"></i></div>
+                            <div class="activity-panel">
+                            <h5>3 DAYS AGO</h5>
+                            <p>Sent resumes for Approval</p>
+                            </div>
+                        </div>
+                        <!-- /recent-activity -->
+                        </div>
+                        <!-- /detailed -->
                     </div>
-                    <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
-                    <div>
-                    <span class="btn btn-theme02 btn-file">
-                        <span class="fileupload-new"><i class="fa fa-paperclip"></i> Select image</span>
-                        <span class="fileupload-exists"><i class="fa fa-undo"></i> Change</span>
-                        <input type="file" class="default" name="image"/>
-                    </span>
-                    <a href="advanced_form_components.html#" class="btn btn-theme04 fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash-o"></i> Remove</a>
+                    <!-- /col-md-6 -->
+                    <div class="col-md-6 detailed">
+                        <h4>User Stats</h4>
+                        <div class="row centered mt mb">
+                        <div class="col-sm-4">
+                            <h1><i class="fa fa-desktop"></i></h1>
+                            <h3>Count</h3>
+                            <h6>JOBS AVAILABLE</h6>
+                        </div>
+                        <div class="col-sm-4">
+                            <h1><i class="fa fa-check-circle"></i></h1>
+                            <h3>count</h3>
+                            <h6>JOBS APPLIED</h6>
+                        </div>
+                        <div class="col-sm-4">
+                            <h1><i class="fa fa-file"></i></h1>
+                            <h3>count</h3>
+                            <h6>APPROVED RESUMES</h6>
+                        </div>
+                        </div>
+                        <!-- /row -->
                     </div>
+                    <!-- /col-md-6 -->
+                    </div>
+                    <!-- /OVERVIEW -->
                 </div>
-                <span class="label label-info">NOTE!</span>
-                <span>
-                    Attached image thumbnail is
-                    supported in Latest Firefox, Chrome, Opera,
-                    Safari and Internet Explorer 10 only
-                    </span>
+                <!-- /tab-pane -->
+                <div id="contact" class="tab-pane">
+                    <div class="row">
+                    <div class="col-md-6">
+                        <div id="map"></div>
+                    </div>
+                    <!-- /col-md-6 -->
+                    <div class="col-md-6 detailed">
+                        <h4>Location</h4>
+                        <div class="col-md-8 col-md-offset-2 mt">
+                        <p>
+                            Postal Address<br/> 
+                        </p>
+                        <br>
+                        </div>
+                        <h4>Contacts</h4>
+                        <div class="col-md-8 col-md-offset-2 mt">
+                        <p>
+                            Phone: +33 4898-4303<br/> Cell: 48 4389-4393<br/>
+                        </p>
+                        <br>
+                        <p>
+                            Email: hello@dashiotheme.com<br/> Skype: UseDashio<br/> 
+                        </p>
+                        </div>
+                    </div>
+                    <!-- /col-md-6 -->
+                    </div>
+                    <!-- /row -->
                 </div>
+                <!-- /tab-pane -->
+                <div id="edit" class="tab-pane">
+                    <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 detailed">
+                        <h4 class="mb">Personal Information</h4>
+                        <form role="form" class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label"> Avatar</label>
+                            <div class="col-lg-6">
+                            <input type="file" id="exampleInputFile" class="file-pos">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Institute</label>
+                            <div class="col-lg-6">
+                            <input type="text" placeholder=" " id="c-name" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Lives In</label>
+                            <div class="col-lg-6">
+                            <input type="text" placeholder=" " id="lives-in" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Home town</label>
+                            <div class="col-lg-6">
+                            <input type="text" placeholder=" " id="country" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Description</label>
+                            <div class="col-lg-10">
+                            <textarea rows="10" cols="30" class="form-control" id="" name=""></textarea>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-8 col-lg-offset-2 detailed mt">
+                        <h4 class="mb">Contact Information</h4>
+                        <form role="form" class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Address 1</label>
+                            <div class="col-lg-6">
+                            <input type="text" placeholder=" " id="addr1" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Address 2</label>
+                            <div class="col-lg-6">
+                            <input type="text" placeholder=" " id="addr2" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Phone</label>
+                            <div class="col-lg-6">
+                            <input type="text" placeholder=" " id="phone" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Cell</label>
+                            <div class="col-lg-6">
+                            <input type="text" placeholder=" " id="cell" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Email</label>
+                            <div class="col-lg-6">
+                            <input type="text" placeholder=" " id="email" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">Skype</label>
+                            <div class="col-lg-6">
+                            <input type="text" placeholder=" " id="skype" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-offset-2 col-lg-10">
+                            <button class="btn btn-theme" type="submit">Save</button>
+                            <button class="btn btn-theme04" type="button">Cancel</button>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                    <!-- /col-lg-8 -->
+                    </div>
+                    <!-- /row -->
+                </div>
+                <!-- /tab-pane -->
+                </div>
+                <!-- /tab-content -->
             </div>
-            <div class="form-send">
-                <button type="submit" class="btn btn-large btn-danger" style="margin-left: 60%;">SAVE</button>
+            <!-- /panel-body -->
             </div>
+            <!-- /col-lg-12 -->
         </div>
-            
-    </form>
+        <!-- /row -->
         </div>
-        </div>
-        <!-- col-lg-12-->
-    </div>
-    <!-- /row -->
-  
-</section> 
+        <!-- /container -->
+    </section>
 @endsection
