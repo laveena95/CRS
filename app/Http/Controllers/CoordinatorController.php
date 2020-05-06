@@ -37,7 +37,7 @@ class CoordinatorController extends Controller
             $user->image=$filename;
             $user->save(); 
         }
-        return redirect()->back()->with('success','Profile picture uploaded successfully!');
+        return redirect()->back();
     
     }
 

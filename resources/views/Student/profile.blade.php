@@ -15,13 +15,26 @@
                 <p><button class="btn btn-theme"><i class="fa fa-pencil"></i> Edit</button></p>
             </div>
             <!-- /col-md-4 -->
-            <div class="col-md-4 centered"style="margin-left:125px;background-color:black;">
+            <div class="col-md-4 centered"style="margin-left:125px;">
                 <div class="profile-pic">
-                    <p><img src="/uploads/candidate/{{Auth::user()->image}}" class="img-circle"></p>
-                    <p>
-                        <button class="btn btn-theme02"><i class="fa fa-pencil"></i> Change</button>
-                        <button class="btn btn-danger"><i class="fa fa-trash-o"></i> Remove</button>
-                    </p>
+                    <form  enctype="multipart/form-data" action="/studentAvatar" method="POST">
+                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                        <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;border-color:white;" name="image" type="file">
+                        <img src="/uploads/candidate/Avatar/{{Auth::user()->image}}" class="img-circle" style="margin-top:-5px;">
+                        </div>
+                        <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;border-color:white;"></div>
+                        <div>
+                            <span class="btn btn-theme02 btn-file" >
+                                <span class="fileupload-new"><i class="fa fa-paperclip"></i> Select image</span>
+                                <span class="fileupload-exists" ><i class="fa fa-undo"></i> change</span>
+                                <input type="file" class="default" name="image" />
+                                <input type="hidden" class="form-control" name="_token" value="{{ csrf_token() }}">
+                            </span>
+                            <button class="btn btn-danger">Save</button>
+                        </div>
+                        </div>
+                    </div>
+                    </form>  
                 </div>
             </div>
             <!-- /col-md-4 -->
@@ -145,12 +158,6 @@
                     <div class="col-lg-8 col-lg-offset-2 detailed">
                         <h4 class="mb">Personal Information</h4>
                         <form role="form" class="form-horizontal">
-                        <div class="form-group">
-                            <label class="col-lg-2 control-label"> Avatar</label>
-                            <div class="col-lg-6">
-                            <input type="file" id="exampleInputFile" class="file-pos">
-                            </div>
-                        </div>
                         <div class="form-group">
                             <label class="col-lg-2 control-label">Institute</label>
                             <div class="col-lg-6">

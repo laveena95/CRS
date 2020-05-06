@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 
 use App\StudentProfile;
 use App\User;
+use Auth;
 use App\Job;
 use Illuminate\Http\Request;
 
@@ -16,11 +17,21 @@ class StudentController extends Controller
         return view('Student.profile');
     }
 
-    public function profileS()
+    public function studentAvatar(Request $request)
     {
-        return view('layouts.student',array('user'=>Auth::user()));
+        if($request->hasfile('image')){
+            $file=$request->file('image');
+            $extension=$file->getClientOriginalExtension();
+            $filename=time() . '.' .$extension;
+            $file->move('uploads/candidate/Avatar/',$filename);
+            $user = Auth::user();
+            $user->image=$filename;
+            $user->save(); 
+        }
+        return redirect()->back();
+    
     }
-   
+
     public function jobAlert()
     {
         return view('Student.jobAlert');

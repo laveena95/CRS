@@ -91,6 +91,7 @@ Route::delete('companyOverview/{id}','CompanyController@destroy');
 
 //student
 Route::get('profile', 'StudentController@profile')->name('student')->middleware('Student');
+Route::post('/studentAvatar','StudentController@studentAvatar');
 Route::get('changePassword', 'StudentController@changePassword');
 Route::get('myMail', 'StudentController@myMail');
 Route::get('student', 'StudentController@student');
