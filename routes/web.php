@@ -104,6 +104,7 @@ Route::get('jobsApplied','ResumeController@create');
 
 //coordinator
 Route::get('CoordinatorHome', 'CoordinatorController@CoordinatorHome')->name('coordinator')->middleware('Coordinator');
+Route::post('/coordinatorAvatar','CoordinatorController@CoordinatorAvatar');
 Route::get('changeCoPassword', 'CoordinatorController@changeCoPassword');
 Route::get('CMail', 'CoordinatorController@CMail');
 Route::get('CoLock', 'CoordinatorController@changeCoLock');

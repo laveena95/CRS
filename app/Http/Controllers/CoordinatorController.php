@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Coordinators;
 use App\Resume;
 use App\User;
+use Auth;
 
 class CoordinatorController extends Controller
 {
@@ -27,17 +28,16 @@ class CoordinatorController extends Controller
 
     public function CoordinatorAvatar(Request $request)
     {
-        $avatar=new User();
         if($request->hasfile('image')){
             $file=$request->file('image');
             $extension=$file->getClientOriginalExtension();
             $filename=time() . '.' .$extension;
-            $file->move('uploads/candidate/Avatar',$filename);
-            $avatar->image=$filename;
+            $file->move('uploads/coordinator/Avatar/',$filename);
+            $user = Auth::user();
+            $user->image=$filename;
+            $user->save(); 
         }
-        
-        $avatar->save();
-        return redirect('coordinator.CoordinatorHome');
+        return redirect()->back()->with('success','Profile picture uploaded successfully!');
     
     }
 
