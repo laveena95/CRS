@@ -216,7 +216,6 @@
         *********************************************************************************************************************************************************** -->
     <!--main content start-->
     <section id="main-content">
-    <h3><i class="fa fa-building"></i> <b>My Account</b> <i class="fa fa-angle-right"></i> <i class="fa fa-plus"></i> <b>@yield ('title')</b></h3>
       @yield('content')
     </section>
     <!--main content end-->

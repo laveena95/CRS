@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Coordinators;
 use App\Resume;
+use App\User;
 
 class CoordinatorController extends Controller
 {
@@ -22,6 +23,11 @@ class CoordinatorController extends Controller
     {
         $cv = Resume::all();
         return view('coordinator.CoordinatorHome');
+    }
+
+    public function CoordinatorAvatar()
+    {
+        
     }
 
     public function changeCoPassword()

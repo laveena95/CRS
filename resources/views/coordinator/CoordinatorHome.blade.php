@@ -15,14 +15,26 @@
             <p><button class="btn btn-theme"><i class="fa fa-pencil"></i> Edit</button></p>
           </div>
            <!-- /col-md-4 -->
-          <div class="col-md-4 centered"style="margin-left:125px;background-color:black;">
-            <div class="profile-pic">
-              <p><img src="/uploads/candidate/{{Auth::user()->image}}" class="img-circle"></p>
-              <p>
-                <button class="btn btn-theme02"><i class="fa fa-pencil"></i> Change</button>
-                <button class="btn btn-danger"><i class="fa fa-trash-o"></i> Remove</button>
-              </p>
-            </div>
+          <div class="col-md-4 centered"style="margin-left:125px;">
+            <form  enctype="multipart/form-data" action="/users" method="POST"> 
+            {{csrf_field()}}
+              <div class="profile-pic" name="image">
+              <div class="fileupload fileupload-new" data-provides="fileupload">
+                    <div class="fileupload-new thumbnail" style="width: 150px; height: 150px; border-radius:50%;" name="image" type="file">
+                      <img src="/uploads/candidate/{{Auth::user()->image}}" class="img-circle">
+                    </div>
+                    <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 150px; max-height: 150px; line-height: 20px; border-radius:50%;"></div>
+                    <div>
+                    <span class="btn btn-theme02 btn-file">
+                        <span class="fileupload-new"><i class="fa fa-paperclip"></i> Select image</span>
+                        <span class="fileupload-exists"><i class="fa fa-undo"></i> Change</span>
+                        <input type="file" class="default" name="image"/>
+                    </span>
+                    <a href="advanced_form_components.html#" class="btn btn-theme04 fileupload-exists" data-dismiss="fileupload"><i class="fa fa-trash-o"></i> Remove</a>
+                    </div>
+                </div>
+              </div>
+            </form>
           </div>
           <!-- /col-md-4 -->
         </div>
