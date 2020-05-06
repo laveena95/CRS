@@ -16,19 +16,33 @@
           </div>
            <!-- /col-md-4 -->
           <div class="col-md-4 centered"style="margin-left:125px;">
-            <form  enctype="multipart/form-data" action="/coordinatorAvatar" method="POST"> 
+            <!--<form  enctype="multipart/form-data" action="/coordinatorAvatar" method="POST"> 
               <div class="profile-pic" name="image">
               <input type="file" name="image" class="form-control">
               <input type="hidden" class="form-control" name="_token" value="{{ csrf_token() }}">
               <button class="btn btn-success" type="submit">upload</button>
-            </form>
+              </div>
+            </form>-->
 
             <div class="profile-pic">
-                <p><img src="uploads/coordinator/Avatar/{{Auth::user()->image}}" class="img-circle"></p>
-                <p>
-                    <button class="btn btn-theme02"><i class="fa fa-pencil"></i> Change</button>
-                    <button class="btn btn-danger"><i class="fa fa-trash-o"></i> Remove</button>
-                </p>
+                <form  enctype="multipart/form-data" action="/coordinatorAvatar" method="POST">
+                  <div class="fileupload fileupload-new" data-provides="fileupload">
+                    <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;border-color:white;" name="image" type="file">
+                      <img src="uploads/coordinator/Avatar/{{Auth::user()->image}}" class="img-circle" style="margin-top:-5px;">
+                    </div>
+                    <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;border-color:white;"></div>
+                      <div>
+                        <span class="btn btn-theme02 btn-file" >
+                            <span class="fileupload-new"><i class="fa fa-paperclip"></i> Change</span>
+                            <span class="fileupload-exists" ><i class="fa fa-undo"></i> Cancel</span>
+                            <input type="file" class="default" name="image" />
+                            <input type="hidden" class="form-control" name="_token" value="{{ csrf_token() }}">
+                        </span>
+                        <button class="btn btn-danger">Save</button>
+                      </div>
+                    </div>
+                  </div>
+                </form>  
             </div>
         </div>
         <!-- /row -->
