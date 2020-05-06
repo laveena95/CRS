@@ -25,15 +25,11 @@
 
             <div class="profile-pic">
                 <p><img src="uploads/coordinator/Avatar/{{Auth::user()->image}}" class="img-circle"></p>
-                <form  enctype="multipart/form-data" action="/coordinatorAvatar" method="POST"> 
                 <p>
                     <button class="btn btn-theme02"><i class="fa fa-pencil"></i> Change</button>
                     <button class="btn btn-danger"><i class="fa fa-trash-o"></i> Remove</button>
                 </p>
-                </form>
-                </div>
-          </div>
-          <!-- /col-md-4 -->
+            </div>
         </div>
         <!-- /row -->
       </div>

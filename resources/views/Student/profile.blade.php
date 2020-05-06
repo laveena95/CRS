@@ -17,11 +17,11 @@
             <!-- /col-md-4 -->
             <div class="col-md-4 centered"style="margin-left:125px;background-color:black;">
                 <div class="profile-pic">
-                <p><img src="/uploads/candidate/{{Auth::user()->image}}" class="img-circle"></p>
-                <p>
-                    <button class="btn btn-theme02"><i class="fa fa-pencil"></i> Change</button>
-                    <button class="btn btn-danger"><i class="fa fa-trash-o"></i> Remove</button>
-                </p>
+                    <p><img src="/uploads/candidate/{{Auth::user()->image}}" class="img-circle"></p>
+                    <p>
+                        <button class="btn btn-theme02"><i class="fa fa-pencil"></i> Change</button>
+                        <button class="btn btn-danger"><i class="fa fa-trash-o"></i> Remove</button>
+                    </p>
                 </div>
             </div>
             <!-- /col-md-4 -->
