@@ -131,6 +131,7 @@ Route::get('/sendCompany', 'ResumeController@sendCompany');
 
 //company
 Route::get('companyHome', 'CompanyController@viewCompany')->name('company')->middleware('Company');
+Route::post('/companyAvatar','CompanyController@companyAvatar');
 //Route::get('Login', 'CompanyController@login');
 //Route::get('registration', 'CompanyController@register');
 Route::get('applicants','CompanyController@applicants');

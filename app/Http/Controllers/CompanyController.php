@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Companies;
+use App\User;
+use Auth;
 
 class CompanyController extends Controller
 {
@@ -26,6 +29,21 @@ class CompanyController extends Controller
     public function viewCompany()
     {
         return view('Employee.companyHome');
+    }
+
+    public function companyAvatar(Request $request)
+    {
+        if($request->hasfile('image')){
+            $file=$request->file('image');
+            $extension=$file->getClientOriginalExtension();
+            $filename=time() . '.' .$extension;
+            $file->move('uploads/Recruiter/Avatar/',$filename);
+            $user = Auth::user();
+            $user->image=$filename;
+            $user->save(); 
+        }
+        return redirect()->back();
+    
     }
 
     public function applicants()

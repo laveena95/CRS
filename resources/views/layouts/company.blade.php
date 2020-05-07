@@ -120,7 +120,7 @@
       <div id="sidebar" class="nav-collapse "  style="background-color:;">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-        <p class="centered"><a href=""><img src="/uploads/candidate/{{Auth::user()->image}}" class="img-circle" style="width:100px; height:100px;"></a></p>
+        <p class="centered"><a href=""><img src="uploads/Recruiter/Avatar/{{Auth::user()->image}}" class="img-circle" style="width:100px; height:100px;"></a></p>
           <h5 class="centered">{{Auth::user()->name}}</h5>
           <li class="mt">
             <a class="active" href="companyHome">
