@@ -61,66 +61,36 @@
               </div>
 
               <div class="collapse navbar-collapse" id="navbar">              
-              <!-- Start Navigation List -->
-              <ul class="nav navbar-nav">
-                <li>
-                  <a class="active" href="{{ route('welcome') }}">
-                  Home
-                  </a>   
-                </li>
-                <li>
-                  <a href="about">
-                    About 
-                  </a>
-                  </li>       
-              </ul>
-              <ul class="nav navbar-nav navbar-right float-right">
-                <li class="btn-m"><a href="login"><i class="ti-lock"></i>  Log In</a></li> 
-                <li class="btn-m"><a href="{{ route('register') }}"><i class="ti-lock"></i>  Register</a></li> 
-              </ul>
-            </div>                           
-          </div>
-          <!-- Mobile Menu Start -->
-          <ul class="wpb-mobile-menu">
-            <li>
-              <a class="active" href="{{ route('welcome') }}">Home</a>                       
-            </li>
-            <li>
-              <a href="#">Pages</a>
-              <ul>
-                <li><a href="about">About</a></li>
-                <li><a href="job-page">Job Page</a></li>
-                <li><a href="job-details">Job Details</a></li>
-                <li><a href="resume-page">Resume Page</a></li>
-                <li><a href="faq.blade.php">FAQ</a></li>
-                
-              </ul>
-            </li>
-            <li>
-              <a href="#">For Candidates</a>
-              <ul>
-                <li><a href="browse-jobs.blade.php">Browse Jobs</a></li>
-                <li><a href="browse-categories.blade.php">Browse Categories</a></li>
-                <li><a href="add-resume.blade.php">Add Resume</a></li>
-                <li><a href="manage-resumes.blade.php">Manage Resumes</a></li>
-                <li><a href="job-alerts.blade.php">Job Alerts</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">For Employers</a>
-              <ul>
-                <li><a href="post-job.blade.php">Add Job</a></li>
-                <li><a href="manage-jobs.blade.php">Manage Jobs</a></li>
-                <li><a href="manage-applications.blade.php">Manage Applications</a></li>
-                <li><a href="browse-resumes.blade.php">Browse Resumes</a></li>
-              </ul>
-            </li>  
-            <li class="btn-m"><a href="registration"><i class="ti-pencil-alt"></i> Post A Job</a></li>
-            <li class="btn-m"><a href="login"><i class="ti-lock"></i>  Log In</a></li> 
-            <li class="btn-m"><a href="register"><i class="ti-lock"></i>  Register</a></li>          
-          </ul>
-          <!-- Mobile Menu End --> 
-        </nav>
+                <!-- Start Navigation List -->
+                <ul class="nav navbar-nav">
+                  <li>
+                    <a class="active" href="{{ route('welcome') }}">
+                    Home
+                    </a>   
+                  </li>
+                  <li>
+                    <a href="about">
+                      About 
+                    </a>
+                    </li>       
+                </ul>
+                <ul class="nav navbar-nav navbar-right float-right">
+                  <li class="btn-m"><a href="login"><i class="ti-lock"></i>  Log In</a></li> 
+                  <li class="btn-m"><a href="{{ route('register') }}"><i class="ti-lock"></i>  Register</a></li> 
+                </ul>
+              </div>                           
+            </div>
+            <!-- Mobile Menu Start -->
+            <ul class="wpb-mobile-menu">
+              <li>
+                <a class="active" href="{{ route('welcome') }}">Home</a>                       
+              </li> 
+              <li class="btn-m"><a href="login"><i class="ti-pencil-alt"></i> Post A Job</a></li>
+              <li class="btn-m"><a href="login"><i class="ti-lock"></i>  Log In</a></li> 
+              <li class="btn-m"><a href="register"><i class="ti-lock"></i>  Register</a></li>          
+            </ul>
+            <!-- Mobile Menu End --> 
+          </nav>
 
         <!-- Off Canvas Navigation -->
         <div class="navmenu navmenu-default navmenu-fixed-left offcanvas"> 
@@ -182,7 +152,7 @@
         </div>
       </div>
     </div>
-    </section>
+</section>
     <!-- end intro section -->
     </div> 
 <!-- Find Job Section Start -->
@@ -762,9 +732,9 @@
     </div>
   </footer><!-- #footer -->
 <!-- Go To Top Link -->
-<a href="#" class="back-to-top">
-<i class="ti-arrow-up"></i>
-</a>
+  <a href="#" class="back-to-top">
+    <i class="ti-arrow-up"></i>
+  </a>
 
 <div id="loading">
   <div id="loading-center">
