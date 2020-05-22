@@ -64,7 +64,7 @@
                 <!-- Start Navigation List -->
                 <ul class="nav navbar-nav">
                   <li>
-                    <a class="active" href="{{ route('welcome') }}">
+                    <a class="active" href="find-job section">
                     Home
                     </a>   
                   </li>
