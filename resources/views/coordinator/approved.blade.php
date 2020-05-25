@@ -11,7 +11,7 @@
 
 @section('content')
   <section class="wrapper">
-    <h3 style="margin-top:-20px;"><i class="fa fa-users"></i> <b>Student Requests</b> <i class="fa fa-angle-right"></i> <i class="fa fa-check"></i> @yield ('title')</h3>
+    <h3 style="margin-top:;"><i class="fa fa-users"></i> <b>Student Requests</b> <i class="fa fa-angle-right"></i> <i class="fa fa-check"></i> @yield ('title')</h3>
           <div class="row mb">
               <div class="content-panel">           
                   <div class="adv-table">
