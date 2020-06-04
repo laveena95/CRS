@@ -11,7 +11,7 @@
 
 @section('content')
     <section class="wrapper">
-        <h3 style="margin-top:-20px;"><i class="fa fa-users"></i> <b>Student Requests</b> <i class="fa fa-angle-right"></i> <i class="fa fa-eye"></i> @yield ('title')</h3>
+        <h3 style="margin-top:20px;"><i class="fa fa-users"></i> <b>Student Requests</b> <i class="fa fa-angle-right"></i> <i class="fa fa-eye"></i> @yield ('title')</h3>
         <div class="row mb">
             
                 <h4 style="margin-left:25px;"><i class="fa fa-user"> </i> Name of the Student : {{$data->name}}</h4>

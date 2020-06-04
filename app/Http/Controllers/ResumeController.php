@@ -57,7 +57,7 @@ class ResumeController extends Controller
         if($request->file('cv')){
             $file = $request->file('cv');
             $filename=time().'.'.$file->getClientOriginalExtension();
-            $file->move('/uploads/candidate/CV/',$filename);
+            $file->move('uploads/candidate/CV/',$filename);
             $data->cv=$filename;
         }
         $data->student_id=Auth::id();
